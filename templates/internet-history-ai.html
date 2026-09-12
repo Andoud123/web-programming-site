@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>History of the Internet</title>
 
     <style>
@@ -14,9 +16,44 @@
             color: #222;
         }
 
-        h1 {
-            color: #173b63;
+        header {
+            background-color: #173b63;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
             text-align: center;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
         }
 
         h2 {
@@ -29,15 +66,12 @@
             color: #333;
         }
 
-        .section {
-            background-color: white;
-            padding: 25px;
+        article {
             margin-bottom: 30px;
-            border-radius: 10px;
         }
 
-        .timeline {
-            margin-bottom: 25px;
+        article:last-child {
+            margin-bottom: 0;
         }
 
         .source {
@@ -47,320 +81,544 @@
         a {
             color: #1b5fa7;
         }
+
+        footer {
+            background-color: #173b63;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+        }
     </style>
 </head>
 
+
 <body>
 
-    <h1>HISTORY OF THE INTERNET</h1>
+    <!-- Page Header -->
+    <header>
 
-    <!-- Introduction -->
-    <div class="section">
-        <h2>I- Introduction</h2>
+        <h1>HISTORY OF THE INTERNET</h1>
 
-        <p>
-            The Internet is a worldwide communication system that allows people
-            to communicate with each other using many different devices and to
-            send information to locations around the world. It was not invented
-            in a single year or during a limited period. Instead, it took many
-            years and decades of research and development by specialists,
-            governments, companies, and universities.
-        </p>
+        <nav aria-label="Main navigation">
+            <a href="#introduction">Introduction</a>
+            <a href="#timeline">Milestone Timeline</a>
+            <a href="#technologies">Key Technologies</a>
+            <a href="#sources">Reliable Sources</a>
+        </nav>
 
-        <p>
-            Its development began in the 1950s, during the Cold War, with
-            important military and research projects. Over time, these
-            technologies developed into the global Internet that we use today.
-        </p>
-
-        <p class="source">
-            <strong>Sources:</strong><br>
-
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/" target="_blank">
-                Internet Society - Brief History of the Internet
-            </a>
-            <br>
-
-            <a href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/" target="_blank">
-                GeeksforGeeks - History of the Internet
-            </a>
-        </p>
-    </div>
+    </header>
 
 
-    <!-- Milestone Timeline -->
-    <div class="section">
-        <h2>II- Milestone Timeline</h2>
+    <!-- Main Content -->
+    <main>
 
-        <div class="timeline">
-            <h3>1969 — Creation of ARPANET</h3>
+        <!-- Introduction -->
+        <section id="introduction">
+
+            <h2>I- Introduction</h2>
 
             <p>
-                ARPANET (Advanced Research Projects Agency Network) was an early
-                computer network developed through research involving
-                organizations including RAND, MIT, and UCLA. In fall 1969,
-                the first node was installed at UCLA. By December 1969,
-                four nodes were connected to the infant network named ARPANET.
-                The computers could transfer data over dedicated high-speed
-                transmission lines and could also be programmed remotely from
-                other nodes.
+                The Internet is a worldwide communication system that allows
+                people to communicate with each other using many different
+                devices and to send information to locations around the world.
+                It was not invented in a single year or during a limited
+                period. Instead, it took many years and decades of research
+                and development by specialists, governments, companies,
+                and universities.
+            </p>
+
+            <p>
+                Its development began in the 1950s, during the Cold War,
+                with important military and research projects. Over time,
+                these technologies developed into the global Internet
+                that we use today.
             </p>
 
             <p class="source">
-                <strong>Source:</strong>
-                <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">
-                    Internet Society - Short History of the Internet
-                </a>
-            </p>
-        </div>
-
-
-        <div class="timeline">
-            <h3>1972 — Email Becomes an Important Internet Application</h3>
-
-            <p>
-                In 1972, electronic mail became an important application on
-                ARPANET. In March, Ray Tomlinson at BBN wrote basic software
-                for sending and reading email messages. In July, Larry Roberts
-                expanded email's usefulness by creating a program that could
-                list, selectively read, file, forward, and respond to messages.
-                Email quickly became one of the largest network applications
-                for more than a decade.
-            </p>
-
-            <p class="source">
-                <strong>Source:</strong>
-                <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/" target="_blank">
-                    Internet Society - Brief History of the Internet
-                </a>
-            </p>
-        </div>
-
-
-        <div class="timeline">
-            <h3>1973–1983 — Development and Adoption of TCP/IP</h3>
-
-            <p>
-                DARPA-funded researchers expanded ARPANET and developed new
-                Internet protocols. The original communication standard was
-                called NCP (Network Control Protocol). As networking technology
-                advanced, TCP/IP (Transmission Control Protocol/Internet
-                Protocol) replaced NCP as the standard for communication
-                between networks.
-            </p>
-
-            <p>
-                TCP/IP allowed computers to transmit and receive data such as
-                email, computer-to-computer file transfers, and remote login.
-                Data could be divided into packets at the source and
-                reassembled at the destination.
-            </p>
-
-            <p class="source">
-                <strong>Sources:</strong><br>
-
-                <a href="https://www.nsf.gov/impacts/internet" target="_blank">
-                    National Science Foundation - The Internet
-                </a>
+                <strong>Sources:</strong>
                 <br>
 
-                <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">
-                    Internet Society - Short History of the Internet
+                <a
+                    href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Internet Society - Brief History of the Internet
                 </a>
-            </p>
-        </div>
 
+                <br>
 
-        <div class="timeline">
-            <h3>1986 — NSFNET Expands the Internet</h3>
-
-            <p>
-                NSFNET was launched in 1986 by the National Science Foundation
-                (NSF) to connect academic researchers to a new system of
-                supercomputer centers. It became an important U.S. Internet
-                backbone. It connected around 2,000 computers in 1986 and
-                expanded to more than 2 million by 1993. NSFNET helped create
-                the foundation for the rapid growth of the Internet during
-                the 1990s.
-            </p>
-
-            <p class="source">
-                <strong>Source:</strong>
-                <a href="https://www.nsf.gov/impacts/internet" target="_blank">
-                    National Science Foundation - The Internet
-                </a>
-            </p>
-        </div>
-
-
-        <div class="timeline">
-            <h3>1989 — The World Wide Web Is Proposed</h3>
-
-            <p>
-                Tim Berners-Lee, a British scientist working at CERN, proposed
-                the World Wide Web in 1989. The Web was originally developed
-                to meet the need for automated information sharing between
-                scientists at universities and institutes around the world.
-            </p>
-
-            <p>
-                The basic idea was to combine computers, data networks, and
-                hypertext into a powerful and easy-to-use global information
-                system.
-            </p>
-
-            <p class="source">
-                <strong>Source:</strong>
-                <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">
-                    CERN - A Short History of the Web
-                </a>
-            </p>
-        </div>
-
-
-        <div class="timeline">
-            <h3>1991 — The World Wide Web Becomes Available</h3>
-
-            <p>
-                Berners-Lee created the first web page editor, web browser,
-                and web server, bringing his World Wide Web idea to life.
-                This marked the beginning of web browsing and laid the
-                foundation for websites and online content sharing.
-            </p>
-
-            <p class="source">
-                <strong>Source:</strong>
-                <a href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/" target="_blank">
+                <a
+                    href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     GeeksforGeeks - History of the Internet
                 </a>
             </p>
-        </div>
+
+        </section>
 
 
-        <div class="timeline">
-            <h3>1995 — Commercial Internet Expands</h3>
+        <!-- Milestone Timeline -->
+        <section id="timeline">
 
-            <p>
-                Commercial companies recognized the popularity and usefulness
-                of the growing Internet and began building their own network
-                infrastructure and Internet services. During the 1990s, NSF
-                supported Internet development, including the development of
-                the Mosaic web browser and research into reducing Internet
-                congestion.
-            </p>
-
-            <p>
-                The rapid growth of commercial Internet services led NSF to
-                shut down its dedicated infrastructure backbone in 1995 while
-                continuing to support research and educational Internet
-                projects.
-            </p>
-
-            <p class="source">
-                <strong>Source:</strong>
-                <a href="https://www.nsf.gov/impacts/internet" target="_blank">
-                    National Science Foundation - The Internet
-                </a>
-            </p>
-        </div>
-
-    </div>
+            <h2>II- Milestone Timeline</h2>
 
 
-    <!-- Key Technologies -->
-    <div class="section">
-        <h2>III- 3 Key Technologies of the Internet</h2>
+            <!-- 1969 -->
+            <article>
 
-        <h3>1. Packet Switching</h3>
+                <header>
+                    <h3>
+                        <time datetime="1969">1969</time> —
+                        Creation of ARPANET
+                    </h3>
+                </header>
+
+                <p>
+                    ARPANET (Advanced Research Projects Agency Network)
+                    was an early computer network developed through research
+                    involving organizations including RAND, MIT, and UCLA.
+                    In fall 1969, the first node was installed at UCLA.
+                    By December 1969, four nodes were connected to the
+                    infant network named ARPANET.
+                </p>
+
+                <p>
+                    The computers could transfer data over dedicated
+                    high-speed transmission lines and could also be
+                    programmed remotely from other nodes.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Short History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1972 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1972">1972</time> —
+                        Email Becomes an Important Internet Application
+                    </h3>
+                </header>
+
+                <p>
+                    In 1972, electronic mail became an important application
+                    on ARPANET. In March, Ray Tomlinson at BBN wrote basic
+                    software for sending and reading email messages.
+                </p>
+
+                <p>
+                    In July, Larry Roberts expanded email's usefulness by
+                    creating a program that could list, selectively read,
+                    file, forward, and respond to messages. Email quickly
+                    became one of the largest network applications for
+                    more than a decade.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Brief History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1973-1983 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1973">1973</time>–<time datetime="1983">1983</time>
+                        —
+                        Development and Adoption of TCP/IP
+                    </h3>
+                </header>
+
+                <p>
+                    DARPA-funded researchers expanded ARPANET and developed
+                    new Internet protocols. The original communication
+                    standard was called NCP (Network Control Protocol).
+                    As networking technology advanced, TCP/IP
+                    (Transmission Control Protocol/Internet Protocol)
+                    replaced NCP as the standard for communication
+                    between networks.
+                </p>
+
+                <p>
+                    TCP/IP allowed computers to transmit and receive data
+                    such as email, computer-to-computer file transfers,
+                    and remote login. Data could be divided into packets
+                    at the source and reassembled at the destination.
+                </p>
+
+                <p class="source">
+                    <strong>Sources:</strong>
+                    <br>
+
+                    <a
+                        href="https://www.nsf.gov/impacts/internet"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        National Science Foundation - The Internet
+                    </a>
+
+                    <br>
+
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Short History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1986 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1986">1986</time> —
+                        NSFNET Expands the Internet
+                    </h3>
+                </header>
+
+                <p>
+                    NSFNET was launched in 1986 by the National Science
+                    Foundation (NSF) to connect academic researchers to
+                    a new system of supercomputer centers.
+                </p>
+
+                <p>
+                    It became an important U.S. Internet backbone.
+                    It connected around 2,000 computers in 1986 and
+                    expanded to more than 2 million by 1993.
+                    NSFNET helped create the foundation for the rapid
+                    growth of the Internet during the 1990s.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.nsf.gov/impacts/internet"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        National Science Foundation - The Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1989 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1989">1989</time> —
+                        The World Wide Web Is Proposed
+                    </h3>
+                </header>
+
+                <p>
+                    Tim Berners-Lee, a British scientist working at CERN,
+                    proposed the World Wide Web in 1989. The Web was
+                    originally developed to meet the need for automated
+                    information sharing between scientists at universities
+                    and institutes around the world.
+                </p>
+
+                <p>
+                    The basic idea was to combine computers, data networks,
+                    and hypertext into a powerful and easy-to-use global
+                    information system.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        CERN - A Short History of the Web
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1991 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1991">1991</time> —
+                        The World Wide Web Becomes Available
+                    </h3>
+                </header>
+
+                <p>
+                    Berners-Lee created the first web page editor,
+                    web browser, and web server, bringing his World
+                    Wide Web idea to life.
+                </p>
+
+                <p>
+                    This marked the beginning of web browsing and laid
+                    the foundation for websites and online content sharing.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        GeeksforGeeks - History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- 1995 -->
+            <article>
+
+                <header>
+                    <h3>
+                        <time datetime="1995">1995</time> —
+                        Commercial Internet Expands
+                    </h3>
+                </header>
+
+                <p>
+                    Commercial companies recognized the popularity and
+                    usefulness of the growing Internet and began building
+                    their own network infrastructure and Internet services.
+                </p>
+
+                <p>
+                    During the 1990s, NSF supported Internet development,
+                    including the development of the Mosaic web browser
+                    and research into reducing Internet congestion.
+                </p>
+
+                <p>
+                    The rapid growth of commercial Internet services led
+                    NSF to shut down its dedicated infrastructure backbone
+                    in 1995 while continuing to support research and
+                    educational Internet projects.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.nsf.gov/impacts/internet"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        National Science Foundation - The Internet
+                    </a>
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Key Technologies -->
+        <section id="technologies">
+
+            <h2>III- 3 Key Technologies of the Internet</h2>
+
+
+            <!-- Packet Switching -->
+            <article>
+
+                <h3>1. Packet Switching</h3>
+
+                <p>
+                    Packet switching is a technology that divides messages
+                    into smaller packets. Each packet is addressed separately
+                    and can travel through the network toward its destination.
+                    The packets are then combined again at the destination
+                    to reconstruct the original information.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Short History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- TCP/IP -->
+            <article>
+
+                <h3>2. TCP/IP</h3>
+
+                <p>
+                    TCP/IP is the main communication protocol suite used
+                    by the Internet. It provides the rules needed for
+                    addressing and transferring data, allowing packets
+                    to travel across multiple computers, networks, and
+                    different networking standards.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Short History of the Internet
+                    </a>
+                </p>
+
+            </article>
+
+
+            <!-- World Wide Web -->
+            <article>
+
+                <h3>3. World Wide Web</h3>
+
+                <p>
+                    The World Wide Web (WWW) was invented by Tim Berners-Lee
+                    at CERN in 1989. It is a system that allows people to
+                    access and connect information through web pages,
+                    hyperlinks, and web browsers.
+                </p>
+
+                <p>
+                    The Web made the Internet much easier for people to
+                    use and share information.
+                </p>
+
+                <p class="source">
+                    <strong>Source:</strong>
+
+                    <a
+                        href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        CERN - A Short History of the Web
+                    </a>
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Reliable Sources -->
+        <section id="sources">
+
+            <h2>IV- Reliable Sources</h2>
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Brief History of the Internet
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Internet Society - Short History of the Internet
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        GeeksforGeeks - History of the Internet
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        CERN - A Short History of the Web
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.nsf.gov/impacts/internet"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        National Science Foundation - The Internet
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- Page Footer -->
+    <footer>
 
         <p>
-            Packet switching is a technology that divides messages into
-            smaller packets. Each packet is addressed separately and can
-            travel through the network toward its destination. The packets
-            are then combined again at the destination to reconstruct the
-            original information.
-        </p>
-
-        <p class="source">
-            <strong>Source:</strong>
-            <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">
-                Internet Society - Short History of the Internet
-            </a>
-        </p>
-
-
-        <h3>2. TCP/IP</h3>
-
-        <p>
-            TCP/IP is the main communication protocol suite used by the
-            Internet. It provides the rules needed for addressing and
-            transferring data, allowing packets to travel across multiple
-            computers, networks, and different networking standards.
-        </p>
-
-        <p class="source">
-            <strong>Source:</strong>
-            <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">
-                Internet Society - Short History of the Internet
-            </a>
-        </p>
-
-
-        <h3>3. World Wide Web</h3>
-
-        <p>
-            The World Wide Web (WWW) was invented by Tim Berners-Lee at CERN
-            in 1989. It is a system that allows people to access and connect
-            information through web pages, hyperlinks, and web browsers.
-            The Web made the Internet much easier for people to use and
-            share information.
-        </p>
-
-        <p class="source">
-            <strong>Source:</strong>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">
-                CERN - A Short History of the Web
-            </a>
-        </p>
-
-    </div>
-
-
-    <!-- Reliable Sources -->
-    <div class="section">
-        <h2>IV- Reliable Sources</h2>
-
-        <p>
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/" target="_blank">
-                Internet Society - Brief History of the Internet
-            </a>
+            History of the Internet
         </p>
 
         <p>
-            <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">
-                Internet Society - Short History of the Internet
-            </a>
+            <a href="#introduction">Back to Top</a>
         </p>
 
-        <p>
-            <a href="https://www.geeksforgeeks.org/websites-apps/history-of-internet/" target="_blank">
-                GeeksforGeeks - History of the Internet
-            </a>
-        </p>
-
-        <p>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">
-                CERN - A Short History of the Web
-            </a>
-        </p>
-
-        <p>
-            <a href="https://www.nsf.gov/impacts/internet" target="_blank">
-                National Science Foundation - The Internet
-            </a>
-        </p>
-
-    </div>
+    </footer>
 
 </body>
 </html>

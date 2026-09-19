@@ -1,0 +1,432 @@
+/* ==============================
+   FONTS
+   ============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600&display=swap');
+
+
+/* ==============================
+   MAIN COLORS
+   Neutral + Rose Gold
+   ============================== */
+
+:root {
+    --background: #FDFBF8;
+    --surface: #FFFFFF;
+    --text: #1F2937;
+    --accent: #E8B4B8;
+    --accent-dark: #C98F94;
+    --muted: #9CA3AF;
+    --border: #E5E0DC;
+}
+
+
+/* ==============================
+   GENERAL PAGE
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    font-family: 'Raleway', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto 25px;
+    padding: 35px 40px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.07);
+
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 12px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+header p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 1rem;
+}
+
+
+/* ==============================
+   MAIN CONTENT
+   ============================== */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 40px;
+    padding: 35px;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.06);
+}
+
+
+/* ==============================
+   TITLES
+   ============================== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: var(--text);
+}
+
+h2 {
+    margin-top: 35px;
+    margin-bottom: 18px;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+/* Thin rose-gold line under section titles */
+
+h2::after {
+    content: "";
+
+    display: block;
+
+    width: 99.7%;
+    height: 2px;
+
+    margin-top: 8px;
+
+    background-color: var(--accent);
+}
+
+
+/* ==============================
+   PARAGRAPHS
+   ============================== */
+
+p {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+em {
+    color: #6B7280;
+}
+
+
+/* ==============================
+   LINKS
+   ============================== */
+
+a {
+    color: var(--text);
+
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid transparent;
+}
+
+a:hover {
+    color: var(--accent-dark);
+
+    border-bottom: 2px solid var(--accent);
+}
+
+
+/* ==============================
+   NAVIGATION
+   Works if your page contains <nav>
+   ============================== */
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 30px;
+    padding: 14px 20px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 6px 18px rgba(31, 41, 55, 0.06);
+
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+
+    margin: 5px 12px;
+    padding: 6px 2px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: var(--accent-dark);
+
+    border-bottom: 2px solid var(--accent);
+}
+
+
+/* ==============================
+   SECTIONS
+   ============================== */
+
+section {
+    margin: 30px 0;
+    padding: 25px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(31, 41, 55, 0.05);
+}
+
+
+/* ==============================
+   ARTICLES / WEEKLY WORK CARDS
+   ============================== */
+
+article {
+    margin: 20px 0;
+    padding: 25px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 6px 18px rgba(31, 41, 55, 0.06);
+}
+
+article h2,
+article h3 {
+    margin-top: 0;
+}
+
+
+/* ==============================
+   LISTS
+   ============================== */
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    width:95%;
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   CODE
+   ============================== */
+
+code {
+    padding: 3px 6px;
+
+    background-color: #F3EFEC;
+
+    border-radius: 5px;
+
+    font-family: Consolas, monospace;
+    color: #7C5559;
+}
+
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 30px;
+    padding: 25px 30px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow: 0 6px 18px rgba(31, 41, 55, 0.05);
+}
+
+footer p {
+    margin: 5px 0;
+
+    color: #6B7280;
+    font-size: 0.85rem;
+}
+
+
+/* ==============================
+   HISTORY PAGES
+   ============================== */
+
+main > section h2 {
+    font-size: 1.8rem;
+}
+
+main > section h3 {
+    font-size: 1.35rem;
+}
+
+
+/* ==============================
+   TABLES
+   ============================== */
+
+table {
+    width: 100%;
+
+    margin: 25px 0;
+
+    border-collapse: collapse;
+
+    background-color: var(--surface);
+}
+
+th,
+td {
+    padding: 12px 15px;
+
+    border: 1px solid var(--border);
+
+    text-align: left;
+}
+
+th {
+    background-color: #F8F3F1;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #FDF8F7;
+}
+
+
+/* ==============================
+   HIGHLIGHT / KEY TECHNOLOGIES
+   ============================== */
+
+.highlight {
+    padding: 20px;
+
+    background-color: #FCF5F5;
+
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+}
+
+.highlight h3 {
+    color: var(--accent-dark);
+}
+
+
+/* ==============================
+   SIMPLE RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 700px) {
+
+    header,
+    main,
+    footer,
+    nav {
+        width: 94%;
+    }
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 5px 7px;
+        font-size: 0.85rem;
+    }
+
+    section,
+    article {
+        padding: 18px;
+    }
+}

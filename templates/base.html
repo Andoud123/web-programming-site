@@ -13,14 +13,14 @@
     
     <header>
         <h1>Web Programming Portfolio — Andy-Joe Haddad</h1>
-        <p>A live site that grows one page or feature every week.</p>
+        <p>{% block header_subtitle %}A live site that grows one page or feature every week.{% endblock %}</p>
     </header>
 
     <main> {% block main %} {% endblock %} </main>
 
     <footer>
-        <p>Web Programming — built with Flask and deployed on Render.</p>
-        <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</p>
+        <em><p>Web Programming — built with Flask and deployed on Render.</p>
+        <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</p></em>
     </footer>
 
 </body>

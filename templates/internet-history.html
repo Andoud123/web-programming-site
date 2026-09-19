@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>History of the Internet</title>
-    </head>
+{% block title %}The INTERNET History{% endblock %}
 
-    <body>
+<body>
 
-        <h1>History of the Internet</h1>
+    {% block header %}
+        {{ super()}}
+        {% block header_subtitle %} <em>This page is based on the exact informations of "The History of the Internet", by original and trusted references !</em>{% endblock %}
+    {% endblock %}
+
+    {% block main %}
+        <h1 id="title">History of the Internet</h1>
 
         <nav>
             <h2>Navigation</h2>
@@ -20,6 +21,8 @@
                     <li><a href="#relsrc">Reliable Sources</a></li>
                 </ol>
         </nav>
+
+        <h6 id="top"></h6>
 
         <h2 id="introduction">I- Introduction</h2>
             <p>The internet is a world-wide broadcasting capability and the reason why everyone is communicating now with each other by any device and sending information to any location in the world. It wasn’t invented in a year or a limited time in the past, but it took many years and decades to work on this successful tool and it was developed during the researches of specialists, governments, companies and universities. It started in 1950s, when the world was grappling with the Cold War, as a military project to a global web now.</p>
@@ -84,12 +87,10 @@
                 <li><em><a href="https://www.nsf.gov/impacts/internet">NSF - Birth of the Commercial Internet</a></em></li>
                 <li><em><a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">CERN - Short History of the Web</a></em></li>
             </ul>
+        
+        <a href="#title">^^ Back to Top ^^</a>
+    {% endblock %}
 
     </body>
-
-    <footer>
-        <em>Web Programming — built with Flask and deployed on Render.</em>
-        <em>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</em>
-    </footer>
 
 </html>

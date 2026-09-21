@@ -513,3 +513,176 @@ footer p {
     color: var(--text-muted);
     font-size: 0.85rem;
 }
+
+/* =========================================
+   MOBILE CARD SPACING
+   ========================================= */
+
+@media (max-width: 599px) {
+
+    header h1 {
+        font-size: 1.35rem;
+    }
+
+    header p {
+        font-size: 0.82rem;
+    }
+
+    nav h2 {
+        font-size: 1.05rem;
+    }
+
+    nav a {
+        font-size: 0.72rem;
+        padding: 7px 10px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.88rem;
+    }
+
+    li {
+        font-size: 0.88rem;
+    }
+
+    h4 {
+        font-size: 0.75rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+/* =========================================
+   MOBILE CARD PADDING
+   ========================================= */
+
+@media (max-width: 599px) {
+
+    header {
+        padding: 18px 15px;
+    }
+
+    nav {
+        padding: 12px 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .weekly-list > * {
+        padding: 12px;
+    }
+
+    section {
+        padding: 14px;
+    }
+
+    article {
+        padding: 14px;
+    }
+
+    .highlight {
+        padding: 12px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   RESTORE ORIGINAL DESKTOP SPACING
+   ========================================= */
+
+@media (min-width: 600px) {
+
+    header {
+        padding: 35px 40px;
+    }
+
+    nav {
+        padding: 20px;
+    }
+
+    main {
+        padding: 35px;
+    }
+
+    .weekly-list > * {
+        padding: 24px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    article {
+        padding: 25px;
+    }
+
+    .highlight {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 25px 30px;
+    }
+}
+
+/* =========================================
+   PAGE OPENING ANIMATION
+   ========================================= */
+
+body {
+    animation: pageOpen 0.7s ease-out;
+}
+
+@keyframes pageOpen {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   DARK MODE
+   Follows the user's device preference
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --background: #181716;
+        --surface: #242220;
+
+        --text: #f3f0ed;
+        --text-muted: #b8b2ae;
+
+        --accent: #e8b4b8;
+        --accent-dark: #efc5c8;
+
+        --border: #3a3633;
+
+        --soft-accent: #302729;
+        --soft-code: #302d2a;
+
+        --shadow-small: 0 4px 14px rgba(0, 0, 0, 0.25);
+        --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+}

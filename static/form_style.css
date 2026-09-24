@@ -1,0 +1,646 @@
+/* =========================================================
+   GIN446 — Engineering Student Profile Form
+   Official site design: elegant warm-gold / neutral theme
+   Matches the main site's light/dark visual language.
+   No HTML changes required.
+   ========================================================= */
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+    --form-background: #fdfbf8;
+    --form-surface: #ffffff;
+    --form-surface-soft: #faf7f2;
+
+    --form-text: #1f2937;
+    --form-muted: #6b7280;
+
+    /* Warm elegant gold — intentionally not bright yellow */
+    --form-accent: #c5a968;
+    --form-accent-dark: #a98c4f;
+    --form-accent-soft: rgba(197, 169, 104, 0.12);
+    --form-accent-border: rgba(197, 169, 104, 0.42);
+
+    --form-border: #e5e0d8;
+    --form-border-focus: #c5a968;
+
+    --form-code: #f3efea;
+
+    --form-shadow:
+        0 12px 30px rgba(31, 41, 55, 0.07);
+
+    --form-shadow-focus:
+        0 0 0 4px rgba(197, 169, 104, 0.13);
+
+    --form-radius: 14px;
+    --form-transition: 0.25s ease;
+}
+
+
+/* ---------- Page Area ---------- */
+
+body {
+    background: var(--form-background);
+    color: var(--form-text);
+}
+
+
+/* ---------- Main Form Heading ---------- */
+
+main > h2 {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 28px;
+    color: var(--form-text);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+main > h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 10px auto 0;
+    background: var(--form-accent);
+    border-radius: 999px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+#nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    background: var(--form-surface);
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+    box-shadow: var(--form-shadow);
+}
+
+#nav h2 {
+    flex-basis: 100%;
+    margin: 0 0 7px;
+    color: var(--form-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+#nav h2::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    margin: 8px auto 0;
+    background: var(--form-accent);
+    border-radius: 999px;
+}
+
+#nav a {
+    padding: 8px 13px;
+    color: var(--form-text);
+    background: transparent;
+    border: 1px solid var(--form-border);;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 0.86rem;
+    transition:
+        color var(--form-transition),
+        background var(--form-transition),
+        border-color var(--form-transition),
+        transform var(--form-transition);
+}
+
+#nav a:hover,
+#nav a:focus-visible {
+    color: #171614;
+    background: #967b43;
+    border-color: #967b43;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+}
+
+
+/* ---------- Intro Text ---------- */
+
+form + p,
+main > p {
+    color: var(--form-muted);
+    line-height: 1.7;
+}
+
+
+/* ---------- Form ---------- */
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* ---------- Fieldsets / Cards ---------- */
+
+form fieldset {
+    position: relative;
+    margin: 0 0 22px;
+    padding: 30px 28px 25px;
+    background: var(--form-surface);
+    border: 1px solid var(--form-border);
+    border-radius: var(--form-radius);
+    box-shadow: var(--form-shadow);
+    transition:
+        border-color var(--form-transition),
+        box-shadow var(--form-transition),
+        transform var(--form-transition);
+}
+
+form fieldset:hover {
+    border-color: var(--form-accent-border);
+    box-shadow:
+        0 15px 34px rgba(31, 41, 55, 0.08);
+}
+
+
+/* ---------- Legends ---------- */
+
+form legend {
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    padding: 0 8px;
+    color: var(--form-text);
+    background: var(--form-surface);
+    border: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+form legend::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 9px 2px 0;
+    background: var(--form-accent);
+    border-radius: 50%;
+}
+
+
+/* ---------- Labels ---------- */
+
+form label {
+    display: inline-block;
+    margin-bottom: 7px;
+    padding:8px;
+    color: var(--form-text);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* ---------- Text Inputs / Selects / Textarea ---------- */
+
+form input:not(
+    [type="radio"],
+    [type="checkbox"],
+    [type="submit"],
+    [type="reset"],
+    [type="color"]
+),
+form select,
+form textarea {
+    width: min(420px, 50%);
+    box-sizing: border-box;
+    padding: 11px 13px;
+    color: var(--form-text);
+    background: var(--form-surface-soft);
+    border: 1px solid var(--form-border);
+    border-radius: 9px;
+    outline: none;
+    font: inherit;
+    transition:
+        border-color var(--form-transition),
+        box-shadow var(--form-transition),
+        background var(--form-transition);
+}
+
+form input:not(
+    [type="radio"],
+    [type="checkbox"],
+    [type="submit"],
+    [type="reset"],
+    [type="color"]
+)::placeholder,
+form textarea::placeholder {
+    color: var(--form-muted);
+    opacity: 0.8;
+}
+
+form input:not(
+    [type="radio"],
+    [type="checkbox"],
+    [type="submit"],
+    [type="reset"],
+    [type="color"]
+):hover,
+form select:hover,
+form textarea:hover {
+    border-color: var(--form-accent-border);
+}
+
+form input:not(
+    [type="radio"],
+    [type="checkbox"],
+    [type="submit"],
+    [type="reset"],
+    [type="color"]
+):focus,
+form select:focus,
+form textarea:focus {
+    background: var(--form-surface);
+    border-color: var(--form-border-focus);
+    box-shadow: var(--form-shadow-focus);
+}
+
+form textarea {
+    min-height: 180px;
+    resize: both;
+    line-height: 1.6;
+}
+
+
+/* ---------- Select / Multiple Select ---------- */
+
+form select {
+    min-height: 44px;
+    cursor: pointer;
+}
+
+form select[multiple] {
+    min-height: 204px;
+    padding: 1px;
+}
+
+form option {
+    padding: 7px;
+    color: var(--form-text);
+    background: var(--form-surface);
+}
+
+
+/* ---------- Small Instruction Text ---------- */
+
+form em {
+    color: var(--form-muted);
+}
+
+form em p {
+    margin: 4px 0 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* ---------- Radio Buttons & Checkboxes ---------- */
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin: 5px 7px 5px 0;
+    accent-color: var(--form-accent-dark);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    margin-right: 15px;
+    margin-bottom: 4px;
+    color: var(--form-text);
+    font-weight: 500;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+form input[type="radio"]:focus-visible,
+form input[type="checkbox"]:focus-visible {
+    outline: 3px solid rgba(197, 169, 104, 0.25);
+    outline-offset: 2px;
+}
+
+
+/* ---------- Color Picker ---------- */
+
+form input[type="color"] {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin-left: 10px;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 2px solid var(--form-surface);
+    outline: 2px solid var(--form-accent-border);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(31, 41, 55, 0.12);
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform var(--form-transition),
+        box-shadow var(--form-transition),
+        outline-color var(--form-transition);
+}
+
+form input[type="color"]:hover {
+    transform: scale(1.08);
+    outline-color: var(--form-accent);
+    box-shadow: 0 6px 16px rgba(31, 41, 55, 0.16);
+}
+
+form input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+form input[type="color"]::-webkit-color-swatch {
+    border: 0;
+    border-radius: 50%;
+}
+
+form input[type="color"]::-moz-color-swatch {
+    border: 0;
+    border-radius: 50%;
+}
+
+
+/* ---------- Date / Time Controls ---------- */
+
+form input[type="date"],
+form input[type="time"],
+form input[type="month"] {
+    width: min(250px, 100%);
+    color-scheme: light;
+    cursor: pointer;
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator,
+form input[type="time"]::-webkit-calendar-picker-indicator {
+    padding: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.75;
+    transition:
+        background var(--form-transition),
+        opacity var(--form-transition);
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator:hover,
+form input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    background: var(--form-accent-soft);
+    opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    form input[type="date"],
+    form input[type="time"],
+    form input[type="month"] {
+        color-scheme: dark;
+    }
+}
+
+
+/* ---------- Submit / Reset Buttons ---------- */
+
+
+
+form input[type="submit"],
+form input[type="reset"] {
+    min-width: 135px;
+    padding: 11px 19px;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition:
+        transform var(--form-transition),
+        box-shadow var(--form-transition),
+        background var(--form-transition),
+        color var(--form-transition),
+        border-color var(--form-transition);
+}
+
+form input[type="submit"] {
+    color: #ffffff;
+    background: var(--form-accent-dark);
+    border: 1px solid var(--form-accent-dark);
+    box-shadow: 0 6px 16px rgba(169, 140, 79, 0.20);
+}
+
+form input[type="submit"]:hover,
+form input[type="submit"]:focus-visible {
+    background: #967b43;
+    border-color: #967b43;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+}
+
+form input[type="reset"] {
+    margin-left: 8px;
+    color: var(--form-text);
+    background: transparent;
+    border: 1px solid var(--form-border);
+}
+
+form input[type="reset"]:hover,
+form input[type="reset"]:focus-visible {
+    color: #171614;
+    background: #ff0000;
+    border-color: var(--form-accent-border);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Links Below Form ---------- */
+
+main > h4 {
+    text-align: center;
+    margin: 13px 0;
+    padding: 10px 20px;
+}
+
+main > h4 a {
+    color: var(--form-muted);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color var(--form-transition);
+}
+
+main > h4 a:hover,
+main > h4 a:focus-visible {
+    color: #171614;
+}
+
+
+/* ---------- Smooth Page Entrance ---------- */
+
+@keyframes formPageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: formPageEntrance 0.65s ease-out both;
+}
+
+
+/* ---------- Dark Mode ----------
+   Works with the same common dark-mode class/pattern if your
+   base site already changes theme variables. The media query
+   also provides a fallback for users whose device is dark.
+   --------------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --form-background: #171614;
+        --form-surface: #211f1c;
+        --form-surface-soft: #282521;
+
+        --form-text: #f2eee7;
+        --form-muted: #b8b1a7;
+
+        --form-accent: #c5a968;
+        --form-accent-dark: #d0b878;
+        --form-accent-soft: rgba(197, 169, 104, 0.12);
+        --form-accent-border: rgba(197, 169, 104, 0.38);
+
+        --form-border: #3a352e;
+        --form-border-focus: #c5a968;
+
+        --form-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    form legend {
+        background: var(--form-surface);
+    }
+
+    form option {
+        color: var(--form-text);
+        background: var(--form-surface);
+    }
+
+    form input[type="submit"] {
+        color: #171614;
+        background: var(--form-accent);
+        border-color: var(--form-accent);
+    }
+
+    form input[type="submit"]:hover,
+    form input[type="submit"]:focus-visible {
+        background: var(--form-accent-dark);
+        border-color: var(--form-accent-dark);
+    }
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 700px) {
+    form fieldset {
+        padding: 23px 17px 19px;
+        margin-bottom: 16px;
+    }
+
+    #nav {
+        padding: 16px 12px;
+        gap: 7px;
+    }
+
+    #nav a {
+        padding: 7px 9px;
+        font-size: 0.84rem;
+    }
+
+    form legend {
+        font-size: 1rem;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+        width: 100%;
+        margin: 5px 0 0;
+    }
+
+    form input[type="reset"] {
+        margin-top: 9px;
+    }
+}
+
+
+/* ---------- Very Small Screens ---------- */
+
+@media (max-width: 400px) {
+    form fieldset {
+        padding: 19px 13px 16px;
+        border-radius: 11px;
+    }
+
+    #nav {
+        border-radius: 11px;
+    }
+
+    #nav a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    form label {
+        font-size: 0.86rem;
+    }
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    ),
+    form select,
+    form textarea {
+        padding: 10px 11px;
+        font-size: 0.86rem;
+    }
+}
+
+
+/* ---------- Reduced Motion Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

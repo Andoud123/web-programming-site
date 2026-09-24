@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Web Programming Portfolio{% endblock %}</title>
     <link rel="stylesheet" 
-      href="{{ url_for('static', filename='style.css') }}"/>
+          href="{{ url_for('static', filename='my_styles.css') }}" />
+    {% block head %}{% endblock %}
 </head>
 
 <body>

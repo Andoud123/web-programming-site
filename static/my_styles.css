@@ -158,6 +158,10 @@ nav a {
     font-weight: 600;
 
     text-decoration: none;
+
+    transition:
+        transform 0.25s ease;
+    
 }
 
 
@@ -168,7 +172,11 @@ nav a:hover {
 
     border-color: var(--accent);
 
-    color: var(--accent-dark);
+    color: #171614;
+    background: #967b43;
+    border-color: #967b43;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
 }
 
 /* =========================================
@@ -287,6 +295,9 @@ h4 {
     font-size: 0.85rem;
 
     text-align: center;
+
+    transition:
+        transform 0.25s ease;
 }
 
 h4 a {
@@ -294,13 +305,17 @@ h4 a {
     text-decoration: none;
 }
 
-h4:hover {
-    background-color: var(--soft-accent);
-    border-color: var(--accent);
+h4:hover{
+    color: #171614;
+    background: #967b43;
+    border-color: #967b43;
+    transform: translateY(-2px);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
 }
 
 h4:hover a {
-    color: var(--accent-dark);
+    color: #171614;
 }
 
 /* =========================================

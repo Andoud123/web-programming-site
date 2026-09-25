@@ -5,6 +5,7 @@
    No HTML changes required.
    ========================================================= */
 
+
 /* ---------- Design Tokens ---------- */
 
 :root {
@@ -15,7 +16,6 @@
     --form-text: #1f2937;
     --form-muted: #6b7280;
 
-    /* Warm elegant gold — intentionally not bright yellow */
     --form-accent: #c5a968;
     --form-accent-dark: #a98c4f;
     --form-accent-soft: rgba(197, 169, 104, 0.12);
@@ -108,7 +108,7 @@ main > h2::after {
     padding: 8px 13px;
     color: var(--form-text);
     background: transparent;
-    border: 1px solid var(--form-border);;
+    border: 1px solid var(--form-border);
     border-radius: 9px;
     text-decoration: none;
     font-size: 0.86rem;
@@ -121,11 +121,11 @@ main > h2::after {
 
 #nav a:hover,
 #nav a:focus-visible {
-    color: #171614;
-    background: #967b43;
-    border-color: #967b43;
+    color: #ffeecc;
+    background: #c69d4b;
+    border-color: #ddc088;
     transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+    box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
 }
 
 
@@ -200,7 +200,7 @@ form legend::before {
 form label {
     display: inline-block;
     margin-bottom: 7px;
-    padding:8px;
+    padding: 8px;
     color: var(--form-text);
     font-weight: 600;
     line-height: 1.4;
@@ -233,6 +233,9 @@ form textarea {
         background var(--form-transition);
 }
 
+
+/* ---------- Placeholder ---------- */
+
 form input:not(
     [type="radio"],
     [type="checkbox"],
@@ -245,6 +248,9 @@ form textarea::placeholder {
     opacity: 0.8;
 }
 
+
+/* ---------- Input Hover ---------- */
+
 form input:not(
     [type="radio"],
     [type="checkbox"],
@@ -256,6 +262,9 @@ form select:hover,
 form textarea:hover {
     border-color: var(--form-accent-border);
 }
+
+
+/* ---------- Input Focus ---------- */
 
 form input:not(
     [type="radio"],
@@ -410,18 +419,8 @@ form input[type="time"]::-webkit-calendar-picker-indicator:hover {
     opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-    form input[type="date"],
-    form input[type="time"],
-    form input[type="month"] {
-        color-scheme: dark;
-    }
-}
-
 
 /* ---------- Submit / Reset Buttons ---------- */
-
-
 
 form input[type="submit"],
 form input[type="reset"] {
@@ -441,15 +440,16 @@ form input[type="reset"] {
 }
 
 form input[type="submit"] {
-    color: #ffffff;
-    background: var(--form-accent-dark);
+    color: #a68b34;
+    background: transparent/*var(--form-accent-dark)*/;
     border: 1px solid var(--form-accent-dark);
     box-shadow: 0 6px 16px rgba(169, 140, 79, 0.20);
 }
 
 form input[type="submit"]:hover,
 form input[type="submit"]:focus-visible {
-    background: #967b43;
+    color:#5f4512;
+    background: #ffd88b;
     border-color: #967b43;
     transform: translateY(-2px);
     box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
@@ -459,14 +459,14 @@ form input[type="reset"] {
     margin-left: 8px;
     color: var(--form-text);
     background: transparent;
-    border: 1px solid var(--form-border);
+    border: 1px solid #ff32249e;
 }
 
 form input[type="reset"]:hover,
 form input[type="reset"]:focus-visible {
-    color: #171614;
-    background: #ff0000;
-    border-color: var(--form-accent-border);
+    color: #ffe2a7;
+    background: #ff4b3e;
+    border-color: #4d0000;
     transform: translateY(-2px);
 }
 
@@ -511,13 +511,10 @@ main {
 }
 
 
-/* ---------- Dark Mode ----------
-   Works with the same common dark-mode class/pattern if your
-   base site already changes theme variables. The media query
-   also provides a fallback for users whose device is dark.
-   --------------------------------------------------------- */
+/* ---------- Dark Mode ---------- */
 
 @media (prefers-color-scheme: dark) {
+
     :root {
         --form-background: #171614;
         --form-surface: #211f1c;
@@ -548,8 +545,8 @@ main {
     }
 
     form input[type="submit"] {
-        color: #171614;
-        background: var(--form-accent);
+        color: #bf9c58;
+        background: transparent /*var(--form-accent)*/;
         border-color: var(--form-accent);
     }
 
@@ -558,64 +555,106 @@ main {
         background: var(--form-accent-dark);
         border-color: var(--form-accent-dark);
     }
+
+    form input[type="date"],
+    form input[type="time"],
+    form input[type="month"] {
+        color-scheme: dark;
+    }
+
+    #nav a:hover,
+    #nav a:focus-visible {
+    color:#5f4512;
+    background: #cfb071;
+    border-color: #967b43;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+}
+
 }
 
 
-/* ---------- Responsive Design ---------- */
+/* =========================================================
+   MOBILE DESIGN
+   One section for all mobile devices
+   ========================================================= */
 
 @media (max-width: 700px) {
-    form fieldset {
-        padding: 23px 17px 19px;
-        margin-bottom: 16px;
+
+    /* Main heading */
+
+    main > h2 {
+        font-size: 1.35rem;
+        margin-bottom: 18px;
     }
 
+    main > h2::after {
+        margin-top: 7px;
+    }
+
+
+    /* Navigation */
+
     #nav {
-        padding: 16px 12px;
-        gap: 7px;
+        padding: 10px 8px;
+        gap: 5px;
+        margin-bottom: 18px;
+        border-radius: 11px;
+    }
+
+    #nav h2 {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+        letter-spacing: 0.05em;
+    }
+
+    #nav h2::after {
+        width: 55%;
+        height: 1px;
+        margin-top: 5px;
     }
 
     #nav a {
-        padding: 7px 9px;
-        font-size: 0.84rem;
+        padding: 5px 7px;
+        font-size: 0.70rem;
+        border-radius: 7px;
     }
+
+
+    /* Form cards */
+
+    form fieldset {
+        padding: 16px 12px 14px;
+        margin-bottom: 13px;
+        border-radius: 11px;
+    }
+
+
+    /* Field titles */
 
     form legend {
-        font-size: 1rem;
+        font-size: 0.88rem;
+        padding: 0 5px;
     }
 
-    form input[type="submit"],
-    form input[type="reset"] {
-        width: 100%;
-        margin: 5px 0 0;
+    form legend::before {
+        width: 6px;
+        height: 6px;
+        margin-right: 6px;
     }
 
-    form input[type="reset"] {
-        margin-top: 9px;
-    }
-}
 
-
-/* ---------- Very Small Screens ---------- */
-
-@media (max-width: 400px) {
-    form fieldset {
-        padding: 19px 13px 16px;
-        border-radius: 11px;
-    }
-
-    #nav {
-        border-radius: 11px;
-    }
-
-    #nav a {
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-    }
+    /* ALL labels */
 
     form label {
-        font-size: 0.86rem;
+        margin-bottom: 4px;
+        padding: 3px;
+        font-size: 0.76rem;
+        line-height: 1.3;
     }
+
+
+    /* ALL input / select / textarea text */
 
     form input:not(
         [type="radio"],
@@ -626,8 +665,239 @@ main {
     ),
     form select,
     form textarea {
-        padding: 10px 11px;
-        font-size: 0.86rem;
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.76rem;
+        border-radius: 7px;
+    }
+
+
+    /* ALL placeholders */
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    )::placeholder,
+    form textarea::placeholder {
+        font-size: 0.74rem;
+    }
+
+
+    /* Textarea */
+
+    form textarea {
+        min-height: 130px;
+        line-height: 1.4;
+    }
+
+
+    /* Instruction text */
+
+    form em p {
+        margin: 3px 0 7px;
+        font-size: 0.70rem;
+        line-height: 1.4;
+    }
+
+
+    /* Radio / checkbox */
+
+    form input[type="radio"],
+    form input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        margin: 3px 5px 3px 0;
+    }
+
+    form input[type="radio"] + label,
+    form input[type="checkbox"] + label {
+        margin-right: 8px;
+        margin-bottom: 3px;
+        padding: 0;
+        font-size: 0.72rem;
+    }
+
+
+    /* Multiple select */
+
+    form select[multiple] {
+        min-height: 150px;
+    }
+
+
+    /* Date / time / month */
+
+    form input[type="date"],
+    form input[type="time"],
+    form input[type="month"] {
+        width: 100%;
+    }
+
+
+    /* Color picker */
+
+    form input[type="color"] {
+        width: 36px;
+        height: 36px;
+        margin-left: 5px;
+    }
+
+
+    /* Submit / reset */
+
+    form input[type="submit"],
+    form input[type="reset"] {
+        width: 100%;
+        min-width: 0;
+        padding: 9px 14px;
+        margin: 4px 0 0;
+        font-size: 0.76rem;
+    }
+
+    form input[type="reset"] {
+        margin-top: 7px;
+    }
+
+
+    /* Bottom link */
+
+    main > h4 {
+        margin: 9px 0;
+        padding: 7px 12px;
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    main > h2 {
+        font-size: 1.2rem;
+    }
+
+
+    /* Navigation */
+
+    #nav {
+        padding: 8px 6px;
+        gap: 4px;
+    }
+
+    #nav h2 {
+        font-size: 0.82rem;
+    }
+
+    #nav a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 4px 6px;
+        font-size: 0.65rem;
+        text-align: center;
+    }
+
+
+    /* Form cards */
+
+    form fieldset {
+        padding: 13px 9px 12px;
+        margin-bottom: 10px;
+        border-radius: 9px;
+    }
+
+
+    /* Field titles */
+
+    form legend {
+        font-size: 0.82rem;
+    }
+
+
+    /* ALL labels */
+
+    form label {
+        font-size: 0.70rem;
+    }
+
+
+    /* ALL inputs */
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    ),
+    form select,
+    form textarea {
+        padding: 7px 8px;
+        font-size: 0.70rem;
+    }
+
+
+    /* ALL placeholders */
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    )::placeholder,
+    form textarea::placeholder {
+        font-size: 0.68rem;
+    }
+
+
+    /* Textarea */
+
+    form textarea {
+        min-height: 110px;
+    }
+
+
+    /* Instruction text */
+
+    form em p {
+        font-size: 0.65rem;
+    }
+
+
+    /* Radio / checkbox */
+
+    form input[type="radio"],
+    form input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+    }
+
+    form input[type="radio"] + label,
+    form input[type="checkbox"] + label {
+        font-size: 0.67rem;
+    }
+
+
+    /* Color picker */
+
+    form input[type="color"] {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    /* Buttons */
+
+    form input[type="submit"],
+    form input[type="reset"] {
+        font-size: 0.72rem;
+        padding: 8px 12px;
     }
 }
 
@@ -635,6 +905,7 @@ main {
 /* ---------- Reduced Motion Accessibility ---------- */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -643,4 +914,16 @@ main {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+#confirmation {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#confirmation + label {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
 }

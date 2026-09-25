@@ -71,17 +71,29 @@ main > h2::after {
 /* ---------- Navigation ---------- */
 
 #nav {
+    position: sticky;
+    top: 82px;
+    z-index: 999;
+
+    width: min(80%, 1200px);
+    margin: 0 auto 30px;
+    padding: 14px 18px;
+    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    box-shadow: var(--shadow-small);
+
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 0 auto 25px;
-    padding: 20px;
-    background: var(--form-surface);
-    border: 1px solid var(--form-border);
-    border-radius: var(--form-radius);
-    box-shadow: var(--form-shadow);
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+
+    transition:
+        padding 0.45s ease,
+        border-radius 0.45s ease,
+        background-color 0.45s ease,
+        box-shadow 0.45s ease;
 }
 
 #nav h2 {
@@ -426,7 +438,7 @@ form input[type="submit"],
 form input[type="reset"] {
     min-width: 135px;
     padding: 11px 19px;
-    border-radius: 9px;
+    border-radius: 25px;
     font: inherit;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -486,9 +498,8 @@ main > h4 a {
     transition: color var(--form-transition);
 }
 
-main > h4 a:hover,
-main > h4 a:focus-visible {
-    color: #171614;
+main > h4 a:hover {
+    color: var(--accent-dark);
 }
 
 
@@ -926,4 +937,72 @@ main {
     padding: 0;
     margin: 0;
     vertical-align: middle;
+}
+
+/* ---------- Scroll Entry Animation ---------- */
+
+form fieldset {
+    animation: sectionReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   MOBILE FIT — PROFILE FORM
+   Keeps the existing design
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Keep form navigation sticky */
+    #nav {
+        position: sticky;
+        top: 78px;
+        z-index: 999;
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #nav a {
+        white-space: nowrap;
+    }
+
+    /* Prevent long form content from overflowing */
+    main {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        overflow-wrap: anywhere;
+    }
 }

@@ -6,7 +6,11 @@ Reads the exact field `name` values from the profile form; `skills` and
 `software` arrive as lists. #} {% block head %}
 <style>
   /* Small, profile-specific touches. The rest comes from your own style.css. */
-  .profile { max-width: 860px; }
+.profile {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
   .profile-header { border-top: 6px solid {{ data.get('project_color', '#336699') }};
                     padding-top: 1rem; margin-bottom: 1.5rem; }
   .profile-title { color: {{ data.get('project_color', '#336699') }}; margin: .25rem 0 .5rem; }
@@ -16,7 +20,10 @@ Reads the exact field `name` values from the profile form; `skills` and
   .profile h2 { border-bottom: 2px solid {{ data.get('project_color', '#336699') }};
                 display: inline-block; padding-bottom: .15rem; }
   .profile dl { display: grid; grid-template-columns: 220px 1fr; gap: .35rem 1rem; margin: 0; }
-  .profile dt { font-weight: 600; color: #475569; }
+.profile dt {
+    font-weight: 600;
+    color: var(--text);
+}  
   .profile dd { margin: 0; }
   .chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin: .3rem 0 0; }
   .chip { border: 1px solid {{ data.get('project_color', '#336699') }};
@@ -24,10 +31,27 @@ Reads the exact field `name` values from the profile form; `skills` and
   .swatch { display: inline-block; width: 1rem; height: 1rem; border-radius: 3px;
             border: 1px solid #cbd5e1; vertical-align: middle;
             background: {{ data.get('project_color', '#336699') }}; }
+  .profile h1::after,
+  .profile h2::after {
+    display: none;
+}
+.profile main::background
+
+main {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.profile section {
+    border-left: 3px solid {{ data.get('project_color', '#336699') }};
+    border-right: 3px solid {{ data.get('project_color', '#336699') }};
+
+}
 </style>
-{% endblock %} {% block content %}
+{% endblock %} {% block main %}
 <article class="profile">
-  <header class="profile-header">
+  <p class="profile-header">
     <h1>{{ data.get('fullname') }}</h1>
     {% if data.get('major') %}
     <p class="profile-title">{{ data.get('major') | title }} Engineering</p>
@@ -49,7 +73,7 @@ Reads the exact field `name` values from the profile form; `skills` and
         >🔗 <a href="{{ data.get('gin446') }}">GIN446 site</a></span
       >{% endif %}
     </p>
-  </header>
+  </p>
 
   <section>
     <h2>Academic Information</h2>

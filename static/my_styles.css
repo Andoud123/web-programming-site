@@ -24,14 +24,14 @@
     --soft-accent: #f7f3e8;
     --soft-code: #f3efec;
 
-    --shadow-small: 0 4px 14px rgba(31, 41, 55, 0.05);
+    --shadow-small: 0 4px 14px rgba(55, 52, 31, 0.05);
     --shadow-medium: 0 8px 24px rgba(31, 41, 55, 0.08);
 
-    --radius-small: 8px;
-    --radius-medium: 14px;
-    --radius-large: 18px;
+    --radius-small: 20px;
+    --radius-medium: 35px;
+    --radius-large: 50px;
 
-    --content-width: 1200px;
+    --content-width: 1800px;
 }
 
 
@@ -64,12 +64,16 @@ body {
    ========================================= */
 
 header {
-    width: min(90%, var(--content-width));
+    position: sticky;
+    top: 8px;
+    z-index: 1000;
+
+    width: min(80%, var(--content-width));
 
     margin: 40px auto 25px;
     padding: 35px 40px;
 
-    background-color: var(--surface);
+    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
 
     border: 1px solid var(--border);
     border-radius: var(--radius-large);
@@ -79,14 +83,28 @@ header {
     text-align: center;
 }
 
+header,
+nav {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
 header h1 {
-    margin: 0 0 10px;
+    margin: 0 0 0px;
 
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 700;
 
     color: var(--text);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+
+    transition:
+        font-size 0.45s ease,
+        transform 0.45s ease;
 }
 
 header p {
@@ -94,6 +112,9 @@ header p {
 
     color: var(--text-muted);
     font-size: 1rem;
+
+    transition: opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease;
+    overflow: hidden;
 }
 
 
@@ -102,32 +123,45 @@ header p {
    ========================================= */
 
 nav {
-    width: min(90%, var(--content-width));
+    position: sticky;
+    top: 81px;
+    z-index: 999;
+
+    width: min(80%, 1200px);
 
     margin: 0 auto 30px;
-    padding: 20px;
+    padding: 14px 18px;
 
-    background-color: var(--surface);
-
+    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
     border: 1px solid var(--border);
-    border-radius: var(--radius-medium);
-
+    border-radius: 25px;
     box-shadow: var(--shadow-small);
 
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+
+    transition:
+        padding 0.45s ease,
+        border-radius 0.45s ease,
+        background-color 0.45s ease,
+        box-shadow 0.45s ease;
 }
 
 
 /* Navigation title */
 
 nav h2 {
-    margin: 0 0 18px;
+    display: none;
+    /*margin: 0 0 18px;
 
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
 
-    color: var(--text);
+    color: var(--text);*/
 }
 
 
@@ -142,26 +176,26 @@ nav h2::after {
 
 nav a {
     display: inline-block;
-
-    margin: 5px 8px;
-    padding: 9px 18px;
+    margin: 0;
+    padding: 8px 15px;
 
     background-color: var(--surface);
-
     border: 1px solid var(--border);
-    border-radius: var(--radius-small);
+    border-radius: 8px;
 
     color: var(--text);
-
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
-
     text-decoration: none;
 
+    white-space: nowrap;
+
     transition:
-        transform 0.25s ease;
-    
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
@@ -169,14 +203,12 @@ nav a {
 
 nav a:hover {
     background-color: var(--soft-accent);
-
     border-color: var(--accent);
+    color: var(--text);
 
-    color: #ffeecc;
-    background: #c69d4b;
-    border-color: #ddc088;
     transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+
+    box-shadow: 0 4px 12px rgba(184, 155, 94, 0.18);
 }
 
 /* =========================================
@@ -306,16 +338,16 @@ h4 a {
 }
 
 h4:hover{
-    color: #ffeecc;
-    background: #c69d4b;
-    border-color: #ddc088;
+    background-color: var(--soft-accent);
+    border-color: var(--accent);
+    color: var(--text);
     transform: translateY(-2px);
     cursor: pointer;
     box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
 }
 
 h4:hover a {
-    color: #ffeecc;
+    color: var(--accent-dark);
 }
 
 /* =========================================
@@ -507,26 +539,35 @@ th {
    ========================================= */
 
 footer {
-    width: min(90%, var(--content-width));
+    width: min(90%, 1200px);
+    margin: 25px auto 15px;
+    padding: 8px 15px;
 
-    margin: 0 auto 30px;
-    padding: 25px 30px;
-
-    background-color: var(--surface);
-
+    background-color: color-mix(in srgb, var(--surface) 65%, transparent);
     border: 1px solid var(--border);
-    border-radius: var(--radius-large);
+    border-radius: 10px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     text-align: center;
-
     box-shadow: var(--shadow-small);
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 footer p {
+
+    animation: footerContentScroll linear both;
+    animation-timeline: scroll();
+    animation-range: 0 180px;
+
     margin: 5px 0;
 
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 1.5rem;
 }
 
 /* =========================================
@@ -724,5 +765,348 @@ body {
 
     h4:hover a {
         color:#5f4512;
+    }
+}
+
+/* Customization of header, footer and navigation */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+
+    position: sticky;
+    bottom: 8px;
+    z-index: 900;
+
+    width: min(87%, 1800px);
+    margin: 25px auto 10px;
+    padding: 9px 15px;
+
+    background-color: color-mix(in srgb, var(--surface) 50%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    text-align: center;
+    box-shadow: var(--shadow-small);
+}
+
+footer p {
+    margin: 2px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+@supports (animation-timeline: scroll()) {
+
+    header h1 {
+    animation: titleScroll linear both;
+    animation-timeline: scroll();
+    animation-range: 0 180px;
+}
+
+@keyframes titleScroll {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.78);
+    }
+}
+
+    @keyframes headerScroll {
+        from {
+            padding: 35px 40px;
+            border-radius: 18px;
+        }
+
+        to {
+            padding: 12px 24px;
+            border-radius: 12px;
+        }
+    }
+
+    @keyframes navScroll {
+        from {
+            padding: 14px 18px;
+            border-radius: 14px;
+        }
+
+        to {
+            padding: 7px 12px;
+            border-radius: 10px;
+        }
+    }
+
+    header p {
+        animation: subtitleCompact linear both;
+        animation-timeline: scroll();
+        animation-range: 0 180px;
+    }
+
+    @keyframes subtitleCompact {
+        from {
+            opacity: 1;
+            max-height: 40px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        to {
+            opacity: 0;
+            max-height: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+    header {
+        animation: headerCompact linear both;
+        animation-timeline: scroll();
+        animation-range: 0 180px;
+    }
+
+    @keyframes headerCompact {
+        from {
+            padding: 35px 40px;
+        }
+
+        to {
+            padding: 5px 30px;
+        }
+    }
+
+    header h1 {
+        animation: titleCompact linear both;
+        animation-timeline: scroll();
+        animation-range: 0 180px;
+    }
+
+    @keyframes titleCompact {
+        from {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+        }
+
+        to {
+            font-size: 2.03rem;
+        }
+    }
+
+    nav {
+        animation: navCompact linear both;
+        animation-timeline: scroll();
+        animation-range: 0 180px;
+    }
+
+    @keyframes navCompact {
+        from {
+            padding: 14px 18px;
+        }
+
+        to {
+            padding: 6px 10px;
+        }
+    }
+
+
+/* Animation for paragraphs */
+
+@supports (animation-timeline: view()) {
+
+    main :is(a, p, h2, h3):not(nav *) {
+        animation: contentScroll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+    }
+
+    @keyframes contentScroll {
+
+        /* Entering the screen */
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Fully visible */
+        25% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staying visible */
+        70% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Leaving the screen */
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+
+}
+
+/* =========================================================
+   MOBILE FIT + STICKY ELEMENTS
+   Only fixes mobile positioning and overflow
+   Desktop is completely untouched.
+   ========================================================= */
+
+@media (max-width: 599px) {
+
+    /* Prevent sideways scrolling */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Keep header sticky */
+    header {
+        position: sticky;
+        top: 8px;
+        z-index: 1000;
+    }
+
+    /* Keep navigation sticky below the header */
+    nav {
+        position: sticky;
+        top: 78px;
+        z-index: 999;
+
+        /* Allow links to fit on small screens */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        white-space: nowrap;
+    }
+
+    /* Keep footer sticky */
+    footer {
+        position: sticky;
+        bottom: 8px;
+        z-index: 900;
+
+        /* Prevent long footer text from overflowing */
+        max-width: 94%;
+        box-sizing: border-box;
+    }
+
+    footer p {
+        overflow-wrap: anywhere;
+    }
+
+    /* Give the page enough room above the sticky footer */
+    main {
+        min-width: 0;
+    }
+
+    /* Prevent long content from pushing the page sideways */
+    main img,
+    main video,
+    main iframe,
+    main pre {
+        max-width: 100%;
+    }
+
+    pre {
+        overflow-x: auto;
+    }
+}
+
+/* =========================================================
+   MOBILE — STICKY HEADER / NAV / FOOTER + CONTENT ANIMATION
+   Desktop is not affected.
+   ========================================================= */
+
+@media (max-width: 599px) {
+
+    header {
+        position: sticky !important;
+        top: 8px !important;
+        z-index: 1000 !important;
+        transform: none;
+    }
+
+    nav {
+        position: sticky !important;
+        top: 78px !important;
+        z-index: 999 !important;
+        flex-wrap: wrap;
+        transform: none;
+    }
+
+    footer {
+        position: sticky !important;
+        bottom: 8px !important;
+        z-index: 900 !important;
+        transform: none;
+    }
+
+    /* Disable desktop header/nav scroll animation */
+    header,
+    header h1,
+    header p,
+    nav {
+        animation: none !important;
+    }
+
+    @supports (animation-timeline: view()) {
+
+        main :is(p, h2, h3, li, a):not(nav *) {
+            animation: mobileContentFade linear both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 35%;
+        }
+
+    }
+
+    @keyframes mobileContentFade {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    main {
+        min-width: 0;
+    }
+
+    main img,
+    main video,
+    main iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
     }
 }

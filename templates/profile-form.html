@@ -16,9 +16,9 @@
 
 {% block main %}
     
-    <h2>Engineering Student Profile</h2> 
+    <h2 id="title">Engineering Student Profile</h2> 
 
-        <nav id="nav">
+        <nav>
             <h2>Navigation</h2>
                     <a href="#personal">Personal Information</a>
                     <a href="#academic">Academic Information</a>
@@ -72,7 +72,7 @@
                     </datalist><br><br>
             
                 <label for="gpa">Current GPA / 100:</label>
-                <input type="number" id="gpa" name="gpa" placeholder="85.50" min="0" max="100" required><br><br>
+                <input type="number" id="gpa" name="gpa" placeholder="85.50" min="0" max="100" step="0.01" required><br><br>
 
                 <label for="cred_nb">Credits Completed:</label>
                 <input type="number" id="cred_nb" name="credits" placeholder="3" required><br><br><br>
@@ -201,7 +201,7 @@
             <input type="hidden" name="form_version" value="2026-2027">
 
         </form>
-        <h4><a href="#nav"><strong>BACK TO TOP</strong></a></h4>
+        <h4><a href="#title"><strong>BACK TO TOP</strong></a></h4>
         <h4><a href="/"><strong>HOME</strong></a></h4>
 {% endblock %}
 

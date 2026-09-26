@@ -1,15 +1,23 @@
 /* =========================================================
-   GIN446 — Engineering Student Profile Form
-   Official site design: elegant warm-gold / neutral theme
-   Matches the main site's light/dark visual language.
-   No HTML changes required.
+   GIN446 — ENGINEERING STUDENT PROFILE FORM
+
+   Design:
+   - Warm elegant gold
+   - Neutral light/dark theme
+   - Responsive
+   - Beginner-friendly layout
+   - Mobile optimized
+   - Smooth animations
    ========================================================= */
 
 
-/* ---------- Design Tokens ---------- */
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
 
 :root {
     --form-background: #fdfbf8;
+
     --form-surface: #ffffff;
     --form-surface-soft: #faf7f2;
 
@@ -18,8 +26,12 @@
 
     --form-accent: #c5a968;
     --form-accent-dark: #a98c4f;
-    --form-accent-soft: rgba(197, 169, 104, 0.12);
-    --form-accent-border: rgba(197, 169, 104, 0.42);
+
+    --form-accent-soft:
+        rgba(197, 169, 104, 0.12);
+
+    --form-accent-border:
+        rgba(197, 169, 104, 0.42);
 
     --form-border: #e5e0d8;
     --form-border-focus: #c5a968;
@@ -33,97 +45,174 @@
         0 0 0 4px rgba(197, 169, 104, 0.13);
 
     --form-radius: 14px;
-    --form-transition: 0.25s ease;
+
+    --form-transition:
+        0.25s ease;
 }
 
 
-/* ---------- Page Area ---------- */
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 120px;
+}
 
 body {
     background: var(--form-background);
+
     color: var(--form-text);
+
+    overflow-x: hidden;
 }
 
 
-/* ---------- Main Form Heading ---------- */
+/* =========================================================
+   MAIN FORM HEADING
+   ========================================================= */
 
 main > h2 {
     position: relative;
+
     width: fit-content;
+
     margin: 0 auto 28px;
+
     color: var(--form-text);
+
     font-weight: 700;
+
     letter-spacing: 0.02em;
+
     text-align: center;
 }
 
 main > h2::after {
     content: "";
+
     display: block;
+
     width: 100%;
+
     height: 2px;
+
     margin: 10px auto 0;
+
     background: var(--form-accent);
+
     border-radius: 999px;
 }
 
 
-/* ---------- Navigation ---------- */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 #nav {
     position: sticky;
+
     top: 82px;
+
     z-index: 999;
 
     width: min(80%, 1200px);
+
     margin: 0 auto 30px;
+
     padding: 14px 18px;
-    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
-    border: 1px solid var(--border);
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--form-surface) 40%,
+            transparent
+        );
+
+    border: 1px solid var(--form-border);
+
     border-radius: 25px;
-    box-shadow: var(--shadow-small);
+
+    box-shadow: var(--form-shadow);
 
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 8px;
+
     flex-wrap: nowrap;
 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
     transition:
-        padding 0.45s ease,
-        border-radius 0.45s ease,
-        background-color 0.45s ease,
-        box-shadow 0.45s ease;
+        padding var(--form-transition),
+        border-radius var(--form-transition),
+        background-color var(--form-transition),
+        box-shadow var(--form-transition);
 }
+
+
+/* Navigation title */
 
 #nav h2 {
     flex-basis: 100%;
+
     margin: 0 0 7px;
+
     color: var(--form-text);
+
     font-size: 1.2rem;
+
     font-weight: 700;
+
     text-align: center;
+
     letter-spacing: 0.08em;
 }
 
 #nav h2::after {
     content: "";
+
     display: block;
+
     width: 80%;
+
     height: 2px;
+
     margin: 8px auto 0;
+
     background: var(--form-accent);
+
     border-radius: 999px;
 }
 
+
+/* Navigation links */
+
 #nav a {
     padding: 8px 13px;
+
     color: var(--form-text);
+
     background: transparent;
+
     border: 1px solid var(--form-border);
+
     border-radius: 9px;
+
     text-decoration: none;
+
     font-size: 0.86rem;
+
     transition:
         color var(--form-transition),
         background var(--form-transition),
@@ -134,40 +223,60 @@ main > h2::after {
 #nav a:hover,
 #nav a:focus-visible {
     color: #ffeecc;
+
     background: #c69d4b;
+
     border-color: #ddc088;
+
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
+
+    box-shadow:
+        0 6px 20px rgba(169, 140, 79, 0.25);
 }
 
 
-/* ---------- Intro Text ---------- */
+/* =========================================================
+   INTRO TEXT
+   ========================================================= */
 
 form + p,
 main > p {
     color: var(--form-muted);
+
     line-height: 1.7;
 }
 
 
-/* ---------- Form ---------- */
+/* =========================================================
+   FORM
+   ========================================================= */
 
 form {
     width: 100%;
+
     margin: 0 auto;
 }
 
 
-/* ---------- Fieldsets / Cards ---------- */
+/* =========================================================
+   FIELDSETS / CARDS
+   ========================================================= */
 
 form fieldset {
     position: relative;
+
     margin: 0 0 22px;
+
     padding: 30px 28px 25px;
+
     background: var(--form-surface);
+
     border: 1px solid var(--form-border);
+
     border-radius: var(--form-radius);
+
     box-shadow: var(--form-shadow);
+
     transition:
         border-color var(--form-transition),
         box-shadow var(--form-transition),
@@ -176,50 +285,77 @@ form fieldset {
 
 form fieldset:hover {
     border-color: var(--form-accent-border);
+
     box-shadow:
         0 15px 34px rgba(31, 41, 55, 0.08);
 }
 
 
-/* ---------- Legends ---------- */
+/* =========================================================
+   LEGENDS
+   ========================================================= */
 
 form legend {
     position: relative;
+
     width: auto;
+
     max-width: 100%;
+
     padding: 0 8px;
+
     color: var(--form-text);
+
     background: var(--form-surface);
+
     border: 0;
+
     font-size: 0.98rem;
+
     font-weight: 700;
+
     letter-spacing: 0.02em;
 }
 
 form legend::before {
     content: "";
+
     display: inline-block;
+
     width: 7px;
     height: 7px;
-    margin: 0 9px 2px 0;
+
+    margin:
+        0 9px 2px 0;
+
     background: var(--form-accent);
+
     border-radius: 50%;
 }
 
 
-/* ---------- Labels ---------- */
+/* =========================================================
+   LABELS
+   ========================================================= */
 
 form label {
     display: inline-block;
+
     margin-bottom: 7px;
+
     padding: 8px;
+
     color: var(--form-text);
+
     font-weight: 600;
+
     line-height: 1.4;
 }
 
 
-/* ---------- Text Inputs / Selects / Textarea ---------- */
+/* =========================================================
+   TEXT INPUTS / SELECTS / TEXTAREA
+   ========================================================= */
 
 form input:not(
     [type="radio"],
@@ -231,14 +367,23 @@ form input:not(
 form select,
 form textarea {
     width: min(420px, 50%);
+
     box-sizing: border-box;
+
     padding: 11px 13px;
+
     color: var(--form-text);
+
     background: var(--form-surface-soft);
+
     border: 1px solid var(--form-border);
+
     border-radius: 9px;
+
     outline: none;
+
     font: inherit;
+
     transition:
         border-color var(--form-transition),
         box-shadow var(--form-transition),
@@ -246,7 +391,9 @@ form textarea {
 }
 
 
-/* ---------- Placeholder ---------- */
+/* =========================================================
+   PLACEHOLDERS
+   ========================================================= */
 
 form input:not(
     [type="radio"],
@@ -257,11 +404,14 @@ form input:not(
 )::placeholder,
 form textarea::placeholder {
     color: var(--form-muted);
+
     opacity: 0.8;
 }
 
 
-/* ---------- Input Hover ---------- */
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
 
 form input:not(
     [type="radio"],
@@ -276,7 +426,9 @@ form textarea:hover {
 }
 
 
-/* ---------- Input Focus ---------- */
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
 
 form input:not(
     [type="radio"],
@@ -288,37 +440,56 @@ form input:not(
 form select:focus,
 form textarea:focus {
     background: var(--form-surface);
-    border-color: var(--form-border-focus);
-    box-shadow: var(--form-shadow-focus);
+
+    border-color:
+        var(--form-border-focus);
+
+    box-shadow:
+        var(--form-shadow-focus);
 }
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
 
 form textarea {
     min-height: 180px;
+
     resize: both;
+
     line-height: 1.6;
 }
 
 
-/* ---------- Select / Multiple Select ---------- */
+/* =========================================================
+   SELECT
+   ========================================================= */
 
 form select {
     min-height: 44px;
+
     cursor: pointer;
 }
 
 form select[multiple] {
     min-height: 204px;
+
     padding: 1px;
 }
 
 form option {
     padding: 7px;
+
     color: var(--form-text);
+
     background: var(--form-surface);
 }
 
 
-/* ---------- Small Instruction Text ---------- */
+/* =========================================================
+   SMALL INSTRUCTION TEXT
+   ========================================================= */
 
 form em {
     color: var(--form-muted);
@@ -326,57 +497,94 @@ form em {
 
 form em p {
     margin: 4px 0 10px;
+
     font-size: 1rem;
+
     line-height: 1.5;
 }
 
 
-/* ---------- Radio Buttons & Checkboxes ---------- */
+/* =========================================================
+   RADIO BUTTONS & CHECKBOXES
+   ========================================================= */
 
 form input[type="radio"],
 form input[type="checkbox"] {
     width: 17px;
     height: 17px;
-    margin: 5px 7px 5px 0;
-    accent-color: var(--form-accent-dark);
+
+    margin:
+        5px 7px 5px 0;
+
+    accent-color:
+        var(--form-accent-dark);
+
     vertical-align: middle;
+
     cursor: pointer;
 }
 
 form input[type="radio"] + label,
 form input[type="checkbox"] + label {
     margin-right: 15px;
+
     margin-bottom: 4px;
+
     color: var(--form-text);
+
     font-weight: 500;
+
     cursor: pointer;
+
     vertical-align: middle;
 }
 
 form input[type="radio"]:focus-visible,
 form input[type="checkbox"]:focus-visible {
-    outline: 3px solid rgba(197, 169, 104, 0.25);
+    outline:
+        3px solid
+        rgba(197, 169, 104, 0.25);
+
     outline-offset: 2px;
 }
 
 
-/* ---------- Color Picker ---------- */
+/* =========================================================
+   COLOR PICKER
+   ========================================================= */
 
 form input[type="color"] {
     width: 42px;
     height: 42px;
+
     padding: 0;
+
     margin-left: 10px;
+
     vertical-align: middle;
+
     appearance: none;
     -webkit-appearance: none;
+
     background: transparent;
-    border: 2px solid var(--form-surface);
-    outline: 2px solid var(--form-accent-border);
+
+    border:
+        2px solid
+        var(--form-surface);
+
+    outline:
+        2px solid
+        var(--form-accent-border);
+
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(31, 41, 55, 0.12);
+
+    box-shadow:
+        0 4px 12px rgba(31, 41, 55, 0.12);
+
     cursor: pointer;
+
     overflow: hidden;
+
     transition:
         transform var(--form-transition),
         box-shadow var(--form-transition),
@@ -385,8 +593,11 @@ form input[type="color"] {
 
 form input[type="color"]:hover {
     transform: scale(1.08);
+
     outline-color: var(--form-accent);
-    box-shadow: 0 6px 16px rgba(31, 41, 55, 0.16);
+
+    box-shadow:
+        0 6px 16px rgba(31, 41, 55, 0.16);
 }
 
 form input[type="color"]::-webkit-color-swatch-wrapper {
@@ -395,31 +606,41 @@ form input[type="color"]::-webkit-color-swatch-wrapper {
 
 form input[type="color"]::-webkit-color-swatch {
     border: 0;
+
     border-radius: 50%;
 }
 
 form input[type="color"]::-moz-color-swatch {
     border: 0;
+
     border-radius: 50%;
 }
 
 
-/* ---------- Date / Time Controls ---------- */
+/* =========================================================
+   DATE / TIME / MONTH
+   ========================================================= */
 
 form input[type="date"],
 form input[type="time"],
 form input[type="month"] {
     width: min(250px, 100%);
+
     color-scheme: light;
+
     cursor: pointer;
 }
 
 form input[type="date"]::-webkit-calendar-picker-indicator,
 form input[type="time"]::-webkit-calendar-picker-indicator {
     padding: 4px;
+
     border-radius: 6px;
+
     cursor: pointer;
+
     opacity: 0.75;
+
     transition:
         background var(--form-transition),
         opacity var(--form-transition);
@@ -428,21 +649,31 @@ form input[type="time"]::-webkit-calendar-picker-indicator {
 form input[type="date"]::-webkit-calendar-picker-indicator:hover,
 form input[type="time"]::-webkit-calendar-picker-indicator:hover {
     background: var(--form-accent-soft);
+
     opacity: 1;
 }
 
 
-/* ---------- Submit / Reset Buttons ---------- */
+/* =========================================================
+   SUBMIT / RESET BUTTONS
+   ========================================================= */
 
 form input[type="submit"],
 form input[type="reset"] {
     min-width: 135px;
+
     padding: 11px 19px;
+
     border-radius: 25px;
+
     font: inherit;
+
     font-weight: 700;
+
     letter-spacing: 0.02em;
+
     cursor: pointer;
+
     transition:
         transform var(--form-transition),
         box-shadow var(--form-transition),
@@ -451,83 +682,132 @@ form input[type="reset"] {
         border-color var(--form-transition);
 }
 
+
+/* Submit */
+
 form input[type="submit"] {
     color: #a68b34;
-    background: transparent/*var(--form-accent-dark)*/;
-    border: 1px solid var(--form-accent-dark);
-    box-shadow: 0 6px 16px rgba(169, 140, 79, 0.20);
+
+    background: transparent;
+
+    border:
+        1px solid
+        var(--form-accent-dark);
+
+    box-shadow:
+        0 6px 16px
+        rgba(169, 140, 79, 0.20);
 }
 
 form input[type="submit"]:hover,
 form input[type="submit"]:focus-visible {
-    color:#5f4512;
+    color: #5f4512;
+
     background: #ffd88b;
+
     border-color: #967b43;
+
     transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+
+    box-shadow:
+        0 9px 20px
+        rgba(169, 140, 79, 0.25);
 }
+
+
+/* Reset */
 
 form input[type="reset"] {
     margin-left: 8px;
+
     color: var(--form-text);
+
     background: transparent;
-    border: 1px solid #ff32249e;
+
+    border:
+        1px solid
+        #ff32249e;
 }
 
 form input[type="reset"]:hover,
 form input[type="reset"]:focus-visible {
     color: #ffe2a7;
+
     background: #ff4b3e;
+
     border-color: #4d0000;
+
     transform: translateY(-2px);
 }
 
 
-/* ---------- Links Below Form ---------- */
+/* =========================================================
+   LINKS BELOW FORM
+   ========================================================= */
 
 main > h4 {
     text-align: center;
+
     margin: 13px 0;
+
     padding: 10px 20px;
 }
 
 main > h4 a {
     color: var(--form-muted);
+
     text-decoration: none;
+
     letter-spacing: 0.01em;
-    transition: color var(--form-transition);
+
+    transition:
+        color var(--form-transition);
 }
 
 main > h4 a:hover {
-    color: var(--accent-dark);
+    color: var(--form-accent-dark);
 }
 
 
-/* ---------- Smooth Page Entrance ---------- */
+/* =========================================================
+   SMOOTH PAGE ENTRANCE
+   ========================================================= */
 
 @keyframes formPageEntrance {
+
     from {
         opacity: 0;
-        transform: translateY(12px);
+
+        transform:
+            translateY(12px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 main {
-    animation: formPageEntrance 0.65s ease-out both;
+    animation:
+        formPageEntrance
+        0.65s
+        ease-out
+        both;
 }
 
 
-/* ---------- Dark Mode ---------- */
+/* =========================================================
+   DARK MODE
+   ========================================================= */
 
 @media (prefers-color-scheme: dark) {
 
     :root {
         --form-background: #171614;
+
         --form-surface: #211f1c;
         --form-surface-soft: #282521;
 
@@ -536,8 +816,12 @@ main {
 
         --form-accent: #c5a968;
         --form-accent-dark: #d0b878;
-        --form-accent-soft: rgba(197, 169, 104, 0.12);
-        --form-accent-border: rgba(197, 169, 104, 0.38);
+
+        --form-accent-soft:
+            rgba(197, 169, 104, 0.12);
+
+        --form-accent-border:
+            rgba(197, 169, 104, 0.38);
 
         --form-border: #3a352e;
         --form-border-focus: #c5a968;
@@ -546,26 +830,37 @@ main {
             0 12px 30px rgba(0, 0, 0, 0.22);
     }
 
+
     form legend {
         background: var(--form-surface);
     }
 
     form option {
         color: var(--form-text);
-        background: var(--form-surface);
+
+        background:
+            var(--form-surface);
     }
+
 
     form input[type="submit"] {
         color: #bf9c58;
-        background: transparent /*var(--form-accent)*/;
-        border-color: var(--form-accent);
+
+        background: transparent;
+
+        border-color:
+            var(--form-accent);
     }
 
     form input[type="submit"]:hover,
     form input[type="submit"]:focus-visible {
-        background: var(--form-accent-dark);
-        border-color: var(--form-accent-dark);
+        background:
+            var(--form-accent-dark);
+
+        border-color:
+            var(--form-accent-dark);
     }
+
 
     form input[type="date"],
     form input[type="time"],
@@ -573,29 +868,42 @@ main {
         color-scheme: dark;
     }
 
+
     #nav a:hover,
     #nav a:focus-visible {
-    color:#5f4512;
-    background: #cfb071;
-    border-color: #967b43;
-    transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
-}
+        color: #5f4512;
 
+        background: #cfb071;
+
+        border-color: #967b43;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 9px 20px
+            rgba(169, 140, 79, 0.25);
+    }
 }
 
 
 /* =========================================================
-   MOBILE DESIGN
-   One section for all mobile devices
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    /* Main heading */
+    html {
+        scroll-padding-top: 110px;
+    }
+
+
+    /* -----------------------------------------
+       Main heading
+       ----------------------------------------- */
 
     main > h2 {
         font-size: 1.35rem;
+
         margin-bottom: 18px;
     }
 
@@ -604,68 +912,105 @@ main {
     }
 
 
-    /* Navigation */
+    /* -----------------------------------------
+       Navigation
+       ----------------------------------------- */
 
     #nav {
+        position: sticky !important;
+
+        top: 78px !important;
+
+        width: calc(100% - 20px);
+
         padding: 10px 8px;
+
+        margin: 0 auto 18px;
+
         gap: 5px;
-        margin-bottom: 18px;
+
         border-radius: 11px;
+
+        flex-wrap: wrap;
     }
 
     #nav h2 {
+        flex-basis: 100%;
+
         font-size: 0.9rem;
+
         margin-bottom: 3px;
+
         letter-spacing: 0.05em;
     }
 
     #nav h2::after {
         width: 55%;
+
         height: 1px;
+
         margin-top: 5px;
     }
 
     #nav a {
         padding: 5px 7px;
+
         font-size: 0.70rem;
+
         border-radius: 7px;
     }
 
 
-    /* Form cards */
+    /* -----------------------------------------
+       Form cards
+       ----------------------------------------- */
 
     form fieldset {
         padding: 16px 12px 14px;
+
         margin-bottom: 13px;
+
         border-radius: 11px;
     }
 
 
-    /* Field titles */
+    /* -----------------------------------------
+       Field titles
+       ----------------------------------------- */
 
     form legend {
         font-size: 0.88rem;
+
         padding: 0 5px;
     }
 
     form legend::before {
         width: 6px;
+
         height: 6px;
+
         margin-right: 6px;
     }
 
 
-    /* ALL labels */
+    /* -----------------------------------------
+       Labels
+       ----------------------------------------- */
 
     form label {
         margin-bottom: 4px;
+
         padding: 3px;
+
         font-size: 0.76rem;
+
         line-height: 1.3;
     }
 
 
-    /* ALL input / select / textarea text */
+    /* -----------------------------------------
+       Inputs
+       ----------------------------------------- */
 
     form input:not(
         [type="radio"],
@@ -677,13 +1022,18 @@ main {
     form select,
     form textarea {
         width: 100%;
+
         padding: 8px 10px;
+
         font-size: 0.76rem;
+
         border-radius: 7px;
     }
 
 
-    /* ALL placeholders */
+    /* -----------------------------------------
+       Placeholders
+       ----------------------------------------- */
 
     form input:not(
         [type="radio"],
@@ -697,49 +1047,68 @@ main {
     }
 
 
-    /* Textarea */
+    /* -----------------------------------------
+       Textarea
+       ----------------------------------------- */
 
     form textarea {
         min-height: 130px;
+
         line-height: 1.4;
     }
 
 
-    /* Instruction text */
+    /* -----------------------------------------
+       Instruction text
+       ----------------------------------------- */
 
     form em p {
         margin: 3px 0 7px;
+
         font-size: 0.70rem;
+
         line-height: 1.4;
     }
 
 
-    /* Radio / checkbox */
+    /* -----------------------------------------
+       Radio / checkbox
+       ----------------------------------------- */
 
     form input[type="radio"],
     form input[type="checkbox"] {
         width: 15px;
+
         height: 15px;
-        margin: 3px 5px 3px 0;
+
+        margin:
+            3px 5px 3px 0;
     }
 
     form input[type="radio"] + label,
     form input[type="checkbox"] + label {
         margin-right: 8px;
+
         margin-bottom: 3px;
+
         padding: 0;
+
         font-size: 0.72rem;
     }
 
 
-    /* Multiple select */
+    /* -----------------------------------------
+       Multiple select
+       ----------------------------------------- */
 
     form select[multiple] {
         min-height: 150px;
     }
 
 
-    /* Date / time / month */
+    /* -----------------------------------------
+       Date / time / month
+       ----------------------------------------- */
 
     form input[type="date"],
     form input[type="time"],
@@ -748,23 +1117,33 @@ main {
     }
 
 
-    /* Color picker */
+    /* -----------------------------------------
+       Color picker
+       ----------------------------------------- */
 
     form input[type="color"] {
         width: 36px;
+
         height: 36px;
+
         margin-left: 5px;
     }
 
 
-    /* Submit / reset */
+    /* -----------------------------------------
+       Buttons
+       ----------------------------------------- */
 
     form input[type="submit"],
     form input[type="reset"] {
         width: 100%;
+
         min-width: 0;
+
         padding: 9px 14px;
+
         margin: 4px 0 0;
+
         font-size: 0.76rem;
     }
 
@@ -773,11 +1152,15 @@ main {
     }
 
 
-    /* Bottom link */
+    /* -----------------------------------------
+       Bottom link
+       ----------------------------------------- */
 
     main > h4 {
         margin: 9px 0;
+
         padding: 7px 12px;
+
         font-size: 0.72rem;
     }
 }
@@ -789,6 +1172,11 @@ main {
 
 @media (max-width: 400px) {
 
+    html {
+        scroll-padding-top: 105px;
+    }
+
+
     main > h2 {
         font-size: 1.2rem;
     }
@@ -797,7 +1185,10 @@ main {
     /* Navigation */
 
     #nav {
+        top: 72px !important;
+
         padding: 8px 6px;
+
         gap: 4px;
     }
 
@@ -807,9 +1198,13 @@ main {
 
     #nav a {
         width: 100%;
+
         box-sizing: border-box;
+
         padding: 4px 6px;
+
         font-size: 0.65rem;
+
         text-align: center;
     }
 
@@ -818,7 +1213,9 @@ main {
 
     form fieldset {
         padding: 13px 9px 12px;
+
         margin-bottom: 10px;
+
         border-radius: 9px;
     }
 
@@ -830,14 +1227,14 @@ main {
     }
 
 
-    /* ALL labels */
+    /* Labels */
 
     form label {
         font-size: 0.70rem;
     }
 
 
-    /* ALL inputs */
+    /* Inputs */
 
     form input:not(
         [type="radio"],
@@ -849,11 +1246,12 @@ main {
     form select,
     form textarea {
         padding: 7px 8px;
+
         font-size: 0.70rem;
     }
 
 
-    /* ALL placeholders */
+    /* Placeholders */
 
     form input:not(
         [type="radio"],
@@ -886,6 +1284,7 @@ main {
     form input[type="radio"],
     form input[type="checkbox"] {
         width: 14px;
+
         height: 14px;
     }
 
@@ -899,6 +1298,7 @@ main {
 
     form input[type="color"] {
         width: 32px;
+
         height: 32px;
     }
 
@@ -908,12 +1308,172 @@ main {
     form input[type="submit"],
     form input[type="reset"] {
         font-size: 0.72rem;
+
         padding: 8px 12px;
     }
 }
 
 
-/* ---------- Reduced Motion Accessibility ---------- */
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    html {
+        scroll-padding-top: 95px;
+    }
+
+
+    #nav {
+        top: 60px !important;
+
+        width: calc(100% - 20px);
+
+        padding: 7px 8px;
+
+        gap: 4px;
+    }
+
+    #nav h2 {
+        font-size: 0.82rem;
+    }
+
+    #nav a {
+        padding: 4px 6px;
+
+        font-size: 0.62rem;
+    }
+
+
+    form fieldset {
+        padding: 12px 10px 11px;
+
+        margin-bottom: 10px;
+    }
+
+    form legend {
+        font-size: 0.80rem;
+    }
+
+    form label {
+        font-size: 0.70rem;
+
+        padding: 2px;
+    }
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    ),
+    form select,
+    form textarea {
+        width: 100%;
+
+        padding: 7px 8px;
+
+        font-size: 0.70rem;
+    }
+
+    form textarea {
+        min-height: 100px;
+    }
+
+    form em p {
+        font-size: 0.64rem;
+    }
+
+    form input[type="radio"],
+    form input[type="checkbox"] {
+        width: 13px;
+
+        height: 13px;
+    }
+
+    form input[type="radio"] + label,
+    form input[type="checkbox"] + label {
+        font-size: 0.66rem;
+    }
+
+    form input[type="color"] {
+        width: 30px;
+
+        height: 30px;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+        padding: 7px 11px;
+
+        font-size: 0.68rem;
+    }
+}
+
+
+/* =========================================================
+   CONFIRMATION CHECKBOX ALIGNMENT
+   ========================================================= */
+
+#confirmation {
+    vertical-align: middle;
+
+    margin-right: 5px;
+}
+
+#confirmation + label {
+    display: inline;
+
+    padding: 0;
+
+    margin: 0;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   FORM FIELD SCROLL ANIMATION
+   ========================================================= */
+
+@supports (animation-timeline: view()) {
+
+    form fieldset {
+        animation:
+            sectionReveal
+            linear
+            both;
+
+        animation-timeline: view();
+
+        animation-range:
+            entry 0% cover 30%;
+    }
+
+    @keyframes sectionReveal {
+
+        from {
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+        }
+
+        to {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -921,88 +1481,14 @@ main {
     *::before,
     *::after {
         scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
 
-#confirmation {
-    vertical-align: middle;
-    margin-right: 5px;
-}
+        animation-duration:
+            0.01ms !important;
 
-#confirmation + label {
-    display: inline;
-    padding: 0;
-    margin: 0;
-    vertical-align: middle;
-}
+        animation-iteration-count:
+            1 !important;
 
-/* ---------- Scroll Entry Animation ---------- */
-
-form fieldset {
-    animation: sectionReveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
-}
-
-@keyframes sectionReveal {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================================================
-   MOBILE FIT — PROFILE FORM
-   Keeps the existing design
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    /* Keep form navigation sticky */
-    #nav {
-        position: sticky;
-        top: 78px;
-        z-index: 999;
-
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #nav a {
-        white-space: nowrap;
-    }
-
-    /* Prevent long form content from overflowing */
-    main {
-        min-width: 0;
-        overflow-x: hidden;
-    }
-
-    form {
-        max-width: 100%;
-    }
-
-    form input,
-    form select,
-    form textarea {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    form textarea {
-        overflow-wrap: anywhere;
+        transition-duration:
+            0.01ms !important;
     }
 }

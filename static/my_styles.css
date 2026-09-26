@@ -1,31 +1,45 @@
-/* =========================================
+/* =========================================================
+   GIN446 — WEB PROGRAMMING PORTFOLIO
+   Main Website Stylesheet
+
+   Design:
+   - Warm neutral background
+   - Elegant muted gold accent
+   - Montserrat headings
+   - Raleway paragraphs
+   - Responsive light/dark mode
+   - Sticky header/navigation/footer
+   - Smooth page and content animations
+   ========================================================= */
+
+
+/* =========================================================
    FONTS
-   ========================================= */
+   ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600&display=swap');
 
 
-/* =========================================
+/* =========================================================
    DESIGN TOKENS
-   ========================================= */
+   ========================================================= */
 
 :root {
     --background: #fdfbf8;
     --surface: #ffffff;
-
     --text: #1f2937;
     --text-muted: #6b7280;
-
     --accent: #b89b5e;
     --accent-dark: #967a3f;
-
     --border: #e5e0dc;
-
     --soft-accent: #f7f3e8;
     --soft-code: #f3efec;
 
-    --shadow-small: 0 4px 14px rgba(55, 52, 31, 0.05);
-    --shadow-medium: 0 8px 24px rgba(31, 41, 55, 0.08);
+    --shadow-small:
+        0 4px 14px rgba(55, 52, 31, 0.05);
+
+    --shadow-medium:
+        0 8px 24px rgba(31, 41, 55, 0.08);
 
     --radius-small: 20px;
     --radius-medium: 35px;
@@ -35,9 +49,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    GENERAL
-   ========================================= */
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -45,103 +59,42 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 130px;
 }
 
 body {
     margin: 0;
     padding: 0;
-
+    min-height: 100vh;
     background-color: var(--background);
     color: var(--text);
-
     font-family: 'Raleway', Arial, sans-serif;
     line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 
-/* =========================================
+/* =========================================================
    HEADER
-   ========================================= */
+   ========================================================= */
 
 header {
     position: sticky;
     top: 8px;
     z-index: 1000;
-
-    width: min(80%, var(--content-width));
-
+    width: min(86%, var(--content-width));
     margin: 40px auto 25px;
     padding: 35px 40px;
-
-    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
-
+    background-color:
+        color-mix(in srgb, var(--surface) 40%, transparent);
     border: 1px solid var(--border);
     border-radius: var(--radius-large);
-
     box-shadow: var(--shadow-medium);
-
     text-align: center;
-}
-
-header,
-nav {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-}
-
-header h1 {
-    margin: 0 0 0px;
-
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 700;
-
-    color: var(--text);
-
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 700;
-
-    transition:
-        font-size 0.45s ease,
-        transform 0.45s ease;
-}
-
-header p {
-    margin: 0;
-
-    color: var(--text-muted);
-    font-size: 1rem;
-
-    transition: opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease;
-    overflow: hidden;
-}
-
-
-/* =========================================
-   NAVIGATION
-   ========================================= */
-
-nav {
-    position: sticky;
-    top: 81px;
-    z-index: 999;
-
-    width: min(80%, 1200px);
-
-    margin: 0 auto 30px;
-    padding: 14px 18px;
-
-    background-color: color-mix(in srgb, var(--surface) 40%, transparent);
-    border: 1px solid var(--border);
-    border-radius: 25px;
-    box-shadow: var(--shadow-small);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: nowrap;
 
     transition:
         padding 0.45s ease,
@@ -150,45 +103,94 @@ nav {
         box-shadow 0.45s ease;
 }
 
-
-/* Navigation title */
-
-nav h2 {
-    display: none;
-    /*margin: 0 0 18px;
-
+header h1 {
+    margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
 
-    color: var(--text);*/
+    transition:
+        font-size 0.45s ease,
+        transform 0.45s ease;
+}
+
+/* Requested header title line */
+header h1::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 2px;
+    margin: 10px auto 0;
+    background-color: var(--accent);
+    border-radius: 999px;
+}
+
+header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    overflow: hidden;
+
+    transition:
+        opacity 0.4s ease,
+        max-height 0.4s ease,
+        margin 0.4s ease;
 }
 
 
-/* Remove the normal underline from the navigation title */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+    position: sticky;
+    top: 95px;
+    z-index: 999;
+    width: min(80%, 1200px);
+    margin: 0 auto 30px;
+    padding: 14px 18px;
+    background-color:
+        color-mix(in srgb, var(--surface) 40%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    box-shadow: var(--shadow-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition:
+        padding 0.45s ease,
+        border-radius 0.45s ease,
+        background-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+nav h2 {
+    display: none;
+}
 
 nav h2::after {
     margin: 8px auto 0;
 }
 
-
-/* Navigation links */
-
 nav a {
     display: inline-block;
     margin: 0;
     padding: 8px 15px;
-
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-
     color: var(--text);
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
-
     white-space: nowrap;
 
     transition:
@@ -198,41 +200,49 @@ nav a {
         box-shadow 0.25s ease;
 }
 
-
-/* Hover */
-
 nav a:hover {
     background-color: var(--soft-accent);
     border-color: var(--accent);
     color: var(--text);
-
     transform: translateY(-2px);
-
-    box-shadow: 0 4px 12px rgba(184, 155, 94, 0.18);
+    box-shadow:
+        0 4px 12px rgba(184, 155, 94, 0.18);
 }
 
-/* =========================================
+
+/* =========================================================
    MAIN CONTENT
-   ========================================= */
+   ========================================================= */
 
 main {
+    flex: 1;
     width: min(90%, var(--content-width));
-
     margin: 0 auto 40px;
     padding: 35px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: var(--radius-large);
-
     box-shadow: var(--shadow-small);
+    min-width: 0;
 }
 
+main > h1 {
+    text-align: center;
+}
 
-/* =========================================
+main > h1::after {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 2px;
+    margin: 10px auto 0;
+    background-color: var(--accent);
+    border-radius: 999px;
+}
+
+/* =========================================================
    HEADINGS
-   ========================================= */
+   ========================================================= */
 
 h1,
 h2,
@@ -244,7 +254,6 @@ h3 {
 h2 {
     margin-top: 35px;
     margin-bottom: 18px;
-
     font-size: 1.7rem;
     font-weight: 600;
 }
@@ -252,38 +261,29 @@ h2 {
 h3 {
     margin-top: 28px;
     margin-bottom: 12px;
-
     font-size: 1.3rem;
     font-weight: 600;
 }
 
-
-/* Thin gold underline */
-
 h2::after {
     content: "";
-
     display: block;
-
     width: 100%;
     height: 2px;
-
     margin-top: 8px;
-
     background-color: var(--accent);
+    border-radius: 999px;
 }
 
 
-/* =========================================
+/* =========================================================
    PARAGRAPHS
-   ========================================= */
+   ========================================================= */
 
 p {
     margin-top: 0;
-
     font-family: 'Raleway', Arial, sans-serif;
     font-size: 1rem;
-
     color: var(--text);
 }
 
@@ -292,16 +292,14 @@ em {
 }
 
 
-/* =========================================
+/* =========================================================
    LINKS
-   ========================================= */
+   ========================================================= */
 
 a {
     color: var(--text);
-
     font-family: 'Raleway', Arial, sans-serif;
     font-weight: 600;
-
     text-decoration: none;
 }
 
@@ -309,90 +307,71 @@ a:hover {
     color: var(--accent-dark);
 }
 
+
+/* =========================================================
+   H4 LINK CARDS
+   ========================================================= */
+
 h4 {
     display: inline-block;
-
     margin: 25px 0;
     padding: 10px 20px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: var(--radius-small);
-
     box-shadow: var(--shadow-small);
-
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 0.85rem;
-
     text-align: center;
 
     transition:
-        transform 0.25s ease;
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 h4 a {
-    padding:10px 10px;
+    padding: 10px;
     color: var(--text);
     text-decoration: none;
 }
 
-h4:hover{
+h4:hover {
     background-color: var(--soft-accent);
     border-color: var(--accent);
     color: var(--text);
     transform: translateY(-2px);
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
+    box-shadow:
+        0 6px 20px rgba(169, 140, 79, 0.25);
 }
 
 h4:hover a {
     color: var(--accent-dark);
 }
 
-/* =========================================
+
+/* =========================================================
    WEEKLY WORK
-   ========================================= */
-
-/*
-   CSS Grid creates a responsive gallery.
-
-   Each item must be at least 240px wide.
-   The browser automatically creates as many
-   columns as can fit.
-*/
+   ========================================================= */
 
 .weekly-list {
     display: grid;
-
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(240px, 1fr)
-    );
-
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
-
     margin-top: 25px;
 }
 
-
-/* Weekly Work cards */
-
 .weekly-list > * {
+    min-width: 0;
     padding: 24px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: var(--radius-medium);
-
     box-shadow: var(--shadow-small);
-
-    min-width: 0;
 }
-
-
-/* Card headings */
 
 .weekly-list h2,
 .weekly-list h3,
@@ -401,39 +380,34 @@ h4:hover a {
 }
 
 
-/* =========================================
+/* =========================================================
    GENERAL SECTIONS
-   ========================================= */
+   ========================================================= */
 
 section {
     margin: 30px 0;
     padding: 25px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-left: 4px solid var(--accent);
-
     border-radius: var(--radius-medium);
-
     box-shadow: var(--shadow-small);
+    min-width: 0;
 }
 
 
-/* =========================================
+/* =========================================================
    ARTICLES
-   ========================================= */
+   ========================================================= */
 
 article {
     margin: 20px 0;
     padding: 25px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: var(--radius-medium);
-
     box-shadow: var(--shadow-small);
+    min-width: 0;
 }
 
 article h2,
@@ -442,9 +416,9 @@ article h3 {
 }
 
 
-/* =========================================
+/* =========================================================
    HISTORY CONTENT
-   ========================================= */
+   ========================================================= */
 
 main > section h2 {
     font-size: 1.8rem;
@@ -455,9 +429,9 @@ main > section h3 {
 }
 
 
-/* =========================================
+/* =========================================================
    LISTS
-   ========================================= */
+   ========================================================= */
 
 ul,
 ol {
@@ -469,33 +443,29 @@ li {
 }
 
 
-/* =========================================
+/* =========================================================
    CODE
-   ========================================= */
+   ========================================================= */
 
 code {
     padding: 3px 6px;
-
     background-color: var(--soft-code);
-
     border-radius: var(--radius-small);
-
     font-family: Consolas, monospace;
     color: #7c5559;
 }
 
 
-/* =========================================
+/* =========================================================
    HIGHLIGHT / KEY TECHNOLOGIES
-   ========================================= */
+   ========================================================= */
 
 .highlight {
     padding: 20px;
-
     background-color: var(--soft-accent);
-
     border: 1px solid var(--accent);
     border-radius: var(--radius-medium);
+    min-width: 0;
 }
 
 .highlight h3 {
@@ -503,53 +473,48 @@ code {
 }
 
 
-/* =========================================
+/* =========================================================
    TABLES
-   ========================================= */
+   ========================================================= */
 
 table {
     width: 100%;
-
     margin: 25px 0;
-
     border-collapse: collapse;
-
     background-color: var(--surface);
 }
 
 th,
 td {
     padding: 12px 15px;
-
     border: 1px solid var(--border);
-
     text-align: left;
 }
 
 th {
     background-color: var(--soft-accent);
-
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 600;
 }
 
 
-/* =========================================
+/* =========================================================
    FOOTER
-   ========================================= */
+   ========================================================= */
 
 footer {
-    width: min(90%, 1200px);
-    margin: 25px auto 15px;
-    padding: 8px 15px;
-
-    background-color: color-mix(in srgb, var(--surface) 65%, transparent);
+    position: sticky;
+    bottom: 8px;
+    z-index: 900;
+    width: min(87%, 1800px);
+    margin: 25px auto 10px;
+    padding: 9px 15px;
+    background-color:
+        color-mix(in srgb, var(--surface) 50%, transparent);
     border: 1px solid var(--border);
-    border-radius: 10px;
-
+    border-radius: 50px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     text-align: center;
     box-shadow: var(--shadow-small);
 
@@ -559,313 +524,563 @@ footer {
 }
 
 footer p {
-
-    animation: footerContentScroll linear both;
-    animation-timeline: scroll();
-    animation-range: 0 180px;
-
-    margin: 5px 0;
-
+    margin: 2px 0;
     color: var(--text-muted);
-    font-size: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
-/* =========================================
-   MOBILE CARD SPACING
-   ========================================= */
 
-@media (max-width: 599px) {
-
-    header h1 {
-        font-size: 1.35rem;
-    }
-
-    header p {
-        font-size: 0.82rem;
-    }
-
-    nav h2 {
-        font-size: 1.05rem;
-    }
-
-    nav a {
-        font-size: 0.72rem;
-        padding: 7px 10px;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    h3 {
-        font-size: 1rem;
-    }
-
-    p {
-        font-size: 0.88rem;
-    }
-
-    li {
-        font-size: 0.88rem;
-    }
-
-    h4 {
-        font-size: 0.75rem;
-    }
-
-    footer {
-        font-size: 0.75rem;
-    }
-}
-
-/* =========================================
-   MOBILE CARD PADDING
-   ========================================= */
-
-@media (max-width: 599px) {
-
-    header {
-        padding: 18px 15px;
-    }
-
-    nav {
-        padding: 12px 10px;
-    }
-
-    main {
-        padding: 15px;
-    }
-
-    .weekly-list > * {
-        padding: 12px;
-    }
-
-    section {
-        padding: 14px;
-    }
-
-    article {
-        padding: 14px;
-    }
-
-    .highlight {
-        padding: 12px;
-    }
-
-    footer {
-        padding: 15px;
-    }
-}
-
-/* =========================================
-   RESTORE ORIGINAL DESKTOP SPACING
-   ========================================= */
+/* =========================================================
+   DESKTOP SCROLL ANIMATIONS
+   ========================================================= */
 
 @media (min-width: 600px) {
 
-    header {
-        padding: 35px 40px;
+    @supports (animation-timeline: scroll()) {
+
+        header {
+            animation:
+                headerCompact linear both;
+            animation-timeline: scroll();
+            animation-range: 0 180px;
+        }
+
+        @keyframes headerCompact {
+            from {
+                padding: 35px 40px;
+            }
+
+            to {
+                padding: 5px 30px;
+            }
+        }
+
+
+        header h1 {
+            animation:
+                titleScroll linear both,
+                titleCompact linear both;
+
+            animation-timeline:
+                scroll(),
+                scroll();
+
+            animation-range:
+                0 180px,
+                0 180px;
+        }
+
+        @keyframes titleScroll {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.78);
+            }
+        }
+
+        @keyframes titleCompact {
+            from {
+                font-size: clamp(1.8rem, 4vw, 2.6rem);
+            }
+
+            to {
+                font-size: 2.03rem;
+            }
+        }
+
+
+        header p {
+            animation:
+                subtitleCompact linear both;
+            animation-timeline: scroll();
+            animation-range: 0 180px;
+        }
+
+        @keyframes subtitleCompact {
+            from {
+                opacity: 1;
+                max-height: 40px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            to {
+                opacity: 0;
+                max-height: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+
+        nav {
+            animation:
+                navCompact linear both;
+            animation-timeline: scroll();
+            animation-range: 0 180px;
+        }
+
+        @keyframes navCompact {
+            from {
+                padding: 14px 18px;
+            }
+
+            to {
+                padding: 6px 10px;
+            }
+        }
     }
 
-    nav {
-        padding: 20px;
-    }
 
-    main {
-        padding: 35px;
-    }
+    /* -----------------------------------------
+       Desktop content scroll animation
+       ----------------------------------------- */
 
-    .weekly-list > * {
-        padding: 24px;
-    }
+    @supports (animation-timeline: view()) {
 
-    section {
-        padding: 25px;
-    }
+        main :is(a, p, h2, h3):not(nav *) {
+            animation:
+                contentScroll linear both;
+            animation-timeline: view();
+            animation-range:
+                entry 0% exit 100%;
+        }
 
-    article {
-        padding: 25px;
-    }
+        @keyframes contentScroll {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-    .highlight {
-        padding: 20px;
-    }
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    footer {
-        padding: 25px 30px;
+            75% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-05px);
+            }
+        }
     }
 }
 
-/* =========================================
+
+/* =========================================================
    PAGE OPENING ANIMATION
-   ========================================= */
+   Desktop only
+   ========================================================= */
 
-body {
-    animation: pageOpen 0.7s ease-out;
-}
+@media (min-width: 600px) {
 
-@keyframes pageOpen {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
+    body {
+        animation:
+            pageOpen 0.7s ease-out;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    @keyframes pageOpen {
+
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
-/* =========================================
+
+/* =========================================================
    DARK MODE
-   Follows the user's device preference
-   ========================================= */
+   ========================================================= */
 
 @media (prefers-color-scheme: dark) {
 
     :root {
         --background: #181716;
         --surface: #242220;
-
         --text: #f3f0ed;
         --text-muted: #b8b2ae;
-
         --accent: #c5a968;
         --accent-dark: #d6bc7a;
-
         --border: #3a3633;
-
         --soft-accent: #302729;
         --soft-code: #302d2a;
 
-        --shadow-small: 0 4px 14px rgba(0, 0, 0, 0.25);
-        --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.35);
+        --shadow-small:
+            0 4px 14px rgba(0, 0, 0, 0.25);
+
+        --shadow-medium:
+            0 8px 24px rgba(0, 0, 0, 0.35);
     }
+
 
     nav a:hover {
-        background-color: var(--soft-accent);
-
-        border-color: var(--accent);
-
-        color:#5f4512;
+        color: #5f4512;
         background: #cfb071;
         border-color: #967b43;
         transform: translateY(-2px);
-        box-shadow: 0 9px 20px rgba(169, 140, 79, 0.25);
+        box-shadow:
+            0 9px 20px rgba(169, 140, 79, 0.25);
     }
 
-    h4:hover{
-        color:#5f4512;
+
+    h4:hover {
+        color: #5f4512;
         background: #cfb071;
         border-color: #967b43;
         transform: translateY(-2px);
-        cursor: pointer;
-        box-shadow: 0 6px 20px rgba(169, 140, 79, 0.25);
+        box-shadow:
+            0 6px 20px rgba(169, 140, 79, 0.25);
     }
 
     h4:hover a {
-        color:#5f4512;
+        color: #5f4512;
     }
 }
 
-/* Customization of header, footer and navigation */
 
-html,
-body {
-    min-height: 100%;
-}
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 599px) {
 
-main {
-    flex: 1;
-}
+    /* -----------------------------------------
+       General mobile protection
+       ----------------------------------------- */
 
-footer {
+    html {
+        scroll-padding-top: 125px;
+    }
 
-    position: sticky;
-    bottom: 8px;
-    z-index: 900;
+    body {
+        /*
+           Important:
+           No transform/animation on body in mobile.
+           This keeps sticky positioning reliable.
+        */
 
-    width: min(87%, 1800px);
-    margin: 25px auto 10px;
-    padding: 9px 15px;
+        animation: none !important;
+        transform: none !important;
+        overflow-x: hidden;
+    }
 
-    background-color: color-mix(in srgb, var(--surface) 50%, transparent);
-    border: 1px solid var(--border);
-    border-radius: 50px;
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* -----------------------------------------
+       Header
+       ----------------------------------------- */
 
-    text-align: center;
-    box-shadow: var(--shadow-small);
-}
-
-footer p {
-    margin: 2px 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-@supports (animation-timeline: scroll()) {
+    header {
+        position: sticky !important;
+        top: 8px !important;
+        z-index: 1000 !important;
+        width: calc(93% - 20px);
+        margin: 8px auto 12px;
+        padding: 14px 12px !important;
+        transform: none !important;
+        animation: none !important;
+        border-radius: 25px;
+    }
 
     header h1 {
-    animation: titleScroll linear both;
-    animation-timeline: scroll();
-    animation-range: 0 180px;
-}
-
-@keyframes titleScroll {
-    from {
-        transform: scale(1);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin: 0 0 5px;
+        transform: none !important;
+        animation: none !important;
     }
 
-    to {
-        transform: scale(0.78);
-    }
-}
-
-    @keyframes headerScroll {
-        from {
-            padding: 35px 40px;
-            border-radius: 18px;
-        }
-
-        to {
-            padding: 12px 24px;
-            border-radius: 12px;
-        }
-    }
-
-    @keyframes navScroll {
-        from {
-            padding: 14px 18px;
-            border-radius: 14px;
-        }
-
-        to {
-            padding: 7px 12px;
-            border-radius: 10px;
-        }
+    main > h1 {
+        font-size: 1.35rem;
+        line-height: 1.2;
+        text-align: center;
     }
 
     header p {
-        animation: subtitleCompact linear both;
-        animation-timeline: scroll();
-        animation-range: 0 180px;
+        font-size: 0.78rem;
+        line-height: 1.4;
+        margin: 0;
+        max-height: none;
+        opacity: 1;
+        transform: none !important;
+        animation: none !important;
     }
 
-    @keyframes subtitleCompact {
+
+    /* -----------------------------------------
+       Navigation
+       ----------------------------------------- */
+
+    nav {
+        position: sticky !important;
+        top: 92px !important;
+        z-index: 900 !important;
+        width: calc(88% - 16px);
+        margin: 0 auto 12px;
+        padding: 6px 5px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap !important;
+        gap: 3px;
+        transform: none !important;
+        animation: none !important;
+        border-radius: 25px;
+    }
+
+    nav h2 {
+        width: 100%;
+        flex-basis: 100%;
+        font-size: 0.82rem;
+        line-height: 1.2;
+        margin: 0 0 3px;
+    }
+
+    nav a {
+        margin: 0;
+        padding: 4px 6px;
+        font-size: 0.50rem;
+        line-height: 1.15;
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------
+       Main
+       ----------------------------------------- */
+
+    main {
+        width: calc(100% - 20px);
+        margin: 0 auto 35px;
+        padding: 12px !important;
+        min-width: 0;
+
+        /*
+           Keeps normal content from becoming hidden
+           underneath the sticky elements.
+        */
+
+        scroll-margin-top: 130px;
+        border-radius: 40px;
+    }
+
+
+    /* -----------------------------------------
+       Text
+       ----------------------------------------- */
+
+    h2 {
+        font-size: 1.25rem;
+        line-height: 1.35;
+    }
+
+    h3 {
+        font-size: 0.98rem;
+        line-height: 1.4;
+    }
+
+    p,
+    li {
+        font-size: 0.86rem;
+        line-height: 1.65;
+    }
+
+    li {
+        margin-bottom: 6px;
+    }
+
+    h4 {
+        font-size: 0.75rem;
+    }
+
+
+    /* -----------------------------------------
+       Mobile content animation
+       Fade IN only.
+       No disappearing text while scrolling.
+       ----------------------------------------- */
+
+    @supports (animation-timeline: view()) {
+
+        main :is(p, h2, h3, li, a):not(nav *) {
+            animation:
+                mobileContentFade linear both;
+            animation-timeline: view();
+            animation-range:
+                entry 0% cover 30%;
+        }
+
+        @keyframes mobileContentFade {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+    }
+
+
+    /* -----------------------------------------
+       Weekly cards
+       ----------------------------------------- */
+
+    .weekly-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .weekly-list > * {
+        padding: 12px;
+    }
+    
+
+    /* -----------------------------------------
+       Sections
+       ----------------------------------------- */
+
+    section {
+        margin: 20px 0;
+        padding: 14px;
+    }
+
+
+    /* -----------------------------------------
+       Articles
+       ----------------------------------------- */
+
+    article {
+        margin: 15px 0;
+        padding: 14px;
+    }
+
+
+    /* -----------------------------------------
+       Highlight
+       ----------------------------------------- */
+
+    .highlight {
+        padding: 12px;
+    }
+
+
+    /* -----------------------------------------
+       Tables
+       ----------------------------------------- */
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+    }
+
+
+    /* -----------------------------------------
+       Code
+       ----------------------------------------- */
+
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    code {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -----------------------------------------
+       Footer
+       ----------------------------------------- */
+
+    footer {
+        position: sticky !important;
+        bottom: 8px !important;
+        z-index: 900 !important;
+        width: calc(93% - 20px);
+        margin: 18px auto 8px;
+        padding: 8px 10px !important;
+        transform: none !important;
+        animation: none !important;
+        border-radius: 22px;
+    }
+
+    footer p {
+        margin: 2px 0;
+        font-size: 0.68rem;
+        line-height: 1.35;
+        animation: none !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PORTRAIT PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    html {
+        scroll-padding-top: 115px;
+    }
+
+    header {
+        padding: 12px 10px !important;
+        border-radius: 25px;
+    }
+
+    header h1 {
+        font-size: 1.15rem;
+    }
+
+    header p {
+        font-size: 0.82rem;
+
+        /* Keep subtitle visible at the very top */
+
+        opacity: 1;
+        max-height: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+        animation: subtitleMobile linear both !important;
+        animation-timeline: scroll();
+        animation-range: 40px 180px;
+    }
+
+    @keyframes subtitleMobile {
+
         from {
             opacity: 1;
             max-height: 40px;
-            margin-top: 1em;
-            margin-bottom: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
         to {
@@ -875,238 +1090,321 @@ footer p {
             margin-bottom: 0;
         }
     }
-}
-
-    header {
-        animation: headerCompact linear both;
-        animation-timeline: scroll();
-        animation-range: 0 180px;
-    }
-
-    @keyframes headerCompact {
-        from {
-            padding: 35px 40px;
-        }
-
-        to {
-            padding: 5px 30px;
-        }
-    }
-
-    header h1 {
-        animation: titleCompact linear both;
-        animation-timeline: scroll();
-        animation-range: 0 180px;
-    }
-
-    @keyframes titleCompact {
-        from {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-        }
-
-        to {
-            font-size: 2.03rem;
-        }
-    }
 
     nav {
-        animation: navCompact linear both;
-        animation-timeline: scroll();
-        animation-range: 0 180px;
+        top: 105px !important;
+        padding: 5px 4px !important;
+        gap: 3px;
+        border-radius: 22px;
     }
 
-    @keyframes navCompact {
-        from {
-            padding: 14px 18px;
-        }
-
-        to {
-            padding: 6px 10px;
-        }
+    nav h2 {
+        font-size: 0.88rem;
     }
 
-
-/* Animation for paragraphs */
-
-@supports (animation-timeline: view()) {
-
-    main :is(a, p, h2, h3):not(nav *) {
-        animation: contentScroll linear both;
-        animation-timeline: view();
-        animation-range: entry 0% exit 100%;
+    nav a {
+        font-size: 0.62rem;
+        padding: 5px 6px;
     }
 
-    @keyframes contentScroll {
-
-        /* Entering the screen */
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        /* Fully visible */
-        25% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Staying visible */
-        70% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Leaving the screen */
-        100% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
+    main {
+        width: calc(95% - 16px);
+        padding: 10px !important;
     }
 
+    h2 {
+        font-size: 1.15rem;
+    }
 
+    h3 {
+        font-size: 0.92rem;
+    }
+
+    p,
+    li {
+        font-size: 0.82rem;
+        line-height: 1.6;
+    }
+
+    .weekly-list > * {
+        padding: 10px;
+    }
+
+    section {
+        padding: 12px;
+    }
+
+    article {
+        padding: 12px;
+    }
+
+    .highlight {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 7px 8px !important;
+    }
+
+    footer p {
+        font-size: 0.62rem;
+    }
+
+    main > h4 {
+        font-size: 0.64rem;
+        padding: 5px 10px;
+    }
+
+    main > h4 a {
+        font-size: 0.64rem;
+        padding: 3px 6px;
+    }
 }
 
+
 /* =========================================================
-   MOBILE FIT + STICKY ELEMENTS
-   Only fixes mobile positioning and overflow
-   Desktop is completely untouched.
+   MOBILE SOURCE LINKS
    ========================================================= */
 
 @media (max-width: 599px) {
 
-    /* Prevent sideways scrolling */
-    html,
-    body {
-        overflow-x: hidden;
+    main p {
+        font-size: 0.86rem;
     }
 
-    /* Keep header sticky */
+    main a:not(nav a) {
+        font-size: 0.68rem;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 400px) {
+
+    main p {
+        font-size: 0.82rem;
+    }
+
+    main em:not(footer em) {
+        font-size: 0.64rem;
+    }
+
+    main a:not(nav a) {
+        font-size: 0.64rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE ONLY
+   ========================================================= */
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+
+    html {
+        scroll-padding-top: 88px;
+    }
+
+
+    /* ================= HEADER ================= */
+
     header {
-        position: sticky;
-        top: 8px;
-        z-index: 1000;
+        position: sticky !important;
+        top: 4px !important;
+        z-index: 1000 !important;
+        width: 88% !important;
+        max-width: 850px !important;
+        margin: 4px auto 6px !important;
+        padding: 12px 18px !important;
+        border-radius: 14px !important;
+        box-sizing: border-box;
+
+        animation-range: 0 80px !important;
+
+        transition:
+            padding 0.18s ease,
+            margin 0.18s ease,
+            border-radius 0.18s ease,
+            box-shadow 0.18s ease;
     }
 
-    /* Keep navigation sticky below the header */
-    nav {
-        position: sticky;
-        top: 78px;
-        z-index: 999;
+    header h1 {
+        font-size: 1.05rem !important;
+        line-height: 1.12 !important;
+        margin: 0 !important;
 
-        /* Allow links to fit on small screens */
-        flex-wrap: wrap;
-        justify-content: center;
+        animation-range: 0 80px !important;
+
+        transition:
+            font-size 0.18s ease,
+            transform 0.18s ease;
+    }
+
+    header h1::after {
+    display: none;
+}
+
+    header p {
+        font-size: 0.66rem !important;
+        line-height: 1.15 !important;
+        margin: 3px 0 0 !important;
+
+        animation-range: 0 80px !important;
+
+        transition:
+            opacity 0.18s ease,
+            max-height 0.18s ease,
+            margin 0.18s ease;
+    }
+
+
+    /* ================= NAVIGATION ================= */
+
+    nav {
+        position: sticky !important;
+        top: 57px !important;
+        z-index: 999 !important;
+        width: 82% !important;
+        max-width: 780px !important;
+        margin: 0 auto 7px !important;
+        padding: 4px 6px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 3px !important;
+        border-radius: 11px !important;
+        box-sizing: border-box;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    nav h2 {
+        width: 100% !important;
+        flex-basis: 100% !important;
+        font-size: 0.64rem !important;
+        line-height: 1.02 !important;
+        margin: 0 0 2px !important;
     }
 
     nav a {
-        white-space: nowrap;
+        font-size: 0.49rem !important;
+        line-height: 1.05 !important;
+        padding: 3px 5px !important;
+        white-space: normal !important;
+        text-align: center !important;
     }
 
-    /* Keep footer sticky */
-    footer {
-        position: sticky;
-        bottom: 8px;
-        z-index: 900;
 
-        /* Prevent long footer text from overflowing */
-        max-width: 94%;
+    /* ================= MAIN ================= */
+
+    main {
+        width: 90% !important;
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 8px 18px !important;
+        box-sizing: border-box;
+    }
+
+    main p,
+    main li {
+        font-size: 0.74rem !important;
+    }
+
+    main h1 {
+        font-size: 1.25rem !important;
+    }
+
+    main h2 {
+        font-size: 1.02rem !important;
+    }
+
+    main h3 {
+        font-size: 0.90rem !important;
+    }
+
+
+    /* ================= ITALIC / EM PARAGRAPHS ================= */
+
+    main em {
+        font-size: 0.7rem !important;
+    }
+
+
+    /* ================= HOME / BACK TO TOP ================= */
+
+    main > h4 {
+        font-size: 0.64rem !important;
+        padding: 5px 10px !important;
+        margin: 8px 0 !important;
+    }
+
+    main > h4 a {
+        font-size: 0.64rem !important;
+        padding: 3px 6px !important;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        position: sticky !important;
+        bottom: 4px !important;
+        z-index: 998 !important;
+        width: 88% !important;
+        max-width: 850px !important;
+        margin: 7px auto 4px !important;
+        padding: 5px 10px !important;
+        border-radius: 11px !important;
         box-sizing: border-box;
     }
 
     footer p {
-        overflow-wrap: anywhere;
-    }
-
-    /* Give the page enough room above the sticky footer */
-    main {
-        min-width: 0;
-    }
-
-    /* Prevent long content from pushing the page sideways */
-    main img,
-    main video,
-    main iframe,
-    main pre {
-        max-width: 100%;
-    }
-
-    pre {
-        overflow-x: auto;
+        font-size: 0.52rem !important;
+        line-height: 1.08 !important;
+        margin: 1px 0 !important;
     }
 }
 
-/* =========================================================
-   MOBILE — STICKY HEADER / NAV / FOOTER + CONTENT ANIMATION
-   Desktop is not affected.
-   ========================================================= */
+/* Weekly Lists BOXES */
 
-@media (max-width: 599px) {
+/* Home page - Weekly Work boxes */
+section > ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
 
-    header {
-        position: sticky !important;
-        top: 8px !important;
-        z-index: 1000 !important;
-        transform: none;
-    }
+section > ul > li {
+    margin: 0;
+}
 
-    nav {
-        position: sticky !important;
-        top: 78px !important;
-        z-index: 999 !important;
-        flex-wrap: wrap;
-        transform: none;
-    }
+section > ul > li > a {
+    display: block;
+    padding: 22px 24px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-small);
+    color: var(--text);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
-    footer {
-        position: sticky !important;
-        bottom: 8px !important;
-        z-index: 900 !important;
-        transform: none;
-    }
-
-    /* Disable desktop header/nav scroll animation */
-    header,
-    header h1,
-    header p,
-    nav {
-        animation: none !important;
-    }
-
-    @supports (animation-timeline: view()) {
-
-        main :is(p, h2, h3, li, a):not(nav *) {
-            animation: mobileContentFade linear both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 35%;
-        }
-
-    }
-
-    @keyframes mobileContentFade {
-        from {
-            opacity: 0;
-            transform: translateY(12px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    main {
-        min-width: 0;
-    }
-
-    main img,
-    main video,
-    main iframe {
-        max-width: 100%;
-        height: auto;
-    }
-
-    pre {
-        max-width: 100%;
-        overflow-x: auto;
-    }
+section > ul > li > a:hover {
+    background-color: var(--soft-accent);
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+    cursor: pointer;
+    box-shadow:0 6px 20px rgba(169, 140, 79, 0.25);
 }

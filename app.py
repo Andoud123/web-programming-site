@@ -49,10 +49,27 @@ def home():
         {"week": 2, "title": "History of the Web", "url": "/web-history"},
         {"week": 2, "title": "History of the Internet (AI)", "url": "/internet-history-ai"},
         {"week": 2, "title": "History of the Web (AI)", "url": "/web-history-ai"},
+
+        {"week": 3, "title": "NO CSS - WEB PORTFOLIO", "url": "/nocss-index"},
+
         {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
+
+@app.route("/nocss-index")
+def nocss_index():
+    weekly_work = [
+        {"week": 3, "title": "NO CSS - History of the Internet", "url": "/nocss-internet-history"},
+        {"week": 3, "title": "NO CSS - History of the Web", "url": "/nocss-web-history"},
+        {"week": 3, "title": "NO CSS - History of the Internet (AI)", "url": "/nocss-internet-history-ai"},
+        {"week": 3, "title": "NO CSS - History of the Web (AI)", "url": "/nocss-web-history-ai"},
+
+        {"week": 4, "title": "NO CSS - Engineering Profile Form", "url": "/nocss-profile-form"},
+
+    ]
+
+    return render_template("nocss-index.html", weekly_work=weekly_work)
 
 @app.route("/internet-history")
 def internet_history():
@@ -74,6 +91,31 @@ def web_history_ai():
     return render_template("web-history-ai.html")
 
 
+@app.route("/nocss-internet-history")
+def nocss_internet_history():
+    return render_template("nocss-internet-history.html")
+
+
+@app.route("/nocss-web-history")
+def nocss_web_history():
+    return render_template("nocss-web-history.html")
+
+
+@app.route("/nocss-internet-history-ai")
+def nocss_internet_history_ai():
+    return render_template("nocss-internet-history-ai.html")
+
+
+@app.route("/nocss-web-history-ai")
+def nocss_web_history_ai():
+    return render_template("nocss-web-history-ai.html")
+
+
+@app.route("/nocss-profile-form")
+def nocss_profile_form():
+    return render_template("nocss-profile-form.html")
+
+
 @app.route("/submit-profile", methods=["GET", "POST"])
 def submit_profile():
     """
@@ -91,6 +133,23 @@ def submit_profile():
 
     # First visit (GET): just show the empty form.
     return render_template("profile-form.html")
+
+
+@app.route("/nocss-submit-profile", methods=["GET", "POST"])
+def nocss_submit_profile():
+    if request.method == "POST":
+        data = request.form.to_dict()
+        skills = request.form.getlist("skills")
+        software = request.form.getlist("software")
+
+        return render_template(
+            "nocss-profile.html",
+            data=data,
+            skills=skills,
+            software=software
+        )
+
+    return render_template("nocss-profile-form.html")
 
 
 if __name__ == "__main__":

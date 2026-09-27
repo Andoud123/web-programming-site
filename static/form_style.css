@@ -16,11 +16,10 @@
    ========================================================= */
 
 :root {
-    --form-background: #fdfbf8;
 
+    --form-background: #fdfbf8;
     --form-surface: #ffffff;
     --form-surface-soft: #faf7f2;
-
     --form-text: #1f2937;
     --form-muted: #6b7280;
 
@@ -61,15 +60,12 @@
 
 html {
     scroll-behavior: smooth;
-
     scroll-padding-top: 120px;
 }
 
 body {
     background: var(--form-background);
-
     color: var(--form-text);
-
     overflow-x: hidden;
 }
 
@@ -79,34 +75,24 @@ body {
    ========================================================= */
 
 main > h2 {
+
     position: relative;
-
     width: fit-content;
-
     margin: 0 auto 28px;
-
     color: var(--form-text);
-
     font-weight: 700;
-
     letter-spacing: 0.02em;
-
     text-align: center;
 }
 
 main > h2::after {
+
     content: "";
-
     display: block;
-
     width: 100%;
-
     height: 2px;
-
     margin: 10px auto 0;
-
     background: var(--form-accent);
-
     border-radius: 999px;
 }
 
@@ -116,16 +102,13 @@ main > h2::after {
    ========================================================= */
 
 #nav {
+
     position: sticky;
-
     top: 82px;
-
     z-index: 999;
 
     width: min(80%, 1200px);
-
     margin: 0 auto 30px;
-
     padding: 14px 18px;
 
     background-color:
@@ -136,18 +119,15 @@ main > h2::after {
         );
 
     border: 1px solid var(--form-border);
-
     border-radius: 25px;
 
     box-shadow: var(--form-shadow);
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
     gap: 8px;
-
     flex-wrap: nowrap;
 
     backdrop-filter: blur(16px);
@@ -164,34 +144,29 @@ main > h2::after {
 /* Navigation title */
 
 #nav h2 {
-    flex-basis: 100%;
 
+    flex-basis: 100%;
     margin: 0 0 7px;
 
     color: var(--form-text);
-
     font-size: 1.2rem;
-
     font-weight: 700;
 
     text-align: center;
-
     letter-spacing: 0.08em;
 }
 
 #nav h2::after {
-    content: "";
 
+    content: "";
     display: block;
 
     width: 80%;
-
     height: 2px;
 
     margin: 8px auto 0;
 
     background: var(--form-accent);
-
     border-radius: 999px;
 }
 
@@ -199,18 +174,16 @@ main > h2::after {
 /* Navigation links */
 
 #nav a {
+
     padding: 8px 13px;
 
     color: var(--form-text);
-
     background: transparent;
 
     border: 1px solid var(--form-border);
-
     border-radius: 9px;
 
     text-decoration: none;
-
     font-size: 0.86rem;
 
     transition:
@@ -222,10 +195,9 @@ main > h2::after {
 
 #nav a:hover,
 #nav a:focus-visible {
+
     color: #ffeecc;
-
     background: #c69d4b;
-
     border-color: #ddc088;
 
     transform: translateY(-2px);
@@ -241,8 +213,8 @@ main > h2::after {
 
 form + p,
 main > p {
-    color: var(--form-muted);
 
+    color: var(--form-muted);
     line-height: 1.7;
 }
 
@@ -252,8 +224,8 @@ main > p {
    ========================================================= */
 
 form {
-    width: 100%;
 
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -263,16 +235,15 @@ form {
    ========================================================= */
 
 form fieldset {
+
     position: relative;
 
     margin: 0 0 22px;
-
     padding: 30px 28px 25px;
 
     background: var(--form-surface);
 
     border: 1px solid var(--form-border);
-
     border-radius: var(--form-radius);
 
     box-shadow: var(--form-shadow);
@@ -284,6 +255,7 @@ form fieldset {
 }
 
 form fieldset:hover {
+
     border-color: var(--form-accent-border);
 
     box-shadow:
@@ -296,28 +268,26 @@ form fieldset:hover {
    ========================================================= */
 
 form legend {
+
     position: relative;
 
     width: auto;
-
     max-width: 100%;
 
     padding: 0 8px;
 
     color: var(--form-text);
-
     background: var(--form-surface);
 
     border: 0;
 
     font-size: 0.98rem;
-
     font-weight: 700;
-
     letter-spacing: 0.02em;
 }
 
 form legend::before {
+
     content: "";
 
     display: inline-block;
@@ -329,7 +299,6 @@ form legend::before {
         0 9px 2px 0;
 
     background: var(--form-accent);
-
     border-radius: 50%;
 }
 
@@ -339,16 +308,15 @@ form legend::before {
    ========================================================= */
 
 form label {
+
     display: inline-block;
 
     margin-bottom: 7px;
-
     padding: 8px;
 
     color: var(--form-text);
 
     font-weight: 600;
-
     line-height: 1.4;
 }
 
@@ -366,22 +334,19 @@ form input:not(
 ),
 form select,
 form textarea {
-    width: min(420px, 50%);
 
+    width: min(420px, 50%);
     box-sizing: border-box;
 
     padding: 11px 13px;
 
     color: var(--form-text);
-
     background: var(--form-surface-soft);
 
     border: 1px solid var(--form-border);
-
     border-radius: 9px;
 
     outline: none;
-
     font: inherit;
 
     transition:
@@ -403,8 +368,8 @@ form input:not(
     [type="color"]
 )::placeholder,
 form textarea::placeholder {
-    color: var(--form-muted);
 
+    color: var(--form-muted);
     opacity: 0.8;
 }
 
@@ -422,6 +387,7 @@ form input:not(
 ):hover,
 form select:hover,
 form textarea:hover {
+
     border-color: var(--form-accent-border);
 }
 
@@ -439,6 +405,7 @@ form input:not(
 ):focus,
 form select:focus,
 form textarea:focus {
+
     background: var(--form-surface);
 
     border-color:
@@ -454,10 +421,9 @@ form textarea:focus {
    ========================================================= */
 
 form textarea {
+
     min-height: 180px;
-
     resize: both;
-
     line-height: 1.6;
 }
 
@@ -467,22 +433,22 @@ form textarea {
    ========================================================= */
 
 form select {
-    min-height: 44px;
 
+    min-height: 44px;
     cursor: pointer;
 }
 
 form select[multiple] {
-    min-height: 204px;
 
+    min-height: 204px;
     padding: 1px;
 }
 
 form option {
+
     padding: 7px;
 
     color: var(--form-text);
-
     background: var(--form-surface);
 }
 
@@ -492,14 +458,15 @@ form option {
    ========================================================= */
 
 form em {
+
     color: var(--form-muted);
 }
 
 form em p {
+
     margin: 4px 0 10px;
 
     font-size: 1rem;
-
     line-height: 1.5;
 }
 
@@ -510,6 +477,7 @@ form em p {
 
 form input[type="radio"],
 form input[type="checkbox"] {
+
     width: 17px;
     height: 17px;
 
@@ -520,14 +488,13 @@ form input[type="checkbox"] {
         var(--form-accent-dark);
 
     vertical-align: middle;
-
     cursor: pointer;
 }
 
 form input[type="radio"] + label,
 form input[type="checkbox"] + label {
-    margin-right: 15px;
 
+    margin-right: 15px;
     margin-bottom: 4px;
 
     color: var(--form-text);
@@ -535,12 +502,12 @@ form input[type="checkbox"] + label {
     font-weight: 500;
 
     cursor: pointer;
-
     vertical-align: middle;
 }
 
 form input[type="radio"]:focus-visible,
 form input[type="checkbox"]:focus-visible {
+
     outline:
         3px solid
         rgba(197, 169, 104, 0.25);
@@ -554,11 +521,11 @@ form input[type="checkbox"]:focus-visible {
    ========================================================= */
 
 form input[type="color"] {
+
     width: 42px;
     height: 42px;
 
     padding: 0;
-
     margin-left: 10px;
 
     vertical-align: middle;
@@ -582,7 +549,6 @@ form input[type="color"] {
         0 4px 12px rgba(31, 41, 55, 0.12);
 
     cursor: pointer;
-
     overflow: hidden;
 
     transition:
@@ -592,6 +558,7 @@ form input[type="color"] {
 }
 
 form input[type="color"]:hover {
+
     transform: scale(1.08);
 
     outline-color: var(--form-accent);
@@ -601,18 +568,19 @@ form input[type="color"]:hover {
 }
 
 form input[type="color"]::-webkit-color-swatch-wrapper {
+
     padding: 0;
 }
 
 form input[type="color"]::-webkit-color-swatch {
-    border: 0;
 
+    border: 0;
     border-radius: 50%;
 }
 
 form input[type="color"]::-moz-color-swatch {
-    border: 0;
 
+    border: 0;
     border-radius: 50%;
 }
 
@@ -624,21 +592,20 @@ form input[type="color"]::-moz-color-swatch {
 form input[type="date"],
 form input[type="time"],
 form input[type="month"] {
+
     width: min(250px, 100%);
-
     color-scheme: light;
-
     cursor: pointer;
 }
 
 form input[type="date"]::-webkit-calendar-picker-indicator,
 form input[type="time"]::-webkit-calendar-picker-indicator {
+
     padding: 4px;
 
     border-radius: 6px;
 
     cursor: pointer;
-
     opacity: 0.75;
 
     transition:
@@ -648,8 +615,8 @@ form input[type="time"]::-webkit-calendar-picker-indicator {
 
 form input[type="date"]::-webkit-calendar-picker-indicator:hover,
 form input[type="time"]::-webkit-calendar-picker-indicator:hover {
-    background: var(--form-accent-soft);
 
+    background: var(--form-accent-soft);
     opacity: 1;
 }
 
@@ -660,6 +627,7 @@ form input[type="time"]::-webkit-calendar-picker-indicator:hover {
 
 form input[type="submit"],
 form input[type="reset"] {
+
     min-width: 135px;
 
     padding: 11px 19px;
@@ -667,7 +635,6 @@ form input[type="reset"] {
     border-radius: 25px;
 
     font: inherit;
-
     font-weight: 700;
 
     letter-spacing: 0.02em;
@@ -686,8 +653,8 @@ form input[type="reset"] {
 /* Submit */
 
 form input[type="submit"] {
-    color: #a68b34;
 
+    color: #a68b34;
     background: transparent;
 
     border:
@@ -701,8 +668,8 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover,
 form input[type="submit"]:focus-visible {
-    color: #5f4512;
 
+    color: #5f4512;
     background: #ffd88b;
 
     border-color: #967b43;
@@ -718,10 +685,10 @@ form input[type="submit"]:focus-visible {
 /* Reset */
 
 form input[type="reset"] {
+
     margin-left: 8px;
 
     color: var(--form-text);
-
     background: transparent;
 
     border:
@@ -731,8 +698,8 @@ form input[type="reset"] {
 
 form input[type="reset"]:hover,
 form input[type="reset"]:focus-visible {
-    color: #ffe2a7;
 
+    color: #ffe2a7;
     background: #ff4b3e;
 
     border-color: #4d0000;
@@ -746,16 +713,16 @@ form input[type="reset"]:focus-visible {
    ========================================================= */
 
 main > h4 {
+
     text-align: center;
 
     margin: 13px 0;
-
     padding: 10px 20px;
 }
 
 main > h4 a {
-    color: var(--form-muted);
 
+    color: var(--form-muted);
     text-decoration: none;
 
     letter-spacing: 0.01em;
@@ -765,6 +732,7 @@ main > h4 a {
 }
 
 main > h4 a:hover {
+
     color: var(--form-accent-dark);
 }
 
@@ -776,6 +744,7 @@ main > h4 a:hover {
 @keyframes formPageEntrance {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -783,6 +752,7 @@ main > h4 a:hover {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -791,6 +761,7 @@ main > h4 a:hover {
 }
 
 main {
+
     animation:
         formPageEntrance
         0.65s
@@ -806,8 +777,8 @@ main {
 @media (prefers-color-scheme: dark) {
 
     :root {
-        --form-background: #171614;
 
+        --form-background: #171614;
         --form-surface: #211f1c;
         --form-surface-soft: #282521;
 
@@ -832,10 +803,12 @@ main {
 
 
     form legend {
+
         background: var(--form-surface);
     }
 
     form option {
+
         color: var(--form-text);
 
         background:
@@ -844,8 +817,8 @@ main {
 
 
     form input[type="submit"] {
-        color: #bf9c58;
 
+        color: #bf9c58;
         background: transparent;
 
         border-color:
@@ -854,6 +827,7 @@ main {
 
     form input[type="submit"]:hover,
     form input[type="submit"]:focus-visible {
+
         background:
             var(--form-accent-dark);
 
@@ -865,16 +839,16 @@ main {
     form input[type="date"],
     form input[type="time"],
     form input[type="month"] {
+
         color-scheme: dark;
     }
 
 
     #nav a:hover,
     #nav a:focus-visible {
+
         color: #5f4512;
-
         background: #cfb071;
-
         border-color: #967b43;
 
         transform: translateY(-2px);
@@ -886,14 +860,230 @@ main {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* =====================================
+   STANDARD MOBILE SCREENS Portrait
+   ===================================== */
 
-@media (max-width: 700px) {
+@media (min-width: 320px) and (max-width: 440px) and (max-height: 956px) and (orientation: portrait) {
 
     html {
-        scroll-padding-top: 110px;
+
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+        scroll-padding-top: 125px;
+    }
+
+    body {
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-x: clip;
+    }
+
+
+    /* HEADER */
+
+    header {
+
+        position: sticky;
+
+        top: 20px;
+        z-index: 1000;
+
+        width: 88%;
+
+        margin: auto auto 45px;
+
+        padding: 20px 12px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 30px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    header {
+
+        animation: headerCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 180px;
+    }
+
+    @keyframes headerCompact {
+
+        from {
+
+            padding: 20px 12px;
+        }
+
+        to {
+
+            padding: 20px 12px;
+        }
+    }
+
+    header h1 {
+
+        font-size: 1.4rem;
+
+        line-height: 1.2;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    header h1 {
+
+        animation:
+            titleScroll linear both,
+            titleCompact linear both;
+
+        animation-timeline:
+            scroll(root),
+            scroll(root);
+
+        animation-range:
+            0 180px,
+            0 180px;
+    }
+
+    @keyframes titleCompact {
+
+        from {
+
+            font-size: 1.22rem;
+        }
+
+        to {
+
+            font-size: 1.22rem;
+        }
+    }
+
+    header p {
+
+        font-size: .65rem;
+        line-height: 1.4;
+        margin: auto;
+    }
+
+    header p {
+
+        animation: subtitleCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 100px;
+    }
+
+    @keyframes subtitleCompact {
+
+        from {
+
+            opacity: 1;
+            max-height: 30px;
+
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        to {
+
+            opacity: 0;
+            max-height: 0;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        position: sticky;
+
+        top: 130px;
+        z-index: 900;
+
+        width: 88%;
+
+        margin: 0 auto 12px;
+
+        padding: 6px 5px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 3px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 25px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    nav h2 {
+
+        width: 100%;
+        flex-basis: 100%;
+
+        font-size: .82rem;
+
+        line-height: 1.2;
+
+        margin: 0 0 3px;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    nav a {
+
+        margin: 0;
+
+        padding: 5px 7px;
+
+        font-size: .58rem;
+
+        line-height: 1.15;
+
+        white-space: normal;
+
+        text-align: center;
+
+        transition:
+            padding 0.45s ease,
+            font-size 0.45s ease,
+            transform 0.45s ease;
     }
 
 
@@ -902,12 +1092,14 @@ main {
        ----------------------------------------- */
 
     main > h2 {
+
         font-size: 1.35rem;
 
         margin-bottom: 18px;
     }
 
     main > h2::after {
+
         margin-top: 7px;
     }
 
@@ -917,6 +1109,7 @@ main {
        ----------------------------------------- */
 
     #nav {
+
         position: sticky !important;
 
         top: 78px !important;
@@ -935,6 +1128,7 @@ main {
     }
 
     #nav h2 {
+
         flex-basis: 100%;
 
         font-size: 0.9rem;
@@ -945,6 +1139,7 @@ main {
     }
 
     #nav h2::after {
+
         width: 55%;
 
         height: 1px;
@@ -953,6 +1148,7 @@ main {
     }
 
     #nav a {
+
         padding: 5px 7px;
 
         font-size: 0.70rem;
@@ -966,6 +1162,7 @@ main {
        ----------------------------------------- */
 
     form fieldset {
+
         padding: 16px 12px 14px;
 
         margin-bottom: 13px;
@@ -979,14 +1176,15 @@ main {
        ----------------------------------------- */
 
     form legend {
+
         font-size: 0.88rem;
 
         padding: 0 5px;
     }
 
     form legend::before {
-        width: 6px;
 
+        width: 6px;
         height: 6px;
 
         margin-right: 6px;
@@ -998,6 +1196,7 @@ main {
        ----------------------------------------- */
 
     form label {
+
         margin-bottom: 4px;
 
         padding: 3px;
@@ -1021,6 +1220,7 @@ main {
     ),
     form select,
     form textarea {
+
         width: 100%;
 
         padding: 8px 10px;
@@ -1043,6 +1243,7 @@ main {
         [type="color"]
     )::placeholder,
     form textarea::placeholder {
+
         font-size: 0.74rem;
     }
 
@@ -1052,6 +1253,7 @@ main {
        ----------------------------------------- */
 
     form textarea {
+
         min-height: 130px;
 
         line-height: 1.4;
@@ -1063,6 +1265,7 @@ main {
        ----------------------------------------- */
 
     form em p {
+
         margin: 3px 0 7px;
 
         font-size: 0.70rem;
@@ -1077,8 +1280,8 @@ main {
 
     form input[type="radio"],
     form input[type="checkbox"] {
-        width: 15px;
 
+        width: 15px;
         height: 15px;
 
         margin:
@@ -1087,6 +1290,7 @@ main {
 
     form input[type="radio"] + label,
     form input[type="checkbox"] + label {
+
         margin-right: 8px;
 
         margin-bottom: 3px;
@@ -1102,6 +1306,7 @@ main {
        ----------------------------------------- */
 
     form select[multiple] {
+
         min-height: 150px;
     }
 
@@ -1113,6 +1318,7 @@ main {
     form input[type="date"],
     form input[type="time"],
     form input[type="month"] {
+
         width: 100%;
     }
 
@@ -1122,8 +1328,8 @@ main {
        ----------------------------------------- */
 
     form input[type="color"] {
-        width: 36px;
 
+        width: 36px;
         height: 36px;
 
         margin-left: 5px;
@@ -1136,6 +1342,7 @@ main {
 
     form input[type="submit"],
     form input[type="reset"] {
+
         width: 100%;
 
         min-width: 0;
@@ -1148,6 +1355,7 @@ main {
     }
 
     form input[type="reset"] {
+
         margin-top: 7px;
     }
 
@@ -1157,53 +1365,271 @@ main {
        ----------------------------------------- */
 
     main > h4 {
+
         margin: 9px 0;
 
         padding: 7px 12px;
 
         font-size: 0.72rem;
     }
+
+    footer {
+
+        position: sticky;
+
+        bottom: 8px;
+
+        z-index: 900;
+
+        width: 88%;
+
+        margin: 18px auto 8px;
+
+        padding: 8px 10px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        animation: none;
+
+        border-radius: 22px;
+    }
+
+    footer p {
+
+        margin: 2px 0;
+
+        font-size: .63rem;
+
+        line-height: 1.35;
+
+        animation: none;
+    }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   STANDARD MOBILE SCREENS Landscape
    ========================================================= */
 
-@media (max-width: 400px) {
+@media (min-width: 660px) and (max-width: 956px) and (max-height: 440px) and (orientation: landscape) {
 
     html {
-        scroll-padding-top: 105px;
+
+        scroll-padding-top: 88px;
     }
 
 
-    main > h2 {
-        font-size: 1.2rem;
-    }
+    /* ================= HEADER ================= */
 
+    header {
 
-    /* Navigation */
+        position: sticky;
 
-    #nav {
-        top: 72px !important;
+        top: 15px;
 
-        padding: 8px 6px;
+        z-index: 1000;
 
-        gap: 4px;
-    }
+        width: 88%;
+        max-width: 85%;
 
-    #nav h2 {
-        font-size: 0.82rem;
-    }
+        margin: 4px auto 6px;
 
-    #nav a {
-        width: 100%;
+        padding: 12px 18px;
+
+        border-radius: 40px;
 
         box-sizing: border-box;
 
+        animation-range: 0 80px;
+
+        transition:
+            padding 0.18s ease,
+            margin 0.18s ease,
+            border-radius 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    header h1 {
+
+        font-size: .9rem;
+
+        line-height: 1.12;
+
+        margin: 0;
+
+        animation-range: 0 80px;
+
+        transition:
+            font-size 0.18s ease,
+            transform 0.18s ease;
+    }
+
+    header h1::after {
+
+        display: block;
+    }
+
+    header p {
+
+        font-size: 0.8rem;
+
+        line-height: 1.15;
+
+        margin: 3px 0 0;
+
+        animation-range: 0 80px;
+
+        transition:
+            opacity 0.18s ease,
+            max-height 0.18s ease,
+            margin 0.18s ease;
+    }
+
+    header {
+
+        animation:
+            headerCompact linear both;
+
+        animation-timeline: scroll();
+
+        animation-range: 0 180px;
+    }
+
+    @keyframes headerCompact {
+
+        from {
+
+            padding: 10px 18px;
+        }
+
+        to {
+
+            padding: 5px 30px;
+        }
+    }
+
+
+    header h1 {
+
+        animation:
+            titleScroll linear both,
+            titleCompact linear both;
+
+        animation-timeline:
+            scroll(),
+            scroll();
+
+        animation-range:
+            0 180px,
+            0 180px;
+    }
+
+    @keyframes titleCompact {
+
+        from {
+
+            font-size: 1.3rem;
+        }
+
+        to {
+
+            font-size: 1.2rem;
+        }
+    }
+
+
+    header p {
+
+        animation:
+            subtitleCompact linear both;
+
+        animation-timeline: scroll();
+
+        animation-range: 0 180px;
+    }
+
+    @keyframes subtitleCompact {
+
+        from {
+
+            opacity: 1;
+
+            max-height: 40px;
+
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        to {
+
+            opacity: 0;
+
+            max-height: 0;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+
+    /* ================= NAVIGATION ================= */
+
+    nav {
+
+        position: sticky;
+
+        top: 10px;
+
+        z-index: 999;
+
+        width: 95%;
+        max-width: 780px;
+
+        margin: 0 auto 7px;
+
         padding: 4px 6px;
 
-        font-size: 0.65rem;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 3px;
+
+        border-radius: 11px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        animation: none;
+    }
+
+    nav h2 {
+
+        width: 100%;
+        flex-basis: 100%;
+
+        font-size: 0.64rem;
+
+        line-height: 1.02;
+
+        margin: 0 0 2px;
+    }
+
+    nav a {
+
+        font-size: 0.6rem;
+
+        line-height: 1.05;
+
+        padding: 3px 5px;
+
+        white-space: normal;
 
         text-align: center;
     }
@@ -1212,6 +1638,7 @@ main {
     /* Form cards */
 
     form fieldset {
+
         padding: 13px 9px 12px;
 
         margin-bottom: 10px;
@@ -1223,6 +1650,7 @@ main {
     /* Field titles */
 
     form legend {
+
         font-size: 0.82rem;
     }
 
@@ -1230,6 +1658,7 @@ main {
     /* Labels */
 
     form label {
+
         font-size: 0.70rem;
     }
 
@@ -1245,6 +1674,7 @@ main {
     ),
     form select,
     form textarea {
+
         padding: 7px 8px;
 
         font-size: 0.70rem;
@@ -1261,6 +1691,7 @@ main {
         [type="color"]
     )::placeholder,
     form textarea::placeholder {
+
         font-size: 0.68rem;
     }
 
@@ -1268,6 +1699,7 @@ main {
     /* Textarea */
 
     form textarea {
+
         min-height: 110px;
     }
 
@@ -1275,6 +1707,7 @@ main {
     /* Instruction text */
 
     form em p {
+
         font-size: 0.65rem;
     }
 
@@ -1283,13 +1716,14 @@ main {
 
     form input[type="radio"],
     form input[type="checkbox"] {
-        width: 14px;
 
+        width: 14px;
         height: 14px;
     }
 
     form input[type="radio"] + label,
     form input[type="checkbox"] + label {
+
         font-size: 0.67rem;
     }
 
@@ -1297,8 +1731,8 @@ main {
     /* Color picker */
 
     form input[type="color"] {
-        width: 32px;
 
+        width: 32px;
         height: 32px;
     }
 
@@ -1307,6 +1741,7 @@ main {
 
     form input[type="submit"],
     form input[type="reset"] {
+
         font-size: 0.72rem;
 
         padding: 8px 12px;
@@ -1314,49 +1749,254 @@ main {
 }
 
 
-/* =========================================================
-   LANDSCAPE PHONES
-   ========================================================= */
+/* =====================================
+   TABLET SCREENS Portrait
+   ===================================== */
 
-@media (max-width: 900px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1376px) and (orientation: portrait) {
 
     html {
-        scroll-padding-top: 95px;
+
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+        scroll-padding-top: 125px;
+    }
+
+    body {
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-x: clip;
     }
 
 
-    #nav {
-        top: 60px !important;
+    /* HEADER */
 
-        width: calc(100% - 20px);
+    header {
 
-        padding: 7px 8px;
+        position: sticky;
 
-        gap: 4px;
+        top: 20px;
+
+        z-index: 1000;
+
+        width: 88%;
+
+        margin: auto auto 45px;
+
+        padding: 20px 12px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 30px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
     }
 
-    #nav h2 {
-        font-size: 0.82rem;
+    header {
+
+        animation: headerCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 180px;
     }
 
-    #nav a {
-        padding: 4px 6px;
+    @keyframes headerCompact {
 
-        font-size: 0.62rem;
+        from {
+
+            padding: 20px 12px;
+        }
+
+        to {
+
+            padding: 20px 12px;
+        }
+    }
+
+    header h1 {
+
+        font-size: 1.4rem;
+
+        line-height: 1.2;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    header h1 {
+
+        animation:
+            titleScroll linear both,
+            titleCompact linear both;
+
+        animation-timeline:
+            scroll(root),
+            scroll(root);
+
+        animation-range:
+            0 180px,
+            0 180px;
+    }
+
+    @keyframes titleCompact {
+
+        from {
+
+            font-size: 1.22rem;
+        }
+
+        to {
+
+            font-size: 1.22rem;
+        }
+    }
+
+    header p {
+
+        font-size: .65rem;
+
+        line-height: 1.4;
+
+        margin: auto;
+    }
+
+    header p {
+
+        animation: subtitleCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 100px;
+    }
+
+    @keyframes subtitleCompact {
+
+        from {
+
+            opacity: 1;
+
+            max-height: 30px;
+
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        to {
+
+            opacity: 0;
+
+            max-height: 0;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        position: sticky;
+
+        top: 130px;
+
+        z-index: 900;
+
+        width: 88%;
+
+        margin: 0 auto 12px;
+
+        padding: 6px 5px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 3px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 25px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    nav h2 {
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+        font-size: .82rem;
+
+        line-height: 1.2;
+
+        margin: 0 0 3px;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    nav a {
+
+        margin: 0;
+
+        padding: 5px 7px;
+
+        font-size: .58rem;
+
+        line-height: 1.15;
+
+        white-space: normal;
+
+        text-align: center;
+
+        transition:
+            padding 0.45s ease,
+            font-size 0.45s ease,
+            transform 0.45s ease;
     }
 
 
     form fieldset {
+
         padding: 12px 10px 11px;
 
         margin-bottom: 10px;
     }
 
     form legend {
+
         font-size: 0.80rem;
     }
 
     form label {
+
         font-size: 0.70rem;
 
         padding: 2px;
@@ -1371,6 +2011,7 @@ main {
     ),
     form select,
     form textarea {
+
         width: 100%;
 
         padding: 7px 8px;
@@ -1379,33 +2020,346 @@ main {
     }
 
     form textarea {
+
         min-height: 100px;
     }
 
     form em p {
+
         font-size: 0.64rem;
     }
 
     form input[type="radio"],
     form input[type="checkbox"] {
-        width: 13px;
 
+        width: 13px;
         height: 13px;
     }
 
     form input[type="radio"] + label,
     form input[type="checkbox"] + label {
+
         font-size: 0.66rem;
     }
 
     form input[type="color"] {
-        width: 30px;
 
+        width: 30px;
         height: 30px;
     }
 
     form input[type="submit"],
     form input[type="reset"] {
+
+        padding: 7px 11px;
+
+        font-size: 0.68rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET SCREENS Landscape
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1376px) and (orientation: landscape) {
+
+    html {
+
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+        scroll-padding-top: 125px;
+    }
+
+    body {
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-x: clip;
+    }
+
+
+    /* HEADER */
+
+    header {
+
+        position: sticky;
+
+        top: 20px;
+
+        z-index: 1000;
+
+        width: 88%;
+
+        margin: auto auto 45px;
+
+        padding: 20px 12px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 30px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    header {
+
+        animation: headerCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 180px;
+    }
+
+    @keyframes headerCompact {
+
+        from {
+
+            padding: 20px 12px;
+        }
+
+        to {
+
+            padding: 20px 12px;
+        }
+    }
+
+    header h1 {
+
+        font-size: 1.4rem;
+
+        line-height: 1.2;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    header h1 {
+
+        animation:
+            titleScroll linear both,
+            titleCompact linear both;
+
+        animation-timeline:
+            scroll(root),
+            scroll(root);
+
+        animation-range:
+            0 180px,
+            0 180px;
+    }
+
+    @keyframes titleCompact {
+
+        from {
+
+            font-size: 1.22rem;
+        }
+
+        to {
+
+            font-size: 1.22rem;
+        }
+    }
+
+    header p {
+
+        font-size: .65rem;
+
+        line-height: 1.4;
+
+        margin: auto;
+    }
+
+    header p {
+
+        animation: subtitleCompact linear both;
+
+        animation-timeline: scroll(root);
+
+        animation-range: 0 100px;
+    }
+
+    @keyframes subtitleCompact {
+
+        from {
+
+            opacity: 1;
+
+            max-height: 30px;
+
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        to {
+
+            opacity: 0;
+
+            max-height: 0;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        position: sticky;
+
+        top: 130px;
+
+        z-index: 900;
+
+        width: 88%;
+
+        margin: 0 auto 12px;
+
+        padding: 6px 5px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 3px;
+
+        box-sizing: border-box;
+
+        transform: none;
+
+        border-radius: 25px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    nav h2 {
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+        font-size: .82rem;
+
+        line-height: 1.2;
+
+        margin: 0 0 3px;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    nav a {
+
+        margin: 0;
+
+        padding: 5px 7px;
+
+        font-size: .58rem;
+
+        line-height: 1.15;
+
+        white-space: normal;
+
+        text-align: center;
+
+        transition:
+            padding 0.45s ease,
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+
+    form fieldset {
+
+        padding: 12px 10px 11px;
+
+        margin-bottom: 10px;
+    }
+
+    form legend {
+
+        font-size: 0.80rem;
+    }
+
+    form label {
+
+        font-size: 0.70rem;
+
+        padding: 2px;
+    }
+
+    form input:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="submit"],
+        [type="reset"],
+        [type="color"]
+    ),
+    form select,
+    form textarea {
+
+        width: 100%;
+
+        padding: 7px 8px;
+
+        font-size: 0.70rem;
+    }
+
+    form textarea {
+
+        min-height: 100px;
+    }
+
+    form em p {
+
+        font-size: 0.64rem;
+    }
+
+    form input[type="radio"],
+    form input[type="checkbox"] {
+
+        width: 13px;
+        height: 13px;
+    }
+
+    form input[type="radio"] + label,
+    form input[type="checkbox"] + label {
+
+        font-size: 0.66rem;
+    }
+
+    form input[type="color"] {
+
+        width: 30px;
+        height: 30px;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+
         padding: 7px 11px;
 
         font-size: 0.68rem;
@@ -1418,16 +2372,17 @@ main {
    ========================================================= */
 
 #confirmation {
+
     vertical-align: middle;
 
     margin-right: 5px;
 }
 
 #confirmation + label {
+
     display: inline;
 
     padding: 0;
-
     margin: 0;
 
     vertical-align: middle;
@@ -1441,6 +2396,7 @@ main {
 @supports (animation-timeline: view()) {
 
     form fieldset {
+
         animation:
             sectionReveal
             linear
@@ -1455,6 +2411,7 @@ main {
     @keyframes sectionReveal {
 
         from {
+
             opacity: 0;
 
             transform:
@@ -1462,6 +2419,7 @@ main {
         }
 
         to {
+
             opacity: 1;
 
             transform:
@@ -1480,6 +2438,7 @@ main {
     *,
     *::before,
     *::after {
+
         scroll-behavior: auto !important;
 
         animation-duration:

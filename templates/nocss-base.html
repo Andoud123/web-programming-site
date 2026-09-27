@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Web Programming Portfolio{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    
+    <header>
+        <h1>Web Programming Portfolio — Andy-Joe Haddad</h1>
+        <em><p>{% block header_subtitle %}A live site that grows one page or feature every week.{% endblock %}</p></em>
+    </header>
+
+    <main> {% block main %} {% endblock %} </main>
+
+    <footer>
+        <em><p>Web Programming — built with Flask and deployed on Render.</p>
+        <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course, School of Engineering, USEK. (Fall 2026-2027)</p></em>
+    </footer>
+
+</body>
+
+</html>

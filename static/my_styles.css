@@ -1077,71 +1077,9 @@ footer p {
 }
 
 
-/* =========================================================
-   DARK MODE
-   ========================================================= */
-
-@media (prefers-color-scheme: dark) {
-
-    :root {
-        --background: #181716;
-        --surface: #242220;
-
-        --text: #f3f0ed;
-        --text-muted: #b8b2ae;
-
-        --accent: #c5a968;
-        --accent-dark: #d6bc7a;
-
-        --border: #3a3633;
-
-        --soft-accent: #302729;
-        --soft-code: #302d2a;
-
-        --shadow-small:
-            0 4px 14px rgba(0, 0, 0, 0.25);
-
-        --shadow-medium:
-            0 8px 24px rgba(0, 0, 0, 0.35);
-
-        /* Dark background shapes */
-        --background-shape-1: #4b402d;
-        --background-shape-2: #665638;
-    }
-
-
-    nav a:hover {
-        color: #5f4512;
-        background: var(--accent);
-        border-color: #967b43;
-
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 9px 20px rgba(169, 140, 79, 0.25);
-    }
-
-
-    h4:hover {
-        color: #5f4512;
-        background: #cfb071;
-        border-color: #967b43;
-
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 6px 20px rgba(169, 140, 79, 0.25);
-    }
-
-    h4:hover a {
-        color: #5f4512;
-    }
-}
-
-
-/*=====================================
-    STANDARD MOBILE PORTRAIT SCREENS
-=====================================*/
+/* =====================================
+   STANDARD MOBILE SCREENS Portrait
+   ===================================== */
 
 @media (min-width: 320px) and (max-width: 440px) and (max-height: 956px) and (orientation: portrait) {
 
@@ -1328,16 +1266,16 @@ footer p {
     /* MAIN */
 
     main {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    box-sizing: border-box;
-}
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
     main > h1 {
         font-size: 1.5rem;
@@ -1380,8 +1318,8 @@ footer p {
         font-size: .75rem;
     }
 
-    /* =========================================================
-   HISTORY TIMELINE — CSS ONLY
+/*=========================================================
+   HISTORY TIMELINE
    ========================================================= */
 
 
@@ -1407,154 +1345,154 @@ footer p {
     }
 
 
-/* Vertical timeline line */
+    /* Vertical timeline line */
 
-#milestone ~ h3:not(#keytech ~ h3)::before {
-    content: "";
+    #milestone ~ h3:not(#keytech ~ h3)::before {
+        content: "";
 
-    position: absolute;
+        position: absolute;
 
-    left: -25px;
-    top: 0px;
-    bottom: -43px;
+        left: -25px;
+        top: 0px;
+        bottom: -43px;
 
-    height: auto;
-    width: 2px;
+        height: auto;
+        width: 2px;
 
-    background-color: var(--accent);
-    opacity: 0.65;
-}
-
-
-/* Timeline dot */
-
-#milestone ~ h3:not(#keytech ~ h3)::after {
-    content: "";
-
-    position: absolute;
-
-    left: -35px;
-    top: 22px;
-
-    width: 14px;
-    height: 14px;
-
-    background-color: var(--accent);
-
-    border: 4px solid var(--surface);
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 0 2px var(--accent);
-}
+        background-color: var(--accent);
+        opacity: 0.65;
+    }
 
 
-/* First timeline event */
+    /* Timeline dot */
 
-#milestone + h3::before {
-    top: 25px;
-}
+    #milestone ~ h3:not(#keytech ~ h3)::after {
+        content: "";
 
+        position: absolute;
 
-/* Last timeline event */
+        left: -35px;
+        top: 22px;
 
-#milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
-    bottom: 0;
-}
+        width: 14px;
+        height: 14px;
 
+        background-color: var(--accent);
 
-/* Description under each event */
+        border: 4px solid var(--surface);
+        border-radius: 50%;
 
-#milestone ~ h3:not(#keytech ~ h3) + p {
-    margin: 0 0 0 30px;
-    padding: 14px 24px 0;
-}
-
-
-/* "Why it mattered" text */
-
-#milestone ~ h3:not(#keytech ~ h3) + p + em {
-    display: block;
-
-    margin: 10px 15px 0 30px;
-
-    color: var(--text-muted);
-}
+        box-shadow:
+            0 0 0 2px var(--accent);
+    }
 
 
-/* Source lists */
+    /* First timeline event */
 
-#milestone ~ h3:not(#keytech ~ h3) ~ ul {
-    margin-left: 30px;
-}
-
-
-/* Source text */
-
-#milestone ~ h3:not(#keytech ~ h3) ~ em {
-    margin-left: 30px;
-    color: var(--text-muted);
-}
+    #milestone + h3::before {
+        top: 25px;
+    }
 
 
-/* Space before the Key Technologies section */
+    /* Last timeline event */
 
-#keytech {
-    margin-top: 60px;
-}
+    #milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
+        bottom: 0;
+    }
+
+
+    /* Description under each event */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p {
+        margin: 0 0 0 30px;
+        padding: 14px 24px 0;
+    }
+
+
+    /* "Why it mattered" text */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p + em {
+        display: block;
+
+        margin: 10px 15px 0 30px;
+
+        color: var(--text-muted);
+    }
+
+
+    /* Source lists */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ ul {
+        margin-left: 30px;
+    }
+
+
+    /* Source text */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ em {
+        margin-left: 30px;
+        color: var(--text-muted);
+    }
+
+
+    /* Space before the Key Technologies section */
+
+    #keytech {
+        margin-top: 60px;
+    }
 
 
 /* =========================================================
    3 KEY TECHNOLOGIES — Horizontal specific for mobile
    ========================================================= */
 
-#keytech ~ h3 {
+    #keytech ~ h3 {
 
-    display: block;
-    width: auto;
-    margin: 20px 15px 12px;
-    padding: 22px 20px;
-    box-sizing: border-box;
+        display: block;
+        width: auto;
+        margin: 20px 15px 12px;
+        padding: 22px 20px;
+        box-sizing: border-box;
 
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent);
-    border-radius: 20px;
-    box-shadow: var(--shadow-small);
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: 20px;
+        box-shadow: var(--shadow-small);
 
-    font-size: 1.15rem;
-    font-weight: 600;
-    text-align: center;
+        font-size: 1.15rem;
+        font-weight: 600;
+        text-align: center;
 
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
+        transition:
+            transform 0.25s ease,
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
 
 
-/* Technology descriptions */
+    /* Technology descriptions */
 
-#keytech ~ h3 + p {
+    #keytech ~ h3 + p {
 
-    display: block;
-    width: 100%;
-    margin: 0 0 25px;
-    padding: 0 20px;
-    box-sizing: border-box;
+        display: block;
+        width: 100%;
+        margin: 0 0 25px;
+        padding: 0 20px;
+        box-sizing: border-box;
 
-    font-size: 0.9rem;
-}
+        font-size: 0.9rem;
+    }
 
-#keytech ~ h3 + p + em {
-    display: block;
-    width: auto;
-    margin: 0 15px 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 0.9rem;
-}
+    #keytech ~ h3 + p + em {
+        display: block;
+        width: auto;
+        margin: 0 15px 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
 
 
     /* SECTIONS */
@@ -1680,554 +1618,63 @@ footer p {
         animation: none;
     }
 
-}
+    /* -----------------------------------------
+       Desktop content scroll animation
+       ----------------------------------------- */
 
+    @supports (animation-timeline: view()) {
 
-/*=====================================
-    TABLET SCREENS
-=====================================*/
+        main :is(a, p, h2, h3, ul, li):not(nav *),
+        main :is(em):not(footer *) {
 
-@media (min-width: 768px) and (max-width: 1376px) and (max-height: 1600px) and (orientation: portrait) {
+            animation:
+                contentScroll linear both;
 
-    html {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-        scroll-padding-top: 125px;
-    }
+            animation-timeline: view();
 
-    body {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        overflow-x: clip;
-    }
-
-    /* HEADER */
-
-    header {
-
-        position: sticky;
-        top: 20px;
-        z-index: 1000;
-        width: 88%;
-        margin: auto auto 45px;
-        padding: 20px 12px;
-        box-sizing: border-box;
-        transform: none;
-        border-radius: 30px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-        header {
-    animation: headerCompact linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0 180px;
-}
-
-        @keyframes headerCompact {
-
-            from {
-                padding: 20px 12px;
-            }
-
-            to {
-                padding: 20px 12px;
-            }
+            animation-range:
+                entry 0% exit 100%;
         }
 
-    header h1 {
-        font-size: 1.4rem;
-        line-height: 1.2;
+        @keyframes contentScroll {
 
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-        header h1 {
-    animation:
-        titleScroll linear both,
-        titleCompact linear both;
-    animation-timeline:
-        scroll(root),
-        scroll(root);
-    animation-range:
-        0 180px,
-        0 180px;
-}
-
-        /*@keyframes titleScroll {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.78);
-            }
-        }*/
-
-        @keyframes titleCompact {
-
-            from {
-                font-size: 1.22rem;
-            }
-
-            to {
-                font-size: 1.22rem;
-            }
-        }
-
-    header p {
-        font-size: .65rem;
-        line-height: 1.4;
-        margin: auto;
-    }
-
-    header p {
-    animation: subtitleCompact linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0 100px;
-}
-
-        @keyframes subtitleCompact {
-
-            from {
-                opacity: 1;
-                max-height: 30px;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-
-            to {
+            0% {
                 opacity: 0;
-                max-height: 0;
-                margin-top: 0;
-                margin-bottom: 0;
+                transform: translateY(20px);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
             }
         }
-
-
-    /* NAVIGATION */
-
-    nav {
-
-        position: sticky;
-        top: 130px;
-        z-index: 900;
-        width: 88%;
-        margin: 0 auto 12px;
-        padding: 6px 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 3px;
-        box-sizing: border-box;
-        transform: none;
-        border-radius: 25px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
     }
 
-    nav h2 {
-
-        width: 100%;
-        flex-basis: 100%;
-        font-size: .82rem;
-        line-height: 1.2;
-        margin: 0 0 3px;
-
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-    nav a {
-
-        margin: 0;
-        padding: 5px 7px;
-        font-size: .58rem;
-        line-height: 1.15;
-        white-space: normal;
-        text-align: center;
-
-        transition:
-            padding 0.45s ease,
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-
-    /* MAIN */
-
-    main {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-    main > h1 {
-        font-size: 1.5rem;
-        line-height: 1.2;
-        text-align: center;
-    }
-
-    h2 {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: 1.2rem;
-        line-height: 1.35;
-    }
-
-    h3 {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: auto;
-        line-height: 1.4;
-    }
-
-    p, em:not(header em):not(footer *) {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: .85rem;
-        line-height: 1.65;
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-left: 0px;
-        margin-right: 15px;
-        font-size: .7rem;
-        margin-bottom: 6px;
-    }
-
-    h4 {
-        font-size: .75rem;
-    }
-
-    /* =========================================================
-   HISTORY TIMELINE — CSS ONLY
-   ========================================================= */
-
-
-    /* Timeline area */
-
-    #milestone ~ h3:not(#keytech ~ h3) {
-        position: relative;
-
-        margin: 20px 15px 0 50px;
-        padding: auto;
-
-        background-color: var(--surface);
-
-        border-color: var(--accent);
-        border: 1px solid var(--border);
-
-        border-radius: var(--radius-medium);
-
-        box-shadow: var(--shadow-small);
-
-        font-size: auto;
-        font-weight: auto;
-    }
-
-
-/* Vertical timeline line */
-
-#milestone ~ h3:not(#keytech ~ h3)::before {
-    content: "";
-
-    position: absolute;
-
-    left: -25px;
-    top: 0px;
-    bottom: -43px;
-
-    height: auto;
-    width: 2px;
-
-    background-color: var(--accent);
-    opacity: 0.65;
-}
-
-
-/* Timeline dot */
-
-#milestone ~ h3:not(#keytech ~ h3)::after {
-    content: "";
-
-    position: absolute;
-
-    left: -35px;
-    top: 22px;
-
-    width: 14px;
-    height: 14px;
-
-    background-color: var(--accent);
-
-    border: 4px solid var(--surface);
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 0 2px var(--accent);
-}
-
-
-/* First timeline event */
-
-#milestone + h3::before {
-    top: 25px;
-}
-
-
-/* Last timeline event */
-
-#milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
-    bottom: 0;
-}
-
-
-/* Description under each event */
-
-#milestone ~ h3:not(#keytech ~ h3) + p {
-    margin: 0 0 0 30px;
-    padding: 14px 24px 0;
-}
-
-
-/* "Why it mattered" text */
-
-#milestone ~ h3:not(#keytech ~ h3) + p + em {
-    display: block;
-
-    margin: 10px 15px 0 30px;
-
-    color: var(--text-muted);
-}
-
-
-/* Source lists */
-
-#milestone ~ h3:not(#keytech ~ h3) ~ ul {
-    margin-left: 30px;
-}
-
-
-/* Source text */
-
-#milestone ~ h3:not(#keytech ~ h3) ~ em {
-    margin-left: 30px;
-    color: var(--text-muted);
-}
-
-
-/* Space before the Key Technologies section */
-
-#keytech {
-    margin-top: 60px;
-}
-
-
-/* =========================================================
-   3 KEY TECHNOLOGIES — Horizontal specific for mobile
-   ========================================================= */
-
-#keytech ~ h3 {
-
-    display: block;
-    width: auto;
-    margin: 20px 15px 12px;
-    padding: 22px 20px;
-    box-sizing: border-box;
-
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent);
-    border-radius: 20px;
-    box-shadow: var(--shadow-small);
-
-    font-size: 1.15rem;
-    font-weight: 600;
-    text-align: center;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-/* Technology descriptions */
-
-#keytech ~ h3 + p {
-
-    display: block;
-    width: 100%;
-    margin: 0 0 25px;
-    padding: 0 20px;
-    box-sizing: border-box;
-
-    font-size: 0.9rem;
-}
-
-#keytech ~ h3 + p + em {
-    display: block;
-    width: auto;
-    margin: 0 15px 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 0.9rem;
-}
-
-
-    /* SECTIONS */
-
-    section {
-        margin: 20px 0;
-        padding: 14px;
-    }
-
-    article {
-        margin: 15px 0;
-        padding: 14px;
-    }
-
-    .highlight {
-        padding: 12px;
-    }
-
-
-    /* WEEKLY WORK */
-
-    .home-main section {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin: 20px;
-        padding: 12px;
-    }
-
-    .home-main section h2 {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        margin: auto;
-        font-size: 30px;
-        padding: 12px;
-    }
-
-    .home-main section h2::after {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .home-main section ul {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: content-box;
-    }
-
-    .home-main section li {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        margin: 0 0 10px;
-        padding: 0;
-        box-sizing: content-box;
-    }
-
-    .home-main section li a {
-        display: block;
-        font-size: .75rem;
-        width: 100%;
-        max-width: 80%;
-        min-width: 0;
-        box-sizing: content-box;
-        margin-left:0px;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        padding: 12px;
-        overflow-wrap: anywhere;
-    }
-
-
-    /* TABLES */
-
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: normal;
-    }
-
-    th,
-    td {
-        padding: 8px 10px;
-        font-size: .78rem;
-    }
-
-    pre {
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    code {
-        overflow-wrap: anywhere;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-        position: sticky;
-        bottom: 8px;
-        z-index: 900;
-        width: 88%;
-        margin: 18px auto 8px;
-        padding: 8px 10px;
-        box-sizing: border-box;
-        transform: none;
+    /* Prevent source links from fading in landscape */
+    #milestone ~ h3:not(#keytech ~ h3) + p + em,
+    #milestone ~ h3:not(#keytech ~ h3) ~ em,
+    #keytech ~ h3 + p + em {
         animation: none;
-        border-radius: 22px;
-    }
-
-    footer p {
-        margin: 2px 0;
-        font-size: .63rem;
-        line-height: 1.35;
-        animation: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        filter: none;
     }
 
 }
 
 /* =========================================================
-   STANDARD MOBILE LANDSCAPE SCREENS
+   STANDARD MOBILE SCREENS Landscape
    ========================================================= */
 
 @media (min-width: 660px) and (max-width: 956px) and (max-height: 440px) and (orientation: landscape) {
@@ -2413,148 +1860,321 @@ footer p {
         box-sizing: border-box;
     }
 
-    main p,
-    main li {
-        font-size: 0.74rem;
+    main p{
+        font-size: 0.9rem;
+
     }
+
 
     main h1 {
         font-size: 1.6rem;
     }
 
     main h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     main h3 {
-        font-size: 0.90rem;
+        font-size: 0.9rem;
+    }
+
+    main ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 0.5rem;
     }
 
     .home-main {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-}
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 
-.home-main section {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 35px;
+    .home-main section {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 35px;
 
-    background-color: rgba(186, 149, 47, 0.066);
+        background-color: rgba(186, 149, 47, 0.066);
 
-    border: 1px solid var(--accent-dark);
-    border-left: 3px soli;
-    border-radius: var(--radius-large);
-    box-shadow: var(--shadow-medium);
+        border: 1px solid var(--accent-dark);
+        border-left: 3px soli;
+        border-radius: var(--radius-large);
+        box-shadow: var(--shadow-medium);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
 
-.home-main h2 {
-    font-family: 'Montserrat', Arial, sans-serif;
+    .home-main h2 {
+        font-family: 'Montserrat', Arial, sans-serif;
 
-    font-size: 50px;
+        font-size: 50px;
 
-    text-align: center;
+        text-align: center;
 
-    margin-top: 0;
-}
+        margin-top: 0;
+    }
 
-.home-main h2::after {
-    width: 35%;
-    margin: auto;
-}
+    .home-main h2::after {
+        width: 35%;
+        margin: auto;
+    }
 
-.home-main ul {
-    list-style: none;
+    .home-main ul {
+        list-style: none;
 
-    margin: 16px;
+        margin: 16px;
 
-    display: grid;
+        display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-}
+    .home-main li {
+        margin: 0;
+    }
 
-.home-main li {
-    margin: 0;
-}
+    .home-main li a {
+        margin-left: auto;    
+        margin-right: auto;
 
-.home-main li a {
-    margin-left: auto;    
-    margin-right: auto;
+        min-height: auto;
+        padding: 16px 20px;
 
-    min-height: auto;
-    padding: 16px 20px;
-
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    color: var(--text);
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        color: var(--text);
     
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 0.90rem;
-    font-weight: 600;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 0.90rem;
+        font-weight: 600;
 
-    text-decoration: none;
-    box-shadow: var(--shadow-small);
+        text-decoration: none;
+        box-shadow: var(--shadow-small);
 
-    transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.4s ease;
-}
+        transition:
+            transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+            background-color 0.35s ease,
+            border-color 0.35s ease,
+            box-shadow 0.4s ease;
+    }
 
-.home-main li a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--accent);
-    border-radius: 38px;
-    transform: translateX(-100%);
-    transition: transform 0.7s ease;
-    z-index: -1;
-}
+    .home-main li a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--accent);
+        border-radius: 38px;
+        transform: translateX(-100%);
+        transition: transform 0.7s ease;
+        z-index: -1;
+    }
 
-.home-main li a:hover {
-    transform: translateY(-2px);
-    background-color: var(--soft-accent);
-    border-color: var(--accent);
-    box-shadow: 0 8px 20px rgba(184, 155, 94, 0.16);
-}
+    .home-main li a:hover {
+        transform: translateY(-2px);
+        background-color: var(--soft-accent);
+        border-color: var(--accent);
+        box-shadow: 0 8px 20px rgba(184, 155, 94, 0.16);
+    }
 
 
     /* ================= ITALIC / EM PARAGRAPHS ================= */
 
     main em {
-        font-size: 0.7rem;
+        margin: auto;
+        font-size: 0.9rem;
     }
 
 
-    /* ================= HOME / BACK TO TOP ================= */
+/* =========================================================
+   HISTORY TIMELINE
+   ========================================================= */
 
-    main > h4 {
-        font-size: 0.64rem;
-        padding: 5px 10px;
-        margin: 8px 0;
+
+    /* Timeline area */
+
+    #milestone ~ h3:not(#keytech ~ h3) {
+        position: relative;
+
+        margin: 25px 15px 0 50px;
+        padding: 15px 35px;
+
+        background-color: var(--surface);
+
+        border-color: var(--accent);
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius-medium);
+
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.2rem;
+        font-weight: auto;
     }
 
-    main > h4 a {
-        font-size: 0.64rem;
-        padding: 3px 6px;
+
+    /* Vertical timeline line */
+
+    #milestone ~ h3:not(#keytech ~ h3)::before {
+        content: "";
+
+        position: absolute;
+
+        left: -25px;
+        top: 0px;
+        bottom: -43px;
+
+        height: auto;
+        width: 2px;
+
+        background-color: var(--accent);
+        opacity: 0.65;
     }
 
+
+    /* Timeline dot */
+
+    #milestone ~ h3:not(#keytech ~ h3)::after {
+        content: "";
+
+        position: absolute;
+
+        left: -35px;
+        top: 22px;
+
+        width: 14px;
+        height: 14px;
+
+        background-color: var(--accent);
+
+        border: 4px solid var(--surface);
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 2px var(--accent);
+    }
+
+
+    /* First timeline event */
+
+    #milestone + h3::before {
+        top: 25px;
+    }
+
+
+    /* Last timeline event */
+
+    #milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
+        bottom: 0;
+    }
+
+
+    /* Description under each event */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p {
+        margin: 0 0 0 30px;
+        padding: 14px 24px 0;
+        font-size: 0.9rem;
+    }
+
+
+    /* "Why it mattered" text */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p + em {
+        display: block;
+
+        font-size: 1rem;
+        margin: 20px 50px;
+
+        color: var(--text-muted);
+    }
+
+
+    /* Source lists */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ ul {
+        margin: 0;
+    }
+
+
+    /* Source text */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ em {
+        font-size: 0.9rem;
+        margin-left: 20px 30px;
+        color: var(--text-muted);
+    }
+
+
+    /* Space before the Key Technologies section */
+
+    #keytech {
+        margin-top: 60px;
+    }
+
+
+    /*=======================================
+    3 Key TECHNOLOGIES - LANDSCAPE MOBILE
+    =======================================*/
+
+    #keytech ~ h3 {
+
+        display: block;
+        width: auto;
+        margin: 20px 15px 12px;
+        padding: 22px 20px;
+        box-sizing: border-box;
+
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: 20px;
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+
+        transition:
+            transform 0.25s ease,
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    /* Technology descriptions */
+
+    #keytech ~ h3 + p {
+
+        display: block;
+        width: 100%;
+        margin: 0 0 25px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        font-size: 0.9rem;
+    }
+
+    #keytech ~ h3 + p + em {
+        display: block;
+        width: auto;
+        margin: 0 15px 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
 
     /* ================= FOOTER ================= */
 
@@ -2577,125 +2197,1433 @@ footer p {
     }
 
     /* Prevent source links from fading in landscape */
-#milestone ~ h3:not(#keytech ~ h3) + p + em,
-#milestone ~ h3:not(#keytech ~ h3) ~ em,
-#keytech ~ h3 + p + em {
-    animation: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    filter: none;
-}
+    #milestone ~ h3:not(#keytech ~ h3) + p + em,
+    #milestone ~ h3:not(#keytech ~ h3) ~ em,
+    #keytech ~ h3 + p + em {
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        filter: none;
+    }
+
+    /* ================= HOME / BACK TO TOP ================= */
+
+    main > h4 {
+        font-size: 0.64rem;
+        padding: 5px 10px;
+        margin: 8px 0;
+    }
+
+    main > h4 a {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
 
 }
 
+/* =====================================
+    TABLET SCREENS Portrait
+   ===================================== */
+
+@media (min-width: 768px) and (max-width: 1376px) and (orientation: portrait) {
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-padding-top: 125px;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: clip;
+    }
+
+    /* HEADER */
+
+    header {
+
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+        width: 82%;
+        margin: auto;
+        padding: 30px auto;
+        box-sizing: border-box;
+        transform: none;
+        border-radius: 60px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+        header {
+            animation: headerCompact linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 180px;
+        }
+
+        @keyframes headerCompact {
+
+            from {
+                padding: 20px 12px;
+            }
+
+            to {
+                padding: 20px 12px;
+            }
+        }
+
+    header h1 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+        header h1 {
+            animation:
+                titleScroll linear both,
+                titleCompact linear both;
+            animation-timeline:
+                scroll(root),
+                scroll(root);
+            animation-range:
+                0 180px,
+                0 180px;
+        }
+
+        /*@keyframes titleScroll {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.78);
+            }
+        }*/
+
+        @keyframes titleCompact {
+
+            from {
+                font-size: 2.8rem;
+            }
+
+            to {
+                font-size: 2.8rem;
+            }
+        }
+
+    header p {
+        font-size: .9rem;
+        line-height: 1.4;
+        margin: auto;
+    }
+
+    header p {
+        animation: subtitleCompact linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100px;
+}
+
+        @keyframes subtitleCompact {
+
+            from {
+                opacity: 1;
+                max-height: 30px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            to {
+                opacity: 0;
+                max-height: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        position: sticky;
+        top: 190px;
+        z-index: 900;
+        width: 90%;
+        margin: 0 auto 12px;
+        padding: 6px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+        box-sizing: border-box;
+        transform: none;
+        border-radius: 25px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    nav h2 {
+
+        width: 100%;
+        flex-basis: 100%;
+        font-size: .82rem;
+        line-height: 1.2;
+        margin: 0 0 3px;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    nav a {
+
+        margin: 0;
+        padding: 10px;
+        font-size: 0.9rem;
+        line-height: 1.15;
+        white-space: normal;
+        text-align: center;
+
+        transition:
+            padding 0.45s ease,
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+
+    /* MAIN */
+
+    main {
+        width: 92%;
+        max-width: 1200px;
+        min-width: 0;
+
+        margin: 40px auto;
+
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    main > h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    h2 {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.8rem;
+        line-height: 1.35;
+    }
+
+    h3 {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    p, em:not(header em):not(footer *) {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.1rem;
+        line-height: 1.65;
+    }
+
+
+    ul {
+        list-style: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 15px;
+        font-size: .7rem;
+        margin-bottom: 6px;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+/*=========================================================
+   HISTORY TIMELINE
+   ========================================================= */
+
+
+    /* Timeline area */
+
+    #milestone ~ h3:not(#keytech ~ h3) {
+        position: relative;
+
+        margin: 25px 15px 0 50px;
+        padding: 20px 35px;
+
+        background-color: var(--surface);
+
+        border-color: var(--accent);
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius-medium);
+
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.4rem;
+        font-weight: auto;
+    }
+
+
+    /* Vertical timeline line */
+
+    #milestone ~ h3:not(#keytech ~ h3)::before {
+        content: "";
+
+        position: absolute;
+
+        left: -25px;
+        top: 0px;
+        bottom: -43px;
+
+        height: auto;
+        width: 2px;
+
+        background-color: var(--accent);
+        opacity: 0.65;
+    }
+
+
+    /* Timeline dot */
+
+    #milestone ~ h3:not(#keytech ~ h3)::after {
+        content: "";
+
+        position: absolute;
+
+        left: -35px;
+        top: 25px;
+
+        width: 14px;
+        height: 14px;
+
+        background-color: var(--accent);
+
+        border: 4px solid var(--surface);
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 2px var(--accent);
+    }
+
+
+    /* First timeline event */
+
+    #milestone + h3::before {
+        top: 25px;
+    }
+
+
+    /* Last timeline event */
+
+    #milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
+        bottom: 0;
+    }
+
+
+    /* Description under each event */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p {
+        margin: 0 0 0 30px;
+        padding: 14px 24px 0;
+        font-size: 1.1rem;
+    }
+
+
+    /* "Why it mattered" text */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p + em {
+        display: block;
+
+        font-size: 1rem;
+        margin: 20px 50px;
+
+        color: var(--text-muted);
+    }
+
+
+    /* Source lists */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ ul {
+        margin-left: 30px;
+    }
+
+
+    /* Source text */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ em {
+        font-size: 0.9rem;
+        margin-left: 30px;
+        color: var(--text-muted);
+    }
+
+
+    /* Space before the Key Technologies section */
+
+    #keytech {
+        margin-top: 60px;
+    }
+
+
+/* =========================================================
+   3 KEY TECHNOLOGIES — Horizontal specific for mobile
+   ========================================================= */
+
+    #keytech ~ h3 {
+
+        display: block;
+        width: auto;
+        margin: 20px 15px 12px;
+        padding: 22px 20px;
+        box-sizing: border-box;
+
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: 20px;
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+
+        transition:
+            transform 0.25s ease,
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    /* Technology descriptions */
+
+    #keytech ~ h3 + p {
+
+        display: block;
+        width: 100%;
+        margin: 0 0 25px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        font-size: 1.1rem;
+    }
+
+    #keytech ~ h3 + p + em {
+        display: block;
+        width: auto;
+        margin: 0 15px 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        margin: 20px 0;
+        padding: 14px;
+    }
+
+    article {
+        margin: 15px 0;
+        padding: 14px;
+    }
+
+    .highlight {
+        padding: 12px;
+    }
+
+
+    /* ================= WEEKLY WORK ================= */
+
+.home-main {
+    width: 92%;
+    max-width: 1200px;
+    min-width: 0;
+
+    margin: 40px auto 40px;
+    padding: 25px;
+
+    box-sizing: border-box;
+}
+
+    .home-main section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 25px 0;
+    padding: 24px;
+}
+
+.home-main section h2 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    font-size: 2.5rem;
+    padding: 16px;
+}
+
+.home-main section h2::after {
+    width: 60%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.home-main section ul {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-main section li {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0 0 14px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-main section li a {
+    display: grid;
+
+    font-size: 1.1rem;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    padding: 16px 20px;
+
+    overflow-wrap: anywhere;
+}
+
+
+    /* TABLES */
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+        font-size: .78rem;
+    }
+
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    code {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        position: sticky;
+        bottom: 20px;
+        z-index: 900;
+        width: 85%;
+        margin: 18px auto 8px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        transform: none;
+        animation: none;
+        border-radius: 35px;
+    }
+
+    footer p {
+        margin: 2px 0;
+        font-size: .85rem;
+        line-height: 1.35;
+        animation: none;
+    }
+
+    /* -----------------------------------------
+       Desktop content scroll animation
+       ----------------------------------------- */
+
+    @supports (animation-timeline: view()) {
+
+        main :is(a, p, h2, h3, ul, li):not(nav *),
+        main :is(em):not(footer *) {
+
+            animation:
+                contentScroll linear both;
+
+            animation-timeline: view();
+
+            animation-range:
+                entry 0% exit 100%;
+        }
+
+        @keyframes contentScroll {
+
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    /* Prevent source links from fading in landscape */
+    #milestone ~ h3:not(#keytech ~ h3) + p + em,
+    #milestone ~ h3:not(#keytech ~ h3) ~ em,
+    #keytech ~ h3 + p + em {
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        filter: none;
+    }
+
+}
+
+/* =========================================================
+    TABLET SCREENS Landscape
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1376px) and (orientation: landscape) {
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-padding-top: 125px;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: clip;
+    }
+
+    /* HEADER */
+
+    header {
+
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+        width: 82%;
+        margin: auto;
+        padding: 30px auto;
+        box-sizing: border-box;
+        transform: none;
+        border-radius: 60px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+        header {
+            animation: headerCompact linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 180px;
+        }
+
+        @keyframes headerCompact {
+
+            from {
+                padding: 20px 12px;
+            }
+
+            to {
+                padding: 20px 12px;
+            }
+        }
+
+    header h1 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+        header h1 {
+            animation:
+                titleScroll linear both,
+                titleCompact linear both;
+            animation-timeline:
+                scroll(root),
+                scroll(root);
+            animation-range:
+                0 180px,
+                0 180px;
+        }
+
+        /*@keyframes titleScroll {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.78);
+            }
+        }*/
+
+        @keyframes titleCompact {
+
+            from {
+                font-size: 2.8rem;
+            }
+
+            to {
+                font-size: 2.8rem;
+            }
+        }
+
+    header p {
+        font-size: .9rem;
+        line-height: 1.4;
+        margin: auto;
+    }
+
+    header p {
+        animation: subtitleCompact linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100px;
+}
+
+        @keyframes subtitleCompact {
+
+            from {
+                opacity: 1;
+                max-height: 30px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            to {
+                opacity: 0;
+                max-height: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        position: sticky;
+        top: 190px;
+        z-index: 900;
+        width: 90%;
+        margin: 0 auto 12px;
+        padding: 6px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+        box-sizing: border-box;
+        transform: none;
+        border-radius: 25px;
+
+        transition:
+            padding 0.45s ease,
+            border-radius 0.45s ease,
+            background-color 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    nav h2 {
+
+        width: 100%;
+        flex-basis: 100%;
+        font-size: .82rem;
+        line-height: 1.2;
+        margin: 0 0 3px;
+
+        transition:
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+    nav a {
+
+        margin: 0;
+        padding: 10px;
+        font-size: 0.9rem;
+        line-height: 1.15;
+        white-space: normal;
+        text-align: center;
+
+        transition:
+            padding 0.45s ease,
+            font-size 0.45s ease,
+            transform 0.45s ease;
+    }
+
+
+    /* MAIN */
+
+    main {
+        width: 92%;
+        max-width: 1200px;
+        min-width: 0;
+
+        margin: 40px auto;
+
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    main > h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    h2 {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.8rem;
+        line-height: 1.35;
+    }
+
+    h3 {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    p, em:not(header em):not(footer *) {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 1.1rem;
+        line-height: 1.65;
+    }
+
+
+    ul {
+        list-style: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 15px;
+        font-size: .7rem;
+        margin-bottom: 6px;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+/*=========================================================
+   HISTORY TIMELINE
+   ========================================================= */
+
+
+    /* Timeline area */
+
+    #milestone ~ h3:not(#keytech ~ h3) {
+        position: relative;
+
+        margin: 25px 15px 0 50px;
+        padding: 20px 35px;
+
+        background-color: var(--surface);
+
+        border-color: var(--accent);
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius-medium);
+
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.4rem;
+        font-weight: auto;
+    }
+
+
+    /* Vertical timeline line */
+
+    #milestone ~ h3:not(#keytech ~ h3)::before {
+        content: "";
+
+        position: absolute;
+
+        left: -25px;
+        top: 0px;
+        bottom: -43px;
+
+        height: auto;
+        width: 2px;
+
+        background-color: var(--accent);
+        opacity: 0.65;
+    }
+
+
+    /* Timeline dot */
+
+    #milestone ~ h3:not(#keytech ~ h3)::after {
+        content: "";
+
+        position: absolute;
+
+        left: -35px;
+        top: 25px;
+
+        width: 14px;
+        height: 14px;
+
+        background-color: var(--accent);
+
+        border: 4px solid var(--surface);
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 2px var(--accent);
+    }
+
+
+    /* First timeline event */
+
+    #milestone + h3::before {
+        top: 25px;
+    }
+
+
+    /* Last timeline event */
+
+    #milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
+        bottom: 0;
+    }
+
+
+    /* Description under each event */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p {
+        margin: 0 0 0 30px;
+        padding: 14px 24px 0;
+        font-size: 1.1rem;
+    }
+
+
+    /* "Why it mattered" text */
+
+    #milestone ~ h3:not(#keytech ~ h3) + p + em {
+        display: block;
+
+        font-size: 1rem;
+        margin: 20px 50px;
+
+        color: var(--text-muted);
+    }
+
+
+    /* Source lists */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ ul {
+        margin-left: 30px;
+    }
+
+
+    /* Source text */
+
+    #milestone ~ h3:not(#keytech ~ h3) ~ em {
+        font-size: 0.9rem;
+        margin-left: 30px;
+        color: var(--text-muted);
+    }
+
+
+    /* Space before the Key Technologies section */
+
+    #keytech {
+        margin-top: 60px;
+    }
+
+
+/* =========================================================
+   3 KEY TECHNOLOGIES — Horizontal specific for mobile
+   ========================================================= */
+
+    #keytech ~ h3 {
+
+        display: block;
+        width: auto;
+        margin: 20px 15px 12px;
+        padding: 22px 20px;
+        box-sizing: border-box;
+
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: 20px;
+        box-shadow: var(--shadow-small);
+
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+
+        transition:
+            transform 0.25s ease,
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    /* Technology descriptions */
+
+    #keytech ~ h3 + p {
+
+        display: block;
+        width: 100%;
+        margin: 0 0 25px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        font-size: 1.1rem;
+    }
+
+    #keytech ~ h3 + p + em {
+        display: block;
+        width: auto;
+        margin: 0 15px 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        margin: 20px 0;
+        padding: 14px;
+    }
+
+    article {
+        margin: 15px 0;
+        padding: 14px;
+    }
+
+    .highlight {
+        padding: 12px;
+    }
+
+
+    /* ================= WEEKLY WORK ================= */
+
+.home-main {
+    width: 92%;
+    max-width: 1200px;
+    min-width: 0;
+
+    margin: 40px auto 40px;
+    padding: 25px;
+
+    box-sizing: border-box;
+}
+
+    .home-main section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 25px 0;
+    padding: 24px;
+}
+
+.home-main section h2 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    font-size: 2.5rem;
+    padding: 16px;
+}
+
+.home-main section h2::after {
+    width: 60%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.home-main section ul {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-main section li {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0 0 14px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-main section li a {
+    display: grid;
+
+    font-size: 1.1rem;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    padding: 16px 20px;
+
+    overflow-wrap: anywhere;
+}
+
+
+    /* TABLES */
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+        font-size: .78rem;
+    }
+
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    code {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        position: sticky;
+        bottom: 20px;
+        z-index: 900;
+        width: 82%;
+        margin: 18px auto 8px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        transform: none;
+        animation: none;
+        border-radius: 22px;
+    }
+
+    footer p {
+        margin: 2px 0;
+        font-size: 0.9rem;
+        line-height: 1.35;
+        animation: none;
+    }
+
+    /* -----------------------------------------
+       Desktop content scroll animation
+       ----------------------------------------- */
+
+    @supports (animation-timeline: view()) {
+
+        main :is(a, p, h2, h3, ul, li):not(nav *),
+        main :is(em):not(footer *) {
+
+            animation:
+                contentScroll linear both;
+
+            animation-timeline: view();
+
+            animation-range:
+                entry 0% exit 100%;
+        }
+
+        @keyframes contentScroll {
+
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    /* Prevent source links from fading in landscape */
+    #milestone ~ h3:not(#keytech ~ h3) + p + em,
+    #milestone ~ h3:not(#keytech ~ h3) ~ em,
+    #keytech ~ h3 + p + em {
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        filter: none;
+    }
+
+}
 
 /* =========================================================
    HOME PAGE ONLY
    ========================================================= */
 
-.home-main {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-}
+    .home-main {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 
-.home-main section {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 35px;
+    .home-main section {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 35px;
 
-    background-color: rgba(186, 149, 47, 0.066);
+        background-color: rgba(186, 149, 47, 0.066);
 
-    border: 1px solid var(--accent-dark);
-    border-left: 3px soli;
-    border-radius: var(--radius-large);
-    box-shadow: var(--shadow-medium);
+        border: 1px solid var(--accent-dark);
+        border-left: 3px soli;
+        border-radius: var(--radius-large);
+        box-shadow: var(--shadow-medium);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
 
-.home-main h2 {
-    font-family: 'Montserrat', Arial, sans-serif;
+    .home-main h2 {
+        font-family: 'Montserrat', Arial, sans-serif;
 
-    font-size: 50px;
+        font-size: 50px;
 
-    text-align: center;
+        text-align: center;
 
-    margin-top: 0;
-}
+        margin-top: 0;
+    }
 
-.home-main h2::after {
-    width: 35%;
-    margin: auto;
-}
+    .home-main h2::after {
+        width: 35%;
+        margin: auto;
+    }
 
-.home-main ul {
-    list-style: none;
+    .home-main ul {
+        list-style: none;
 
-    margin: 16px;
+        margin: 16px;
 
-    display: grid;
+        display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-}
+    .home-main li {
+        margin: 0;
+    }
 
-.home-main li {
-    margin: 0;
-}
+    .home-main li a {
+        margin-left: auto;    
+        margin-right: auto;
 
-.home-main li a {
-    margin-left: auto;    
-    margin-right: auto;
+        min-height: auto;
+        padding: 16px 20px;
 
-    min-height: auto;
-    padding: 16px 20px;
-
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    color: var(--text);
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        color: var(--text);
     
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 0.90rem;
-    font-weight: 600;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 0.90rem;
+        font-weight: 600;
 
-    text-decoration: none;
-    box-shadow: var(--shadow-small);
+        text-decoration: none;
+        box-shadow: var(--shadow-small);
 
-    transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.4s ease;
-}
+        transition:
+            transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+            background-color 0.35s ease,
+            border-color 0.35s ease,
+            box-shadow 0.4s ease;
+    }
 
-.home-main li a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--accent);
-    border-radius: 38px;
-    transform: translateX(-100%);
-    transition: transform 0.7s ease;
-    z-index: -1;
-}
+    .home-main li a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--accent);
+        border-radius: 38px;
+        transform: translateX(-100%);
+        transition: transform 0.7s ease;
+        z-index: -1;
+    }
 
-.home-main li a:hover {
-    transform: translateY(-2px);
-    background-color: var(--soft-accent);
-    border-color: var(--accent);
-    box-shadow: 0 8px 20px rgba(184, 155, 94, 0.16);
+    .home-main li a:hover {
+        transform: translateY(-2px);
+        background-color: var(--soft-accent);
+        border-color: var(--accent);
+        box-shadow: 0 8px 20px rgba(184, 155, 94, 0.16);
+    }
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --background: #181716;
+        --surface: #242220;
+
+        --text: #f3f0ed;
+        --text-muted: #b8b2ae;
+
+        --accent: #c5a968;
+        --accent-dark: #d6bc7a;
+
+        --border: #3a3633;
+
+        --soft-accent: #302729;
+        --soft-code: #302d2a;
+
+        --shadow-small:
+            0 4px 14px rgba(0, 0, 0, 0.25);
+
+        --shadow-medium:
+            0 8px 24px rgba(0, 0, 0, 0.35);
+
+        /* Dark background shapes */
+        --background-shape-1: #4b402d;
+        --background-shape-2: #665638;
+    }
+
+
+    nav a:hover {
+        color: #5f4512;
+        background: var(--accent);
+        border-color: #967b43;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 9px 20px rgba(169, 140, 79, 0.25);
+    }
+
+
+    h4:hover {
+        color: #5f4512;
+        background: #cfb071;
+        border-color: #967b43;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 6px 20px rgba(169, 140, 79, 0.25);
+    }
+
+    h4:hover a {
+        color: #5f4512;
+    }
 }
 
 

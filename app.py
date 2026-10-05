@@ -53,6 +53,8 @@ def home():
         {"week": 3, "title": "NO CSS - WEB PORTFOLIO", "url": "/nocss-index"},
 
         {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
+
+        {"week": 5, "title": "Quiz Application", "url": "/quiz"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -114,6 +116,11 @@ def nocss_web_history_ai():
 @app.route("/nocss-profile-form")
 def nocss_profile_form():
     return render_template("nocss-profile-form.html")
+
+
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html")
 
 
 @app.route("/submit-profile", methods=["GET", "POST"])

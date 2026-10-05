@@ -1,0 +1,1050 @@
+/* =========================================================
+   GIN446 — JAVASCRIPT QUIZ
+   Warm Gold / Neutral Design
+   CSS ONLY
+   ========================================================= */
+
+
+/* =========================================================
+   FONTS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600&display=swap');
+
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    --background: #fdfbf8;
+    --surface: #ffffff;
+    --surface-soft: #faf7f1;
+
+    --text: #1f2937;
+    --text-muted: #6b7280;
+
+    --accent: #b89b5e;
+    --accent-dark: #967a3f;
+    --accent-light: #d9c99f;
+
+    --border: #e5e0dc;
+    --border-strong: #d6cbbd;
+
+    --soft-accent: #f7f3e8;
+    --soft-code: #f3efec;
+
+    --success: #557a5c;
+    --success-soft: #edf5ee;
+
+    --danger: #9b5c55;
+    --danger-soft: #f8eeee;
+
+    --shadow-small:
+        0 4px 14px rgba(55, 52, 31, 0.05);
+
+    --shadow-medium:
+        0 12px 30px rgba(31, 41, 55, 0.09);
+
+    --shadow-large:
+        0 22px 60px rgba(31, 41, 55, 0.12);
+
+    --radius-small: 14px;
+    --radius-medium: 24px;
+    --radius-large: 34px;
+
+    --content-width: 1800px;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+body {
+    font-family: "Raleway", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(184, 155, 94, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(184, 155, 94, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: var(--content-width);
+
+    max-width: 100%;
+
+    margin: 55px auto;
+
+    background: none;
+
+    padding: 42px;
+
+    border: none;
+
+    border-radius: var(--radius-large);
+
+    box-shadow: none;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative gold line */
+
+.container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            var(--accent-light),
+            var(--accent),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+h1 {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    text-align: center;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
+
+    margin: 5px 0 35px;
+
+    color: var(--text);
+}
+
+
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 3px;
+
+    margin: 14px auto 0;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent-dark),
+            var(--accent-light)
+        );
+}
+
+
+/* =========================================================
+   QUIZ PANEL — DESKTOP HORIZONTAL LAYOUT
+   ========================================================= */
+
+#quizPanel {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    column-gap: 45px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+#progress {
+    grid-column: 1;
+
+    display: inline-block;
+
+    width: fit-content;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: var(--accent-dark);
+
+    background: var(--soft-accent);
+
+    border: 1px solid rgba(184, 155, 94, 0.25);
+
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    margin: 0 0 15px;
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+#questionText {
+    grid-column: 1;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+
+    line-height: 1.45;
+
+    margin: 5px 0 28px;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   ANSWER CHOICES
+   ========================================================= */
+
+#choices {
+    grid-column: 2;
+
+    grid-row: 1 / span 2;
+
+    display: grid;
+
+    gap: 13px;
+
+    margin-top: 0;
+}
+
+
+.choice {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+
+    padding: 16px 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-small);
+
+    cursor: pointer;
+
+    color: var(--text);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.choice:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--accent);
+
+    background: var(--soft-accent);
+
+    box-shadow: var(--shadow-small);
+}
+
+
+/* =========================================================
+   RADIO BUTTON
+   ========================================================= */
+
+.choice input[type="radio"] {
+    appearance: none;
+
+    width: 19px;
+
+    height: 19px;
+
+    flex-shrink: 0;
+
+    border: 2px solid var(--border-strong);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.choice input[type="radio"]:checked {
+    border-color: var(--accent);
+
+    background: var(--accent);
+}
+
+
+.choice input[type="radio"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    top: 4px;
+
+    left: 4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+button {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    padding: 11px 19px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    background: var(--soft-accent);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 7px 18px rgba(184, 155, 94, 0.16);
+}
+
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+button:disabled {
+    opacity: 0.42;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit {
+    grid-column: 1 / -1;
+
+    display: block;
+
+    margin-top: 30px;
+
+    width: 100%;
+
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.03em;
+
+    box-shadow:
+        0 8px 20px rgba(150, 122, 63, 0.22);
+}
+
+
+.submit:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-dark),
+            var(--accent)
+        );
+
+    border: none;
+
+    box-shadow:
+        0 12px 25px rgba(150, 122, 63, 0.30);
+}
+
+
+/* =========================================================
+   RESULTS PANEL
+   ========================================================= */
+
+#resultsPanel {
+    display: none;
+}
+
+
+#resultsPanel > h2 {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 2rem;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+#scoreText,
+#percentageText,
+#performanceText {
+    margin: 10px 0;
+}
+
+
+#scoreText {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    color: var(--accent-dark);
+}
+
+
+#percentageText {
+    font-size: 1.05rem;
+
+    color: var(--text-muted);
+}
+
+
+#performanceText {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: var(--soft-accent);
+
+    color: var(--accent-dark);
+
+    border: 1px solid rgba(184, 155, 94, 0.25);
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CORRECTION TITLE
+   ========================================================= */
+
+#resultsPanel h3 {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 1.35rem;
+
+    margin-top: 40px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   CORRECTION CONTAINER
+   ========================================================= */
+
+#correction {
+    white-space: pre-wrap;
+
+    font-family: "Raleway", Arial, sans-serif;
+
+    line-height: 0.5;
+
+    color: var(--text);
+
+    background: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   CORRECTION CARDS
+   ========================================================= */
+
+.correction-question {
+    background: var(--surface);
+
+    border: 2px solid var(--border);
+
+    border-radius: var(--radius-medium);
+
+    padding: 20px 24px;
+
+    margin: 14px 0;
+
+    box-shadow: var(--shadow-medium);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.correction-question:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-large);
+}
+
+
+/* =========================================================
+   CORRECTION QUESTION NUMBER
+   ========================================================= */
+
+.correction-question h2 {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 1.05rem;
+
+    margin: 0 0 10px;
+
+    color: var(--accent-dark);
+}
+
+
+/* =========================================================
+   CORRECTION PARAGRAPHS
+   ========================================================= */
+
+.correction-question p {
+    margin: 5px 0;
+
+    line-height: 1.2;
+
+    color: var(--text);
+}
+
+
+.correction-question strong {
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --background: #181716;
+        --surface: #242220;
+        --surface-soft: #2b2825;
+
+        --text: #f3f0ed;
+        --text-muted: #b8b2ae;
+
+        --accent: #c5a968;
+        --accent-dark: #d6bc7a;
+        --accent-light: #e0cd9d;
+
+        --border: #3a3633;
+        --border-strong: #504a45;
+
+        --soft-accent: #302b24;
+        --soft-code: #302d2a;
+
+        --success: #87a88c;
+        --success-soft: #27342a;
+
+        --danger: #c48780;
+        --danger-soft: #382625;
+
+        --shadow-small:
+            0 4px 14px rgba(0, 0, 0, 0.25);
+
+        --shadow-medium:
+            0 12px 30px rgba(0, 0, 0, 0.35);
+
+        --shadow-large:
+            0 22px 60px rgba(0, 0, 0, 0.45);
+    }
+
+
+    body {
+        background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(197, 169, 104, 0.10),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(197, 169, 104, 0.07),
+                transparent 30%
+            ),
+            var(--background);
+
+        color: var(--text);
+    }
+
+
+    .container {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(36, 34, 32, 0.98),
+                rgba(31, 29, 27, 0.98)
+            );
+
+        border-color: var(--border);
+    }
+
+
+    .choice {
+        background: var(--surface);
+
+        border-color: var(--border);
+    }
+
+
+    .choice:hover {
+        background: var(--soft-accent);
+
+        border-color: var(--accent);
+    }
+
+
+    .choice input[type="radio"] {
+        background: var(--surface);
+
+        border-color: var(--border-strong);
+    }
+
+
+    button {
+        background: var(--surface);
+
+        color: var(--text);
+
+        border-color: var(--border);
+    }
+
+
+    button:hover:not(:disabled) {
+        background: var(--soft-accent);
+
+        border-color: var(--accent);
+
+        box-shadow:
+            0 9px 20px rgba(169, 140, 79, 0.20);
+    }
+
+
+    .correction-question {
+        background: var(--surface);
+
+        border-color: var(--border);
+
+        border-left-color: var(--accent);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Return to vertical layout */
+
+    #quizPanel {
+        display: block;
+    }
+
+
+    .container {
+        width: auto;
+
+        max-width: none;
+
+        margin: 25px 15px;
+
+        padding: 28px 22px;
+
+        border-radius: 25px;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+
+        margin-bottom: 28px;
+    }
+
+
+    #questionText {
+        font-size: 1.2rem;
+    }
+
+
+    #choices {
+        margin-top: 20px;
+    }
+
+
+    .choice {
+        padding: 14px 15px;
+    }
+
+
+    .navigation {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 9px;
+
+        margin-top: 25px;
+    }
+
+
+    .navigation button {
+        width: 100%;
+    }
+
+
+    .correction-question {
+        padding: 19px;
+
+        border-radius: 20px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .container {
+        margin: 15px 10px;
+
+        padding: 23px 16px;
+
+        border-radius: 21px;
+    }
+
+
+    h1 {
+        font-size: 1.65rem;
+
+        margin-bottom: 24px;
+    }
+
+
+    #progress {
+        font-size: 0.72rem;
+
+        padding: 7px 12px;
+    }
+
+
+    #questionText {
+        font-size: 1.05rem;
+
+        line-height: 1.5;
+
+        margin-bottom: 22px;
+    }
+
+
+    #choices {
+        margin-top: 18px;
+    }
+
+
+    .choice {
+        font-size: 0.92rem;
+
+        padding: 13px 12px;
+
+        border-radius: 13px;
+    }
+
+
+    .choice input[type="radio"] {
+        width: 17px;
+
+        height: 17px;
+    }
+
+
+    .choice input[type="radio"]:checked::after {
+        width: 6px;
+
+        height: 6px;
+
+        top: 3.5px;
+
+        left: 3.5px;
+    }
+
+
+    .navigation {
+        grid-template-columns: 1fr 1fr;
+
+        margin-top: 25px;
+
+        padding-top: 20px;
+    }
+
+
+    button {
+        font-size: 0.78rem;
+
+        padding: 10px 12px;
+    }
+
+
+    .submit {
+        font-size: 0.85rem;
+
+        padding: 13px 18px;
+
+        margin-top: 24px;
+    }
+
+
+    #resultsPanel > h2 {
+        font-size: 1.5rem;
+    }
+
+
+    #scoreText {
+        font-size: 1.05rem;
+    }
+
+
+    #percentageText {
+        font-size: 0.9rem;
+    }
+
+
+    #performanceText {
+        font-size: 0.8rem;
+
+        padding: 7px 12px;
+    }
+
+
+    #resultsPanel h3 {
+        font-size: 1.15rem;
+
+        margin-top: 30px;
+    }
+
+
+    .correction-question {
+        padding: 16px;
+
+        margin: 15px 0;
+
+        border-radius: 17px;
+    }
+
+
+    .correction-question h2 {
+        font-size: 0.95rem;
+    }
+
+
+    .correction-question p {
+        font-size: 0.85rem;
+
+        line-height: 1.55;
+    }
+}
+
+
+/* =========================================================
+   NO ENTRANCE / FADE ANIMATIONS
+   ========================================================= */
+
+main,
+main.container,
+main.container *,
+#quizPanel,
+#quizPanel *,
+#resultsPanel,
+#resultsPanel *,
+.correction-question {
+    animation: none !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   DISABLED NAVIGATION BUTTONS
+   ========================================================= */
+
+.navigation button:disabled {
+    opacity: 0.35 !important;
+
+    cursor: not-allowed !important;
+
+    pointer-events: none !important;
+
+    transform: none !important;
+
+    box-shadow: none !important;
+}
+
+
+#firstBtn:disabled,
+#previousBtn:disabled,
+#nextBtn:disabled,
+#lastBtn:disabled {
+    opacity: 0.35 !important;
+
+    cursor: not-allowed !important;
+
+    pointer-events: none !important;
+
+    transform: none !important;
+
+    box-shadow: none !important;
+}

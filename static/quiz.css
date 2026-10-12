@@ -84,6 +84,8 @@ body {
     min-height: 100vh;
 
     line-height: 1.6;
+
+    border: none;
 }
 
 
@@ -632,7 +634,7 @@ button:disabled {
 .correction-question h2 {
     font-family: "Montserrat", Arial, sans-serif;
 
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 
     margin: 0 0 10px;
 
@@ -721,11 +723,7 @@ button:disabled {
 
     .container {
         background:
-            linear-gradient(
-                145deg,
-                rgba(36, 34, 32, 0.98),
-                rgba(31, 29, 27, 0.98)
-            );
+            none;
 
         border-color: var(--border);
     }

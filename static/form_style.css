@@ -1580,7 +1580,7 @@ main {
 
         position: sticky;
 
-        top: 10px;
+        top: 66px;
 
         z-index: 999;
 
@@ -2059,315 +2059,6 @@ main {
 
 
 /* =========================================================
-   TABLET SCREENS Landscape
-   ========================================================= */
-
-@media (min-width: 768px) and (max-width: 1376px) and (orientation: landscape) {
-
-    html {
-
-        width: 100%;
-        max-width: 100%;
-
-        overflow-x: hidden;
-
-        scroll-padding-top: 125px;
-    }
-
-    body {
-
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-
-        overflow-x: clip;
-    }
-
-
-    /* HEADER */
-
-    header {
-
-        position: sticky;
-
-        top: 20px;
-
-        z-index: 1000;
-
-        width: 88%;
-
-        margin: auto auto 45px;
-
-        padding: 20px 12px;
-
-        box-sizing: border-box;
-
-        transform: none;
-
-        border-radius: 30px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-    header {
-
-        animation: headerCompact linear both;
-
-        animation-timeline: scroll(root);
-
-        animation-range: 0 180px;
-    }
-
-    @keyframes headerCompact {
-
-        from {
-
-            padding: 20px 12px;
-        }
-
-        to {
-
-            padding: 20px 12px;
-        }
-    }
-
-    header h1 {
-
-        font-size: 1.4rem;
-
-        line-height: 1.2;
-
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-    header h1 {
-
-        animation:
-            titleScroll linear both,
-            titleCompact linear both;
-
-        animation-timeline:
-            scroll(root),
-            scroll(root);
-
-        animation-range:
-            0 180px,
-            0 180px;
-    }
-
-    @keyframes titleCompact {
-
-        from {
-
-            font-size: 1.22rem;
-        }
-
-        to {
-
-            font-size: 1.22rem;
-        }
-    }
-
-    header p {
-
-        font-size: .65rem;
-
-        line-height: 1.4;
-
-        margin: auto;
-    }
-
-    header p {
-
-        animation: subtitleCompact linear both;
-
-        animation-timeline: scroll(root);
-
-        animation-range: 0 100px;
-    }
-
-    @keyframes subtitleCompact {
-
-        from {
-
-            opacity: 1;
-
-            max-height: 30px;
-
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
-
-        to {
-
-            opacity: 0;
-
-            max-height: 0;
-
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-    }
-
-
-    /* NAVIGATION */
-
-    nav {
-
-        position: sticky;
-
-        top: 130px;
-
-        z-index: 900;
-
-        width: 88%;
-
-        margin: 0 auto 12px;
-
-        padding: 6px 5px;
-
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        flex-wrap: wrap;
-
-        gap: 3px;
-
-        box-sizing: border-box;
-
-        transform: none;
-
-        border-radius: 25px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-    nav h2 {
-
-        width: 100%;
-
-        flex-basis: 100%;
-
-        font-size: .82rem;
-
-        line-height: 1.2;
-
-        margin: 0 0 3px;
-
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-    nav a {
-
-        margin: 0;
-
-        padding: 5px 7px;
-
-        font-size: .58rem;
-
-        line-height: 1.15;
-
-        white-space: normal;
-
-        text-align: center;
-
-        transition:
-            padding 0.45s ease,
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-
-    form fieldset {
-
-        padding: 12px 10px 11px;
-
-        margin-bottom: 10px;
-    }
-
-    form legend {
-
-        font-size: 0.80rem;
-    }
-
-    form label {
-
-        font-size: 0.70rem;
-
-        padding: 2px;
-    }
-
-    form input:not(
-        [type="radio"],
-        [type="checkbox"],
-        [type="submit"],
-        [type="reset"],
-        [type="color"]
-    ),
-    form select,
-    form textarea {
-
-        width: 100%;
-
-        padding: 7px 8px;
-
-        font-size: 0.70rem;
-    }
-
-    form textarea {
-
-        min-height: 100px;
-    }
-
-    form em p {
-
-        font-size: 0.64rem;
-    }
-
-    form input[type="radio"],
-    form input[type="checkbox"] {
-
-        width: 13px;
-        height: 13px;
-    }
-
-    form input[type="radio"] + label,
-    form input[type="checkbox"] + label {
-
-        font-size: 0.66rem;
-    }
-
-    form input[type="color"] {
-
-        width: 30px;
-        height: 30px;
-    }
-
-    form input[type="submit"],
-    form input[type="reset"] {
-
-        padding: 7px 11px;
-
-        font-size: 0.68rem;
-    }
-}
-
-
-/* =========================================================
    CONFIRMATION CHECKBOX ALIGNMENT
    ========================================================= */
 
@@ -2449,5 +2140,25 @@ main {
 
         transition-duration:
             0.01ms !important;
+    }
+}
+
+@supports (animation-timeline: view()) {
+    form fieldset:has(#spring) em,
+    form fieldset:has(#prog) em {
+        animation: none !important;
+        animation-timeline: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+
+    form fieldset:has(#spring) em p,
+    form fieldset:has(#prog) em p {
+        animation: none !important;
+        animation-timeline: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
     }
 }

@@ -53,6 +53,47 @@
     /* Soft background shapes */
     --background-shape-1: #e8dcc0;
     --background-shape-2: #d8c9a5;
+
+    /* Typography */
+    --font-heading: 'Montserrat', Arial, sans-serif;
+    --font-body: 'Raleway', Arial, sans-serif;
+    --font-code: Consolas, monospace;
+
+    /* Spacing values (kept identical to the original stylesheet) */
+    --space-1em: 1em;
+    --space-1px: 1px;
+    --space-2px: 2px;
+    --space-3px: 3px;
+    --space-4px: 4px;
+    --space-5px: 5px;
+    --space-6px: 6px;
+    --space-7px: 7px;
+    --space-8px: 8px;
+    --space-9px: 9px;
+    --space-10px: 10px;
+    --space-12px: 12px;
+    --space-14px: 14px;
+    --space-15px: 15px;
+    --space-16px: 16px;
+    --space-18px: 18px;
+    --space-20px: 20px;
+    --space-21px: 21px;
+    --space-22px: 22px;
+    --space-24px: 24px;
+    --space-25px: 25px;
+    --space-28px: 28px;
+    --space-30px: 30px;
+    --space-35px: 35px;
+    --space-40px: 40px;
+    --space-42px: 42px;
+    --space-45px: 45px;
+    --space-50px: 50px;
+    --space-60px: 60px;
+    --space-88px: 88px;
+    --space-120px: 120px;
+    --space-125px: 125px;
+    --space-130px: 130px;
+    --space-144px: 144px;
 }
 
 
@@ -66,7 +107,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 130px;
+    scroll-padding-top: var(--space-130px);
 }
 
 body {
@@ -80,7 +121,7 @@ body {
     background-color: var(--background);
     color: var(--text);
 
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.7;
 
     display: flex;
@@ -145,8 +186,8 @@ header {
     z-index: 1000;
 
     width: min(86%, var(--content-width));
-    margin: 40px auto 25px;
-    padding: 35px 40px;
+    margin: var(--space-40px) auto var(--space-25px);
+    padding: var(--space-35px) var(--space-40px);
 
     background-color:
         color-mix(in srgb, var(--surface) 10%, transparent);
@@ -171,7 +212,7 @@ header {
 header h1 {
     margin: 0;
 
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 700;
 
@@ -193,7 +234,7 @@ header h1::after {
     width: 90%;
     height: 2px;
 
-    margin: 10px auto 0;
+    margin: var(--space-10px) auto 0;
 
     background-color: var(--accent);
     border-radius: 999px;
@@ -224,8 +265,8 @@ nav {
     z-index: 999;
 
     width: min(80%, 1200px);
-    margin: 0 auto 30px;
-    padding: 14px 18px;
+    margin: 0 auto var(--space-30px);
+    padding: var(--space-14px) var(--space-18px);
 
     background-color:
         color-mix(in srgb, var(--surface) 10%, transparent);
@@ -239,7 +280,7 @@ nav {
     justify-content: center;
     align-items: center;
 
-    gap: 8px;
+    gap: var(--space-8px);
     flex-wrap: nowrap;
 
     backdrop-filter: blur(5px);
@@ -257,14 +298,14 @@ nav h2 {
 }
 
 nav h2::after {
-    margin: 8px auto 0;
+    margin: var(--space-8px) auto 0;
 }
 
 nav a {
     display: inline-block;
 
     margin: 0;
-    padding: 8px 15px;
+    padding: var(--space-8px) var(--space-15px);
 
     background-color: var(--surface);
 
@@ -273,7 +314,7 @@ nav a {
 
     color: var(--text);
 
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: 0.85rem;
     font-weight: 600;
 
@@ -307,8 +348,8 @@ main {
     flex: 1;
 
     width: min(90%, var(--content-width));
-    margin: 0 auto 40px;
-    padding: 35px;
+    margin: 0 auto var(--space-40px);
+    padding: var(--space-35px);
 
     background-color: rgba(137, 104, 26, 0);
 
@@ -331,7 +372,7 @@ main > h1::after {
     width: 45%;
     height: 2px;
 
-    margin: 10px auto 0;
+    margin: var(--space-10px) auto 0;
 
     background-color: var(--accent);
     border-radius: 999px;
@@ -345,21 +386,21 @@ main > h1::after {
 h1,
 h2,
 h3 {
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: var(--font-heading);
     color: var(--text);
 }
 
 h2 {
-    margin-top: 35px;
-    margin-bottom: 18px;
+    margin-top: var(--space-35px);
+    margin-bottom: var(--space-18px);
 
     font-size: 1.7rem;
     font-weight: 600;
 }
 
 h3 {
-    margin-top: 28px;
-    margin-bottom: 12px;
+    margin-top: var(--space-28px);
+    margin-bottom: var(--space-12px);
 
     font-size: 1.3rem;
     font-weight: 600;
@@ -372,7 +413,7 @@ h2::after {
     width: 100%;
     height: 2px;
 
-    margin-top: 8px;
+    margin-top: var(--space-8px);
 
     background-color: var(--accent);
     border-radius: 999px;
@@ -389,8 +430,8 @@ h2::after {
 #milestone ~ h3:not(#keytech ~ h3) {
     position: relative;
 
-    margin: 42px 0 0 120px;
-    padding: 20px 24px;
+    margin: var(--space-42px) 0 0 var(--space-120px);
+    padding: var(--space-20px) var(--space-24px);
 
     background-color: var(--surface);
 
@@ -464,8 +505,8 @@ h2::after {
 /* Description under each event */
 
 #milestone ~ h3:not(#keytech ~ h3) + p {
-    margin: 0 0 0 120px;
-    padding: 14px 24px 0;
+    margin: 0 0 0 var(--space-120px);
+    padding: var(--space-14px) var(--space-24px) 0;
 }
 
 
@@ -474,7 +515,7 @@ h2::after {
 #milestone ~ h3:not(#keytech ~ h3) + p + em {
     display: block;
 
-    margin: 10px 0 0 144px;
+    margin: var(--space-10px) 0 0 var(--space-144px);
 
     color: var(--text-muted);
 }
@@ -483,7 +524,7 @@ h2::after {
 /* Source lists */
 
 #milestone ~ h3:not(#keytech ~ h3) ~ ul {
-    margin-left: 144px;
+    margin-left: var(--space-144px);
 }
 
 
@@ -497,7 +538,7 @@ h2::after {
 /* Space before the Key Technologies section */
 
 #keytech {
-    margin-top: 60px;
+    margin-top: var(--space-60px);
 }
 
 
@@ -511,8 +552,8 @@ h2::after {
 
     width: calc(33.333% - 14px);
 
-    margin: 25px 14px 12px 0;
-    padding: 22px 20px;
+    margin: var(--space-25px) var(--space-14px) var(--space-12px) 0;
+    padding: var(--space-22px) var(--space-20px);
 
     background-color: var(--surface);
 
@@ -543,8 +584,8 @@ h2::after {
 
     width: calc(33.333% - 14px);
 
-    margin: 0 14px 25px 0;
-    padding: 0 20px;
+    margin: 0 var(--space-14px) var(--space-25px) 0;
+    padding: 0 var(--space-20px);
 
     font-size: 0.9rem;
 }
@@ -557,7 +598,7 @@ h2::after {
 p {
     margin-top: 0;
 
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
 
     color: var(--text);
@@ -575,7 +616,7 @@ em {
 a {
     color: var(--text);
 
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
 
     text-decoration: none;
@@ -593,8 +634,8 @@ a:hover {
 h4 {
     display: inline-block;
 
-    margin: 25px 0;
-    padding: 10px 20px;
+    margin: var(--space-25px) 0;
+    padding: var(--space-10px) var(--space-20px);
 
     background-color: var(--surface);
 
@@ -603,7 +644,7 @@ h4 {
 
     box-shadow: var(--shadow-small);
 
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: 0.85rem;
 
     text-align: center;
@@ -616,7 +657,7 @@ h4 {
 }
 
 h4 a {
-    padding: 10px;
+    padding: var(--space-10px);
     color: var(--text);
     text-decoration: none;
 }
@@ -646,8 +687,8 @@ h4:hover a {
 main a:not(nav a):not(h4 a) {
     display: inline-block;
 
-    margin: 6px 6px 6px 0;
-    padding: 9px 14px;
+    margin: var(--space-6px) var(--space-6px) var(--space-6px) 0;
+    padding: var(--space-9px) var(--space-14px);
 
     background-color: var(--surface);
 
@@ -656,7 +697,7 @@ main a:not(nav a):not(h4 a) {
 
     color: var(--text);
 
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 0.82rem;
     font-weight: 600;
 
@@ -716,8 +757,8 @@ main a:not(nav a):not(h4 a):hover {
    ========================================================= */
 
 section {
-    margin: 30px 0;
-    padding: 25px;
+    margin: var(--space-30px) 0;
+    padding: var(--space-25px);
 
     background-color:
         color-mix(in srgb, var(--surface) 82%, transparent);
@@ -738,8 +779,8 @@ section {
    ========================================================= */
 
 article {
-    margin: 20px 0;
-    padding: 25px;
+    margin: var(--space-20px) 0;
+    padding: var(--space-25px);
 
     background-color:
         color-mix(in srgb, var(--surface) 82%, transparent);
@@ -754,6 +795,7 @@ article {
 
 article h2,
 article h3 {
+    font-size: 1.7rem;
     margin-top: 0;
 }
 
@@ -777,11 +819,11 @@ main > section h3 {
 
 ul,
 ol {
-    padding-left: 25px;
+    padding-left: var(--space-25px);
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-8px);
 }
 
 
@@ -790,13 +832,13 @@ li {
    ========================================================= */
 
 code {
-    padding: 3px 6px;
+    padding: var(--space-3px) var(--space-6px);
 
     background-color: var(--soft-code);
 
     border-radius: var(--radius-small);
 
-    font-family: Consolas, monospace;
+    font-family: var(--font-code);
     color: #7c5559;
 }
 
@@ -806,7 +848,7 @@ code {
    ========================================================= */
 
 .highlight {
-    padding: 20px;
+    padding: var(--space-20px);
 
     background-color: var(--soft-accent);
 
@@ -828,7 +870,7 @@ code {
 table {
     width: 100%;
 
-    margin: 25px 0;
+    margin: var(--space-25px) 0;
 
     border-collapse: collapse;
 
@@ -837,7 +879,7 @@ table {
 
 th,
 td {
-    padding: 12px 15px;
+    padding: var(--space-12px) var(--space-15px);
 
     border: 1px solid var(--border);
 
@@ -847,7 +889,7 @@ td {
 th {
     background-color: var(--soft-accent);
 
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
 }
 
@@ -863,8 +905,8 @@ footer {
 
     width: min(87%, 1800px);
 
-    margin: 25px auto 10px;
-    padding: 9px 15px;
+    margin: var(--space-25px) auto var(--space-10px);
+    padding: var(--space-9px) var(--space-15px);
 
     background-color:
         color-mix(in srgb, var(--surface) 30%, transparent);
@@ -885,7 +927,7 @@ footer {
 }
 
 footer p {
-    margin: 2px 0;
+    margin: var(--space-2px) 0;
 
     color: var(--text-muted);
 
@@ -913,11 +955,11 @@ footer p {
         @keyframes headerCompact {
 
             from {
-                padding: 35px 40px;
+                padding: var(--space-35px) var(--space-40px);
             }
 
             to {
-                padding: 5px 30px;
+                padding: var(--space-5px) var(--space-30px);
             }
         }
 
@@ -972,8 +1014,8 @@ footer p {
             from {
                 opacity: 1;
                 max-height: 40px;
-                margin-top: 1em;
-                margin-bottom: 1em;
+                margin-top: var(--space-1em);
+                margin-bottom: var(--space-1em);
             }
 
             to {
@@ -996,11 +1038,11 @@ footer p {
         @keyframes navCompact {
 
             from {
-                padding: 14px 18px;
+                padding: var(--space-14px) var(--space-18px);
             }
 
             to {
-                padding: 6px 10px;
+                padding: var(--space-6px) var(--space-10px);
             }
         }
     }
@@ -1087,7 +1129,7 @@ footer p {
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
-        scroll-padding-top: 125px;
+        scroll-padding-top: var(--space-125px);
     }
 
     body {
@@ -1105,8 +1147,8 @@ footer p {
         top: 20px;
         z-index: 1000;
         width: 88%;
-        margin: auto auto 45px;
-        padding: 20px 12px;
+        margin: auto auto var(--space-45px);
+        padding: var(--space-20px) var(--space-12px);
         box-sizing: border-box;
         transform: none;
         border-radius: 30px;
@@ -1127,11 +1169,11 @@ footer p {
         @keyframes headerCompact {
 
             from {
-                padding: 20px 12px;
+                padding: var(--space-20px) var(--space-12px);
             }
 
             to {
-                padding: 20px 12px;
+                padding: var(--space-20px) var(--space-12px);
             }
         }
 
@@ -1155,17 +1197,6 @@ footer p {
         0 180px,
         0 180px;
 }
-
-        /*@keyframes titleScroll {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.78);
-            }
-        }*/
 
         @keyframes titleCompact {
 
@@ -1195,8 +1226,8 @@ footer p {
             from {
                 opacity: 1;
                 max-height: 30px;
-                margin-top: 1em;
-                margin-bottom: 1em;
+                margin-top: var(--space-1em);
+                margin-bottom: var(--space-1em);
             }
 
             to {
@@ -1216,13 +1247,13 @@ footer p {
         top: 130px;
         z-index: 900;
         width: 88%;
-        margin: 0 auto 12px;
-        padding: 6px 5px;
+        margin: 0 auto var(--space-12px);
+        padding: var(--space-6px) var(--space-5px);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 3px;
+        gap: var(--space-3px);
         box-sizing: border-box;
         transform: none;
         border-radius: 25px;
@@ -1240,7 +1271,7 @@ footer p {
         flex-basis: 100%;
         font-size: .82rem;
         line-height: 1.2;
-        margin: 0 0 3px;
+        margin: 0 0 var(--space-3px);
 
         transition:
             font-size 0.45s ease,
@@ -1250,7 +1281,7 @@ footer p {
     nav a {
 
         margin: 0;
-        padding: 5px 7px;
+        padding: var(--space-5px) var(--space-7px);
         font-size: .58rem;
         line-height: 1.15;
         white-space: normal;
@@ -1273,7 +1304,7 @@ footer p {
         margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
+        padding: var(--space-10px);
         box-sizing: border-box;
     }
 
@@ -1284,22 +1315,21 @@ footer p {
     }
 
     h2 {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         font-size: 1.2rem;
         line-height: 1.35;
     }
 
     h3 {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: auto;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         line-height: 1.4;
     }
 
     p, em:not(header em):not(footer *) {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         font-size: .85rem;
         line-height: 1.65;
     }
@@ -1309,9 +1339,9 @@ footer p {
         padding-left: 0px;
         padding-right: 0px;
         margin-left: 0px;
-        margin-right: 15px;
+        margin-right: var(--space-15px);
         font-size: .7rem;
-        margin-bottom: 6px;
+        margin-bottom: var(--space-6px);
     }
 
     h4 {
@@ -1328,9 +1358,7 @@ footer p {
     #milestone ~ h3:not(#keytech ~ h3) {
         position: relative;
 
-        margin: 20px 15px 0 50px;
-        padding: auto;
-
+        margin: var(--space-20px) var(--space-15px) 0 var(--space-50px);
         background-color: var(--surface);
 
         border-color: var(--accent);
@@ -1339,9 +1367,6 @@ footer p {
         border-radius: var(--radius-medium);
 
         box-shadow: var(--shadow-small);
-
-        font-size: auto;
-        font-weight: auto;
     }
 
 
@@ -1404,8 +1429,8 @@ footer p {
     /* Description under each event */
 
     #milestone ~ h3:not(#keytech ~ h3) + p {
-        margin: 0 0 0 30px;
-        padding: 14px 24px 0;
+        margin: 0 0 0 var(--space-30px);
+        padding: var(--space-14px) var(--space-24px) 0;
     }
 
 
@@ -1414,7 +1439,7 @@ footer p {
     #milestone ~ h3:not(#keytech ~ h3) + p + em {
         display: block;
 
-        margin: 10px 15px 0 30px;
+        margin: var(--space-10px) var(--space-15px) 0 var(--space-30px);
 
         color: var(--text-muted);
     }
@@ -1423,14 +1448,14 @@ footer p {
     /* Source lists */
 
     #milestone ~ h3:not(#keytech ~ h3) ~ ul {
-        margin-left: 30px;
+        margin-left: var(--space-30px);
     }
 
 
     /* Source text */
 
     #milestone ~ h3:not(#keytech ~ h3) ~ em {
-        margin-left: 30px;
+        margin-left: var(--space-30px);
         color: var(--text-muted);
     }
 
@@ -1438,7 +1463,7 @@ footer p {
     /* Space before the Key Technologies section */
 
     #keytech {
-        margin-top: 60px;
+        margin-top: var(--space-60px);
     }
 
 
@@ -1450,8 +1475,8 @@ footer p {
 
         display: block;
         width: auto;
-        margin: 20px 15px 12px;
-        padding: 22px 20px;
+        margin: var(--space-20px) var(--space-15px) var(--space-12px);
+        padding: var(--space-22px) var(--space-20px);
         box-sizing: border-box;
 
         background-color: var(--surface);
@@ -1478,8 +1503,8 @@ footer p {
 
         display: block;
         width: 100%;
-        margin: 0 0 25px;
-        padding: 0 20px;
+        margin: 0 0 var(--space-25px);
+        padding: 0 var(--space-20px);
         box-sizing: border-box;
 
         font-size: 0.9rem;
@@ -1488,7 +1513,7 @@ footer p {
     #keytech ~ h3 + p + em {
         display: block;
         width: auto;
-        margin: 0 15px 0;
+        margin: 0 var(--space-15px) 0;
         padding: 0;
         box-sizing: border-box;
         font-size: 0.9rem;
@@ -1498,17 +1523,17 @@ footer p {
     /* SECTIONS */
 
     section {
-        margin: 20px 0;
-        padding: 14px;
+        margin: var(--space-20px) 0;
+        padding: var(--space-14px);
     }
 
     article {
-        margin: 15px 0;
-        padding: 14px;
+        margin: var(--space-15px) 0;
+        padding: var(--space-14px);
     }
 
     .highlight {
-        padding: 12px;
+        padding: var(--space-12px);
     }
 
 
@@ -1520,8 +1545,8 @@ footer p {
         box-sizing: border-box;
         margin-top: auto;
         margin-bottom: auto;
-        margin: 20px;
-        padding: 12px;
+        margin: var(--space-20px);
+        padding: var(--space-12px);
     }
 
     .home-main section h2 {
@@ -1530,12 +1555,12 @@ footer p {
         box-sizing: border-box;
         margin: auto;
         font-size: 30px;
-        padding: 12px;
+        padding: var(--space-12px);
     }
 
     .home-main section h2::after {
         width: 100%;
-        margin-top: 10px;
+        margin-top: var(--space-10px);
     }
 
     .home-main section ul {
@@ -1550,7 +1575,7 @@ footer p {
         width: 100%;
         max-width: 100%;
         min-width: 0;
-        margin: 0 0 10px;
+        margin: 0 0 var(--space-10px);
         padding: 0;
         box-sizing: content-box;
     }
@@ -1566,7 +1591,7 @@ footer p {
         margin-right: auto;
         margin-top: auto;
         margin-bottom: auto;
-        padding: 12px;
+        padding: var(--space-12px);
         overflow-wrap: anywhere;
     }
 
@@ -1582,7 +1607,7 @@ footer p {
 
     th,
     td {
-        padding: 8px 10px;
+        padding: var(--space-8px) var(--space-10px);
         font-size: .78rem;
     }
 
@@ -1603,8 +1628,8 @@ footer p {
         bottom: 8px;
         z-index: 900;
         width: 88%;
-        margin: 18px auto 8px;
-        padding: 8px 10px;
+        margin: var(--space-18px) auto var(--space-8px);
+        padding: var(--space-8px) var(--space-10px);
         box-sizing: border-box;
         transform: none;
         animation: none;
@@ -1612,7 +1637,7 @@ footer p {
     }
 
     footer p {
-        margin: 2px 0;
+        margin: var(--space-2px) 0;
         font-size: .63rem;
         line-height: 1.35;
         animation: none;
@@ -1680,7 +1705,7 @@ footer p {
 @media (min-width: 660px) and (max-width: 956px) and (max-height: 440px) and (orientation: landscape) {
 
     html {
-        scroll-padding-top: 88px;
+        scroll-padding-top: var(--space-88px);
     }
 
 
@@ -1692,8 +1717,8 @@ footer p {
         z-index: 1000;
         width: 88%;
         max-width: 85%;
-        margin: 4px auto 6px;
-        padding: 12px 18px;
+        margin: var(--space-4px) auto var(--space-6px);
+        padding: var(--space-12px) var(--space-18px);
         border-radius: 40px;
         box-sizing: border-box;
         animation-range: 0 80px;
@@ -1721,7 +1746,7 @@ footer p {
     header p {
         font-size: 0.8rem;
         line-height: 1.15;
-        margin: 3px 0 0;
+        margin: var(--space-3px) 0 0;
         animation-range: 0 80px;
         transition:
             opacity 0.18s ease,
@@ -1740,11 +1765,11 @@ footer p {
         @keyframes headerCompact {
 
             from {
-                padding: 10px 18px;
+                padding: var(--space-10px) var(--space-18px);
             }
 
             to {
-                padding: 5px 30px;
+                padding: var(--space-5px) var(--space-30px);
             }
         }
 
@@ -1762,17 +1787,6 @@ footer p {
                 0 180px,
                 0 180px;
         }
-
-        /*@keyframes titleScroll {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.78);
-            }
-        }*/
 
         @keyframes titleCompact {
 
@@ -1799,8 +1813,8 @@ footer p {
             from {
                 opacity: 1;
                 max-height: 40px;
-                margin-top: 1em;
-                margin-bottom: 1em;
+                margin-top: var(--space-1em);
+                margin-bottom: var(--space-1em);
             }
 
             to {
@@ -1820,13 +1834,13 @@ footer p {
         z-index: 999;
         width: 75%;
         max-width: 780px;
-        margin: 0 auto 7px;
-        padding: 4px 6px;
+        margin: 0 auto var(--space-7px);
+        padding: var(--space-4px) var(--space-6px);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 3px;
+        gap: var(--space-3px);
         border-radius: 11px;
         box-sizing: border-box;
         transform: none;
@@ -1838,13 +1852,13 @@ footer p {
         flex-basis: 100%;
         font-size: 0.64rem;
         line-height: 1.02;
-        margin: 0 0 2px;
+        margin: 0 0 var(--space-2px);
     }
 
     nav a {
         font-size: 0.6rem;
         line-height: 1.05;
-        padding: 3px 5px;
+        padding: var(--space-3px) var(--space-5px);
         white-space: normal;
         text-align: center;
     }
@@ -1855,8 +1869,8 @@ footer p {
     main {
         width: 90%;
         max-width: 900px;
-        margin: 21px auto 40px;
-        padding: 8px 18px;
+        margin: var(--space-21px) auto var(--space-40px);
+        padding: var(--space-8px) var(--space-18px);
         box-sizing: border-box;
     }
 
@@ -1902,12 +1916,11 @@ footer p {
     .home-main section {
         margin-right: auto;
         margin-left: auto;
-        padding: 35px;
+        padding: var(--space-35px);
 
         background-color: rgba(186, 149, 47, 0.066);
 
         border: 1px solid var(--accent-dark);
-        border-left: 3px soli;
         border-radius: var(--radius-large);
         box-shadow: var(--shadow-medium);
 
@@ -1916,7 +1929,7 @@ footer p {
     }
 
     .home-main h2 {
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: var(--font-heading);
 
         font-size: 50px;
 
@@ -1933,7 +1946,7 @@ footer p {
     .home-main ul {
         list-style: none;
 
-        margin: 16px;
+        margin: var(--space-16px);
 
         display: grid;
 
@@ -1949,14 +1962,14 @@ footer p {
         margin-right: auto;
 
         min-height: auto;
-        padding: 16px 20px;
+        padding: var(--space-16px) var(--space-20px);
 
         background-color: var(--surface);
         border: 1px solid var(--border);
         border-radius: 50px;
         color: var(--text);
     
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: var(--font-heading);
         font-size: 0.90rem;
         font-weight: 600;
 
@@ -2007,8 +2020,8 @@ footer p {
     #milestone ~ h3:not(#keytech ~ h3) {
         position: relative;
 
-        margin: 25px 15px 0 50px;
-        padding: 15px 35px;
+        margin: var(--space-25px) var(--space-15px) 0 var(--space-50px);
+        padding: var(--space-15px) var(--space-35px);
 
         background-color: var(--surface);
 
@@ -2020,7 +2033,6 @@ footer p {
         box-shadow: var(--shadow-small);
 
         font-size: 1.2rem;
-        font-weight: auto;
     }
 
 
@@ -2083,8 +2095,8 @@ footer p {
     /* Description under each event */
 
     #milestone ~ h3:not(#keytech ~ h3) + p {
-        margin: 0 0 0 30px;
-        padding: 14px 24px 0;
+        margin: 0 0 0 var(--space-30px);
+        padding: var(--space-14px) var(--space-24px) 0;
         font-size: 0.9rem;
     }
 
@@ -2095,7 +2107,7 @@ footer p {
         display: block;
 
         font-size: 1rem;
-        margin: 20px 50px;
+        margin: var(--space-20px) var(--space-50px);
 
         color: var(--text-muted);
     }
@@ -2112,7 +2124,6 @@ footer p {
 
     #milestone ~ h3:not(#keytech ~ h3) ~ em {
         font-size: 0.9rem;
-        margin-left: 20px 30px;
         color: var(--text-muted);
     }
 
@@ -2120,7 +2131,7 @@ footer p {
     /* Space before the Key Technologies section */
 
     #keytech {
-        margin-top: 60px;
+        margin-top: var(--space-60px);
     }
 
 
@@ -2132,8 +2143,8 @@ footer p {
 
         display: block;
         width: auto;
-        margin: 20px 15px 12px;
-        padding: 22px 20px;
+        margin: var(--space-20px) var(--space-15px) var(--space-12px);
+        padding: var(--space-22px) var(--space-20px);
         box-sizing: border-box;
 
         background-color: var(--surface);
@@ -2160,8 +2171,8 @@ footer p {
 
         display: block;
         width: 100%;
-        margin: 0 0 25px;
-        padding: 0 20px;
+        margin: 0 0 var(--space-25px);
+        padding: 0 var(--space-20px);
         box-sizing: border-box;
 
         font-size: 0.9rem;
@@ -2170,7 +2181,7 @@ footer p {
     #keytech ~ h3 + p + em {
         display: block;
         width: auto;
-        margin: 0 15px 0;
+        margin: 0 var(--space-15px) 0;
         padding: 0;
         box-sizing: border-box;
         font-size: 0.9rem;
@@ -2184,8 +2195,8 @@ footer p {
         z-index: 998;
         width: 87%;
         max-width: 850px;
-        margin: 7px auto 4px;
-        padding: 5px 10px;
+        margin: var(--space-7px) auto var(--space-4px);
+        padding: var(--space-5px) var(--space-10px);
         border-radius: 20px;
         box-sizing: border-box;
     }
@@ -2193,7 +2204,7 @@ footer p {
     footer p {
         font-size: 0.55rem;
         line-height: 1.08;
-        margin: 1px 0;
+        margin: var(--space-1px) 0;
     }
 
     /* Prevent source links from fading in landscape */
@@ -2211,13 +2222,13 @@ footer p {
 
     main > h4 {
         font-size: 0.64rem;
-        padding: 5px 10px;
-        margin: 8px 0;
+        padding: var(--space-5px) var(--space-10px);
+        margin: var(--space-8px) 0;
     }
 
     main > h4 a {
         font-size: 0.8rem;
-        padding: 3px 6px;
+        padding: var(--space-3px) var(--space-6px);
     }
 
 }
@@ -2232,7 +2243,7 @@ footer p {
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
-        scroll-padding-top: 125px;
+        scroll-padding-top: var(--space-125px);
     }
 
     body {
@@ -2251,7 +2262,6 @@ footer p {
         z-index: 1000;
         width: 82%;
         margin: auto;
-        padding: 30px auto;
         box-sizing: border-box;
         transform: none;
         border-radius: 60px;
@@ -2272,11 +2282,11 @@ footer p {
         @keyframes headerCompact {
 
             from {
-                padding: 20px 12px;
+                padding: var(--space-20px) var(--space-12px);
             }
 
             to {
-                padding: 20px 12px;
+                padding: var(--space-20px) var(--space-12px);
             }
         }
 
@@ -2300,17 +2310,6 @@ footer p {
                 0 180px,
                 0 180px;
         }
-
-        /*@keyframes titleScroll {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.78);
-            }
-        }*/
 
         @keyframes titleCompact {
 
@@ -2340,8 +2339,8 @@ footer p {
             from {
                 opacity: 1;
                 max-height: 30px;
-                margin-top: 1em;
-                margin-bottom: 1em;
+                margin-top: var(--space-1em);
+                margin-bottom: var(--space-1em);
             }
 
             to {
@@ -2361,13 +2360,13 @@ footer p {
         top: 190px;
         z-index: 900;
         width: 90%;
-        margin: 0 auto 12px;
-        padding: 6px 5px;
+        margin: 0 auto var(--space-12px);
+        padding: var(--space-6px) var(--space-5px);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 3px;
+        gap: var(--space-3px);
         box-sizing: border-box;
         transform: none;
         border-radius: 25px;
@@ -2385,7 +2384,7 @@ footer p {
         flex-basis: 100%;
         font-size: .82rem;
         line-height: 1.2;
-        margin: 0 0 3px;
+        margin: 0 0 var(--space-3px);
 
         transition:
             font-size 0.45s ease,
@@ -2395,7 +2394,7 @@ footer p {
     nav a {
 
         margin: 0;
-        padding: 10px;
+        padding: var(--space-10px);
         font-size: 0.9rem;
         line-height: 1.15;
         white-space: normal;
@@ -2415,9 +2414,9 @@ footer p {
         max-width: 1200px;
         min-width: 0;
 
-        margin: 40px auto;
+        margin: var(--space-40px) auto;
 
-        padding: 25px;
+        padding: var(--space-25px);
         box-sizing: border-box;
     }
 
@@ -2428,22 +2427,22 @@ footer p {
     }
 
     h2 {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         font-size: 1.8rem;
         line-height: 1.35;
     }
 
     h3 {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         font-size: 1.8rem;
         line-height: 1.4;
     }
 
     p, em:not(header em):not(footer *) {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: var(--space-15px);
+        margin-right: var(--space-15px);
         font-size: 1.1rem;
         line-height: 1.65;
     }
@@ -2454,9 +2453,9 @@ footer p {
         padding-left: 0px;
         padding-right: 0px;
         margin-left: 0px;
-        margin-right: 15px;
+        margin-right: var(--space-15px);
         font-size: .7rem;
-        margin-bottom: 6px;
+        margin-bottom: var(--space-6px);
     }
 
     h4 {
@@ -2473,8 +2472,8 @@ footer p {
     #milestone ~ h3:not(#keytech ~ h3) {
         position: relative;
 
-        margin: 25px 15px 0 50px;
-        padding: 20px 35px;
+        margin: var(--space-25px) var(--space-15px) 0 var(--space-50px);
+        padding: var(--space-20px) var(--space-35px);
 
         background-color: var(--surface);
 
@@ -2486,7 +2485,6 @@ footer p {
         box-shadow: var(--shadow-small);
 
         font-size: 1.4rem;
-        font-weight: auto;
     }
 
 
@@ -2549,8 +2547,8 @@ footer p {
     /* Description under each event */
 
     #milestone ~ h3:not(#keytech ~ h3) + p {
-        margin: 0 0 0 30px;
-        padding: 14px 24px 0;
+        margin: 0 0 0 var(--space-30px);
+        padding: var(--space-14px) var(--space-24px) 0;
         font-size: 1.1rem;
     }
 
@@ -2561,7 +2559,7 @@ footer p {
         display: block;
 
         font-size: 1rem;
-        margin: 20px 50px;
+        margin: var(--space-20px) var(--space-50px);
 
         color: var(--text-muted);
     }
@@ -2570,7 +2568,7 @@ footer p {
     /* Source lists */
 
     #milestone ~ h3:not(#keytech ~ h3) ~ ul {
-        margin-left: 30px;
+        margin-left: var(--space-30px);
     }
 
 
@@ -2578,7 +2576,7 @@ footer p {
 
     #milestone ~ h3:not(#keytech ~ h3) ~ em {
         font-size: 0.9rem;
-        margin-left: 30px;
+        margin-left: var(--space-30px);
         color: var(--text-muted);
     }
 
@@ -2586,7 +2584,7 @@ footer p {
     /* Space before the Key Technologies section */
 
     #keytech {
-        margin-top: 60px;
+        margin-top: var(--space-60px);
     }
 
 
@@ -2598,8 +2596,8 @@ footer p {
 
         display: block;
         width: auto;
-        margin: 20px 15px 12px;
-        padding: 22px 20px;
+        margin: var(--space-20px) var(--space-15px) var(--space-12px);
+        padding: var(--space-22px) var(--space-20px);
         box-sizing: border-box;
 
         background-color: var(--surface);
@@ -2626,8 +2624,8 @@ footer p {
 
         display: block;
         width: 100%;
-        margin: 0 0 25px;
-        padding: 0 20px;
+        margin: 0 0 var(--space-25px);
+        padding: 0 var(--space-20px);
         box-sizing: border-box;
 
         font-size: 1.1rem;
@@ -2636,7 +2634,7 @@ footer p {
     #keytech ~ h3 + p + em {
         display: block;
         width: auto;
-        margin: 0 15px 0;
+        margin: 0 var(--space-15px) 0;
         padding: 0;
         box-sizing: border-box;
         font-size: 1rem;
@@ -2646,17 +2644,17 @@ footer p {
     /* SECTIONS */
 
     section {
-        margin: 20px 0;
-        padding: 14px;
+        margin: var(--space-20px) 0;
+        padding: var(--space-14px);
     }
 
     article {
-        margin: 15px 0;
-        padding: 14px;
+        margin: var(--space-15px) 0;
+        padding: var(--space-14px);
     }
 
     .highlight {
-        padding: 12px;
+        padding: var(--space-12px);
     }
 
 
@@ -2667,8 +2665,8 @@ footer p {
     max-width: 1200px;
     min-width: 0;
 
-    margin: 40px auto 40px;
-    padding: 25px;
+    margin: var(--space-40px) auto var(--space-40px);
+    padding: var(--space-25px);
 
     box-sizing: border-box;
 }
@@ -2678,8 +2676,8 @@ footer p {
     max-width: 100%;
     box-sizing: border-box;
 
-    margin: 25px 0;
-    padding: 24px;
+    margin: var(--space-25px) 0;
+    padding: var(--space-24px);
 }
 
 .home-main section h2 {
@@ -2689,13 +2687,13 @@ footer p {
 
     margin: 0 auto;
     font-size: 2.5rem;
-    padding: 16px;
+    padding: var(--space-16px);
 }
 
 .home-main section h2::after {
     width: 60%;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: var(--space-12px);
+    margin-bottom: var(--space-12px);
 }
 
 .home-main section ul {
@@ -2711,7 +2709,7 @@ footer p {
     max-width: 100%;
     min-width: 0;
 
-    margin: 0 0 14px;
+    margin: 0 0 var(--space-14px);
     padding: 0;
     box-sizing: border-box;
 }
@@ -2732,7 +2730,7 @@ footer p {
     margin-top: auto;
     margin-bottom: auto;
 
-    padding: 16px 20px;
+    padding: var(--space-16px) var(--space-20px);
 
     overflow-wrap: anywhere;
 }
@@ -2749,7 +2747,7 @@ footer p {
 
     th,
     td {
-        padding: 8px 10px;
+        padding: var(--space-8px) var(--space-10px);
         font-size: .78rem;
     }
 
@@ -2770,8 +2768,8 @@ footer p {
         bottom: 20px;
         z-index: 900;
         width: 85%;
-        margin: 18px auto 8px;
-        padding: 8px 10px;
+        margin: var(--space-18px) auto var(--space-8px);
+        padding: var(--space-8px) var(--space-10px);
         box-sizing: border-box;
         transform: none;
         animation: none;
@@ -2779,7 +2777,7 @@ footer p {
     }
 
     footer p {
-        margin: 2px 0;
+        margin: var(--space-2px) 0;
         font-size: .85rem;
         line-height: 1.35;
         animation: none;
@@ -2840,623 +2838,21 @@ footer p {
 
 }
 
+
 /* =========================================================
-    TABLET SCREENS Landscape
+   TABLET SCREENS — LANDSCAPE
+   Use desktop layout
    ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1376px) and (orientation: landscape) {
-
-    html {
+    .home-main {
         width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-        scroll-padding-top: 125px;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    body {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        overflow-x: clip;
-    }
-
-    /* HEADER */
-
-    header {
-
-        position: sticky;
-        top: 20px;
-        z-index: 1000;
-        width: 82%;
-        margin: auto;
-        padding: 30px auto;
-        box-sizing: border-box;
-        transform: none;
-        border-radius: 60px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-        header {
-            animation: headerCompact linear both;
-            animation-timeline: scroll(root);
-            animation-range: 0 180px;
-        }
-
-        @keyframes headerCompact {
-
-            from {
-                padding: 20px 12px;
-            }
-
-            to {
-                padding: 20px 12px;
-            }
-        }
-
-    header h1 {
-        font-size: 1.4rem;
-        line-height: 1.2;
-
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-        header h1 {
-            animation:
-                titleScroll linear both,
-                titleCompact linear both;
-            animation-timeline:
-                scroll(root),
-                scroll(root);
-            animation-range:
-                0 180px,
-                0 180px;
-        }
-
-        /*@keyframes titleScroll {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.78);
-            }
-        }*/
-
-        @keyframes titleCompact {
-
-            from {
-                font-size: 2.8rem;
-            }
-
-            to {
-                font-size: 2.8rem;
-            }
-        }
-
-    header p {
-        font-size: .9rem;
-        line-height: 1.4;
-        margin: auto;
-    }
-
-    header p {
-        animation: subtitleCompact linear both;
-        animation-timeline: scroll(root);
-        animation-range: 0 100px;
 }
 
-        @keyframes subtitleCompact {
-
-            from {
-                opacity: 1;
-                max-height: 30px;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-
-            to {
-                opacity: 0;
-                max-height: 0;
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-        }
-
-
-    /* NAVIGATION */
-
-    nav {
-
-        position: sticky;
-        top: 190px;
-        z-index: 900;
-        width: 90%;
-        margin: 0 auto 12px;
-        padding: 6px 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 3px;
-        box-sizing: border-box;
-        transform: none;
-        border-radius: 25px;
-
-        transition:
-            padding 0.45s ease,
-            border-radius 0.45s ease,
-            background-color 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-    nav h2 {
-
-        width: 100%;
-        flex-basis: 100%;
-        font-size: .82rem;
-        line-height: 1.2;
-        margin: 0 0 3px;
-
-        transition:
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-    nav a {
-
-        margin: 0;
-        padding: 10px;
-        font-size: 0.9rem;
-        line-height: 1.15;
-        white-space: normal;
-        text-align: center;
-
-        transition:
-            padding 0.45s ease,
-            font-size 0.45s ease,
-            transform 0.45s ease;
-    }
-
-
-    /* MAIN */
-
-    main {
-        width: 92%;
-        max-width: 1200px;
-        min-width: 0;
-
-        margin: 40px auto;
-
-        padding: 25px;
-        box-sizing: border-box;
-    }
-
-    main > h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-        text-align: center;
-    }
-
-    h2 {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: 1.8rem;
-        line-height: 1.35;
-    }
-
-    h3 {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: 1.8rem;
-        line-height: 1.4;
-    }
-
-    p, em:not(header em):not(footer *) {
-        margin-left: 15px;
-        margin-right: 15px;
-        font-size: 1.1rem;
-        line-height: 1.65;
-    }
-
-
-    ul {
-        list-style: none;
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-left: 0px;
-        margin-right: 15px;
-        font-size: .7rem;
-        margin-bottom: 6px;
-    }
-
-    h4 {
-        font-size: 0.9rem;
-    }
-
-/*=========================================================
-   HISTORY TIMELINE
-   ========================================================= */
-
-
-    /* Timeline area */
-
-    #milestone ~ h3:not(#keytech ~ h3) {
-        position: relative;
-
-        margin: 25px 15px 0 50px;
-        padding: 20px 35px;
-
-        background-color: var(--surface);
-
-        border-color: var(--accent);
-        border: 1px solid var(--border);
-
-        border-radius: var(--radius-medium);
-
-        box-shadow: var(--shadow-small);
-
-        font-size: 1.4rem;
-        font-weight: auto;
-    }
-
-
-    /* Vertical timeline line */
-
-    #milestone ~ h3:not(#keytech ~ h3)::before {
-        content: "";
-
-        position: absolute;
-
-        left: -25px;
-        top: 0px;
-        bottom: -43px;
-
-        height: auto;
-        width: 2px;
-
-        background-color: var(--accent);
-        opacity: 0.65;
-    }
-
-
-    /* Timeline dot */
-
-    #milestone ~ h3:not(#keytech ~ h3)::after {
-        content: "";
-
-        position: absolute;
-
-        left: -35px;
-        top: 25px;
-
-        width: 14px;
-        height: 14px;
-
-        background-color: var(--accent);
-
-        border: 4px solid var(--surface);
-        border-radius: 50%;
-
-        box-shadow:
-            0 0 0 2px var(--accent);
-    }
-
-
-    /* First timeline event */
-
-    #milestone + h3::before {
-        top: 25px;
-    }
-
-
-    /* Last timeline event */
-
-    #milestone ~ h3:not(#keytech ~ h3):has(+ p + em + h2)::before {
-        bottom: 0;
-    }
-
-
-    /* Description under each event */
-
-    #milestone ~ h3:not(#keytech ~ h3) + p {
-        margin: 0 0 0 30px;
-        padding: 14px 24px 0;
-        font-size: 1.1rem;
-    }
-
-
-    /* "Why it mattered" text */
-
-    #milestone ~ h3:not(#keytech ~ h3) + p + em {
-        display: block;
-
-        font-size: 1rem;
-        margin: 20px 50px;
-
-        color: var(--text-muted);
-    }
-
-
-    /* Source lists */
-
-    #milestone ~ h3:not(#keytech ~ h3) ~ ul {
-        margin-left: 30px;
-    }
-
-
-    /* Source text */
-
-    #milestone ~ h3:not(#keytech ~ h3) ~ em {
-        font-size: 0.9rem;
-        margin-left: 30px;
-        color: var(--text-muted);
-    }
-
-
-    /* Space before the Key Technologies section */
-
-    #keytech {
-        margin-top: 60px;
-    }
-
-
-/* =========================================================
-   3 KEY TECHNOLOGIES — Horizontal specific for mobile
-   ========================================================= */
-
-    #keytech ~ h3 {
-
-        display: block;
-        width: auto;
-        margin: 20px 15px 12px;
-        padding: 22px 20px;
-        box-sizing: border-box;
-
-        background-color: var(--surface);
-        border: 1px solid var(--border);
-        border-top: 3px solid var(--accent);
-        border-radius: 20px;
-        box-shadow: var(--shadow-small);
-
-        font-size: 1.4rem;
-        font-weight: 600;
-        text-align: center;
-
-        transition:
-            transform 0.25s ease,
-            background-color 0.25s ease,
-            border-color 0.25s ease,
-            box-shadow 0.25s ease;
-    }
-
-
-    /* Technology descriptions */
-
-    #keytech ~ h3 + p {
-
-        display: block;
-        width: 100%;
-        margin: 0 0 25px;
-        padding: 0 20px;
-        box-sizing: border-box;
-
-        font-size: 1.1rem;
-    }
-
-    #keytech ~ h3 + p + em {
-        display: block;
-        width: auto;
-        margin: 0 15px 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-size: 1rem;
-    }
-
-
-    /* SECTIONS */
-
-    section {
-        margin: 20px 0;
-        padding: 14px;
-    }
-
-    article {
-        margin: 15px 0;
-        padding: 14px;
-    }
-
-    .highlight {
-        padding: 12px;
-    }
-
-
-    /* ================= WEEKLY WORK ================= */
-
-.home-main {
-    width: 92%;
-    max-width: 1200px;
-    min-width: 0;
-
-    margin: 40px auto 40px;
-    padding: 25px;
-
-    box-sizing: border-box;
-}
-
-    .home-main section {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-
-    margin: 25px 0;
-    padding: 24px;
-}
-
-.home-main section h2 {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-
-    margin: 0 auto;
-    font-size: 2.5rem;
-    padding: 16px;
-}
-
-.home-main section h2::after {
-    width: 60%;
-    margin-top: 12px;
-    margin-bottom: 12px;
-}
-
-.home-main section ul {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.home-main section li {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin: 0 0 14px;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.home-main section li a {
-    display: grid;
-
-    font-size: 1.1rem;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    margin-left: 0;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-
-    padding: 16px 20px;
-
-    overflow-wrap: anywhere;
-}
-
-
-    /* TABLES */
-
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: normal;
-    }
-
-    th,
-    td {
-        padding: 8px 10px;
-        font-size: .78rem;
-    }
-
-    pre {
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    code {
-        overflow-wrap: anywhere;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-        position: sticky;
-        bottom: 20px;
-        z-index: 900;
-        width: 82%;
-        margin: 18px auto 8px;
-        padding: 8px 10px;
-        box-sizing: border-box;
-        transform: none;
-        animation: none;
-        border-radius: 22px;
-    }
-
-    footer p {
-        margin: 2px 0;
-        font-size: 0.9rem;
-        line-height: 1.35;
-        animation: none;
-    }
-
-    /* -----------------------------------------
-       Desktop content scroll animation
-       ----------------------------------------- */
-
-    @supports (animation-timeline: view()) {
-
-        main :is(a, p, h2, h3, ul, li):not(nav *),
-        main :is(em):not(footer *) {
-
-            animation:
-                contentScroll linear both;
-
-            animation-timeline: view();
-
-            animation-range:
-                entry 0% exit 100%;
-        }
-
-        @keyframes contentScroll {
-
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            25% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            75% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-        }
-    }
-
-    /* Prevent source links from fading in landscape */
-    #milestone ~ h3:not(#keytech ~ h3) + p + em,
-    #milestone ~ h3:not(#keytech ~ h3) ~ em,
-    #keytech ~ h3 + p + em {
-        animation: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        filter: none;
-    }
-
-}
 
 /* =========================================================
    HOME PAGE ONLY
@@ -3479,12 +2875,11 @@ footer p {
     .home-main section {
         margin-right: auto;
         margin-left: auto;
-        padding: 35px;
+        padding: var(--space-35px);
 
         background-color: rgba(186, 149, 47, 0.066);
 
         border: 1px solid var(--accent-dark);
-        border-left: 3px soli;
         border-radius: var(--radius-large);
         box-shadow: var(--shadow-medium);
 
@@ -3493,7 +2888,7 @@ footer p {
     }
 
     .home-main h2 {
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: var(--font-heading);
 
         font-size: 50px;
 
@@ -3510,7 +2905,7 @@ footer p {
     .home-main ul {
         list-style: none;
 
-        margin: 16px;
+        margin: var(--space-16px);
 
         display: grid;
 
@@ -3526,14 +2921,14 @@ footer p {
         margin-right: auto;
 
         min-height: auto;
-        padding: 16px 20px;
+        padding: var(--space-16px) var(--space-20px);
 
         background-color: var(--surface);
         border: 1px solid var(--border);
         border-radius: 50px;
         color: var(--text);
     
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: var(--font-heading);
         font-size: 0.90rem;
         font-weight: 600;
 
@@ -3625,6 +3020,3 @@ footer p {
         color: #5f4512;
     }
 }
-
-
-/* TESTINGS */

@@ -283,3 +283,4 @@ function showResults(score, percentage, message, correction) {
 // START APPLICATION
 // ======================================================
 renderQuestion();
+

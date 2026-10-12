@@ -718,6 +718,8 @@ button:disabled {
             var(--background);
 
         color: var(--text);
+
+        border: none;
     }
 
 

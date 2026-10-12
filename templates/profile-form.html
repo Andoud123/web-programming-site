@@ -15,6 +15,7 @@
 {% endblock %}
 
 {% block main %}
+    <h6 id="top"></h6>
     
     <h2 id="title">Engineering Student Profile</h2> 
 
@@ -75,7 +76,7 @@
                 <input type="number" id="gpa" name="gpa" placeholder="85.50" min="40" max="100" step="0.01" required><br><br>
 
                 <label for="cred_nb">Credits Completed:</label>
-                <input type="number" id="cred_nb" name="credits" placeholder="3" min="0" max="148" required><br><br><br>
+                <input type="number" id="cred_nb" name="credits" placeholder="3" min="0" max="148" required>
             </fieldset>
 
             <fieldset>
@@ -88,10 +89,10 @@
                     <label for="summer">Summer</label>
 
                     <input type="radio" id="fall" name="graduation" value="Fall">
-                    <label for="fall">Fall</label><br><br>
+                    <label for="fall">Fall</label>
 
                 <label for="grad">Expected Graduation Month & Year:</label>
-                <input type="month" id="grad" name="graduation_month"><br><br><br>
+                <input type="month" id="grad" name="graduation_month">
             </fieldset>
 
             <fieldset>
@@ -101,7 +102,7 @@
                     <label for="yes">Yes</label>
 
                     <input type="radio" id="no" name="internship_completed" value="No" required>
-                    <label for="no">No</label><br>
+                    <label for="no">No</label>
             </fieldset>
 
             <fieldset>
@@ -206,7 +207,7 @@
             <input type="hidden" name="form_version" value="2026-2027">
 
         </form>
-        <h4><a href="#title"><strong>BACK TO TOP</strong></a></h4>
+        <h4><a href="#top"><strong>BACK TO TOP</strong></a></h4>
         <h4><a href="/"><strong>HOME</strong></a></h4>
 {% endblock %}
 

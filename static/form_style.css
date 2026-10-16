@@ -49,6 +49,95 @@
         0.25s ease;
 }
 
+.previewForm {
+    width: 90%;
+    align-items: center;
+
+    margin: 0 auto 22px;
+    padding: 30px 28px 25px;
+
+    font: inherit;
+
+    background: none;
+
+    border: 1px solid var(--form-accent-border);
+    border-radius: 30px;
+
+    box-shadow: var(--form-shadow);
+
+    transition:
+        border-color var(--form-transition),
+        box-shadow var(--form-transition),
+        transform var(--form-transition);
+}
+
+/* Preview buttons */
+.previewForm button {
+    display: inline-block;
+
+    margin: var(--space-25px) 0;
+    padding: var(--space-10px) var(--space-20px);
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+
+    box-shadow: var(--shadow-small);
+
+    font-family: var(--font-heading);
+    color: var(--form-text);
+    font-size: 0.8rem;
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.previewForm button:hover {
+    background-color: var(--form-accent);
+    border-color: var(--form-accent);
+    color: var(--form-border);
+
+    transform: translateY(-2px);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 20px rgba(169, 140, 79, 0.25);
+}
+
+/* Preview content */
+.previewForm {
+    color: var(--form-text);
+    line-height: 1.6;
+}
+
+.previewForm ul {
+    padding-left: 20px;
+}
+
+.previewForm li {
+    margin: 8px 0;
+    padding: 8px;
+    background: var(--form-surface-soft);
+    border: 1px solid var(--form-border);
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .previewForm {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
 
 /* =========================================================
    GENERAL
@@ -730,12 +819,6 @@ main > h4 a {
     transition:
         color var(--form-transition);
 }
-
-main > h4 a:hover {
-
-    color: var(--form-accent-dark);
-}
-
 
 /* =========================================================
    SMOOTH PAGE ENTRANCE
@@ -2162,3 +2245,4 @@ main {
         visibility: visible !important;
     }
 }
+

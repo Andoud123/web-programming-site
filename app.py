@@ -55,9 +55,11 @@ def home():
 
         {"week": 3, "title": "NO CSS - WEB PORTFOLIO", "url": "/nocss-index"},
 
-        {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
+        {"week": 4, "title": "Engineering Student Profile (HTML)", "url": "/submit-profile"},
 
         {"week": 5, "title": "Quiz Application", "url": "/quiz"},
+
+        {"week": 6, "title": "Engineering Student Profile (JS)", "url": "/submit-profile"}
     ]
     return render_template("index.html", weekly_work=weekly_work)
 

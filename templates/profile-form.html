@@ -3,8 +3,9 @@
 {% block title %}Engineering Student Profile{% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" 
+    <link rel="stylesheet" 
         href="{{ url_for('static', filename='form_style.css') }}"/>
+    <script src="{{ url_for('static', filename='form.js') }}" defer></script>
 {% endblock %}
 
 <body>
@@ -29,38 +30,38 @@
         </nav>
         <p>Complete this form to provide information about your academic background, technical skills, internship experience, and Final Year Project preferences.</p><br>
     
-        <form action="{{ url_for('submit_profile') }}" method="post">
+        <form id="profile-form" action="{{ url_for('submit_profile') }}" method="post">
 
             <fieldset>
                 <legend id="personal">1. Personal Information</legend>
             
                 <label for="student_id">Student ID:</label>
-                <input type="number" id="student_id" name="student_id" placeholder="202400000" maxlength="9" required>
+                <input type="number" id="student_id" name="student_id" placeholder="202400000" pattern="^?[0-9]{9}$" >
 
                 <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="First name and Last name" required><br><br>
+                <input type="text" id="fullname" name="fullname" placeholder="First name and Last name" ><br><br>
 
                 <label for="email">USEK Email:</label>
-                <input type="email" id="email" name="email" placeholder="firstname.lastname@net.usek.edu.lb" pattern="^[a-z.-]+@net\.usek\.edu\.lb$" required><br><br>
+                <input type="email" id="email" name="email" placeholder="firstname.lastname@net.usek.edu.lb" pattern="^[a-z.\-]+@net\.usek\.edu\.lb$" ><br><br>
 
                 <label for="phone">Mobile Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+961 12 345678" pattern="^\+961 ?[0-9]{2} ?[0-9]{6}$" required>
+                <input type="tel" id="phone" name="phone" placeholder="+961 12 345678" pattern="^\+961 ?[0-9]{2} ?[0-9]{6}$" >
 
                 <label for="birthdate" >Date of Birth:</label>
-                <input type="date" id="birthdate" name="birthdate" required><br><br>
+                <input type="date" id="birthdate" name="birthdate" ><br><br>
 
                 <label for="portfolio">Github:</label>
-                <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/username" required>
+                <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/username" >
 
                 <label for="gin446">GIN446 website:</label>
-                <input type="url" id="gin446" name="gin446" placeholder="Your RENDER website link" required><br>
+                <input type="url" id="gin446" name="gin446" placeholder="Your RENDER website link" ><br>
             </fieldset><br>
 
             <fieldset>
                 <legend id="academic">2. Academic Information</legend>
 
                 <label for="major">Engineering Major:</label>
-                <input list="majors" id="major" name="major" placeholder="-- Select your major --" required>
+                <input list="majors" id="major" name="major" placeholder="-- Select your major --" >
                     <datalist id="majors">
                         <option value="Computer Engineering">
                         <option value="Electrical Engineering">
@@ -73,10 +74,10 @@
                     </datalist><br><br>
             
                 <label for="gpa">Current GPA / 100:</label>
-                <input type="number" id="gpa" name="gpa" placeholder="85.50" min="40" max="100" step="0.01" required><br><br>
+                <input type="number" id="gpa" name="gpa" placeholder="85.50" min="40" max="100" step="0.01" ><br><br>
 
                 <label for="cred_nb">Credits Completed:</label>
-                <input type="number" id="cred_nb" name="credits" placeholder="3" min="0" max="148" required>
+                <input type="number" id="cred_nb" name="credits" placeholder="3" min="0" max="148" >
             </fieldset>
 
             <fieldset>
@@ -89,7 +90,7 @@
                     <label for="summer">Summer</label>
 
                     <input type="radio" id="fall" name="graduation" value="Fall">
-                    <label for="fall">Fall</label>
+                    <label for="fall">Fall</label><br><br>
 
                 <label for="grad">Expected Graduation Month & Year:</label>
                 <input type="month" id="grad" name="graduation_month">
@@ -98,10 +99,10 @@
             <fieldset>
                 <legend>Internship Experience</legend>
                 <em><p>Have you completed an engineering internship?</p></em>
-                    <input type="radio" id="yes"name="internship_completed" value="Yes" required>
+                    <input type="radio" id="yes"name="internship_completed" value="Yes" >
                     <label for="yes">Yes</label>
 
-                    <input type="radio" id="no" name="internship_completed" value="No" required>
+                    <input type="radio" id="no" name="internship_completed" value="No" >
                     <label for="no">No</label>
             </fieldset>
 
@@ -133,12 +134,11 @@
                     <input type="checkbox" id="signal" name="skills" value="Signal Processing">
                     <label for="signal">Signal Processing</label><br><br>
 
-
                 <label for="language">Primary Programming Language:</label>
-                <input type="text" id="language" name="language" placeholder="Start typing..." required><br><br>
+                <input type="text" id="language" name="language" placeholder="Start typing..." ><br><br>
 
                 <label for="software">Engineering Software Used:</label>
-                    <select id="software" name="software" row="6" cols="40" multiple required>
+                    <select id="software" name="software" row="6" cols="40" multiple >
                         <option value="MATLab">MATLAB</option>
                         <option value="Simulink">Simulink</option>
                         <option value="LabVIEW">LabVIEW</option>
@@ -197,10 +197,10 @@
 
             <fieldset id="submission">
                 <legend>5. Submission</legend>
-                <input type="checkbox" id="confirmation" name="confirmation" required>
+                <input type="checkbox" id="confirmation" name="confirmation" >
                 <label for="confirmation">I confirm that the information provided is accurate.</label><br><br>
                 
-                <input type="submit" value="Submit Form" onclick="alert('Your form is submitted')">
+                <input type="submit" value="Submit Form" onclick="alert('Your form is Previewed to be Submitted')">
                 <input type="reset"  value="Clear Form" onclick="alert('Your form is cleared')">
             </fieldset><br>
 
@@ -212,3 +212,4 @@
 {% endblock %}
 
 </body>
+
